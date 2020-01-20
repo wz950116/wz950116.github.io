@@ -1,0 +1,170 @@
+@charset "UTF-8";
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+.box {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.mask_box {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #000;
+    opacity: 0.9;
+    filter: alpha(opacity=90);
+}
+
+/*左边视频*/
+.video_box .left_video {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 2;
+    -webkit-transition: width .6s ease;
+    -moz-transition: width .6s ease;
+    -ms-transition: width .6s ease;
+    -o-transition: width .6s ease;
+    transition: width .6s ease;
+}
+
+.video_box .left_video.open {
+    width: 100%;
+    z-index: 999;
+}
+
+.video_box .left_video.close {
+    width: 0%;
+    z-index: 999;
+}
+
+/*右边视频*/
+.video_box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    cursor: pointer;
+    -webkit-transition: width .6s ease;
+    -moz-transition: width .6s ease;
+    -ms-transition: width .6s ease;
+    -o-transition: width .6s ease;
+    transition: width .6s ease;
+}
+
+.video_box .rightOpen {
+    width: 100%;
+    z-index: 999;
+}
+
+.video_box {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.gray_box {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 99999;
+    display: none;
+    background: #000;
+    opacity: 0.3;
+    filter: alpha(opacity=30);
+}
+
+.left_video .yyBtn {
+    width: 234px;
+    height: 125px;
+    display: block;
+    background: url(http://i3.gbimg.cn/zt/2019/06/26/world/yy.png) no-repeat;
+    position: absolute;
+    left: 30%;
+    top: 43%;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+    z-index: 99;
+}
+
+.left_video .yyBtn:hover {
+    left: 28%;
+    background: url(http://i3.gbimg.cn/zt/2019/06/26/world/yy_on.png) no-repeat;
+}
+
+.left_mask {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.4;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+}
+
+.l_bg1 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: url(http://i3.gbimg.cn/zt/2019/06/26/world/yyBg.jpg?id=1) no-repeat;
+}
+
+.right_video .hjBtn {
+    width: 234px;
+    height: 125px;
+    display: block;
+    background: url(http://i3.gbimg.cn/zt/2019/06/26/world/hj.png) no-repeat;
+    position: absolute;
+    right: 16%;
+    top: 43%;
+    z-index: 99;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+.right_video .hjBtn:hover {
+    right: 14%;
+    background: url(http://i3.gbimg.cn/zt/2019/06/26/world/hj_on.png) no-repeat;
+}
+
+.right_mask {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.4;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.r_bg1 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: url(http://i3.gbimg.cn/zt/2019/06/26/world/hjBg.jpg) no-repeat;
+}
