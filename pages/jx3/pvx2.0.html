@@ -1,0 +1,72 @@
+---
+layout: default
+---
+
+<link rel="stylesheet" href="/assets/css/jx3-pvx.css">
+
+<body>
+	<div class="container">
+		<div class='box'>
+			<div class='banner-img banner-1'></div>
+			<div class='banner-img banner-2'></div>
+			<div class='banner-img banner-3'></div>
+			<div class='banner-img banner-4'></div>
+			<div class='banner-img banner-5'></div>
+		</div>
+		<div class='nav'>
+			<div class="nav-item nav-1">
+				<div class='top-line'></div>
+				<div class='center-line'>风景</div>
+				<div class='bottom-line'></div>
+			</div>
+			<div class="nav-item nav-2">
+				<div class='top-line'></div>
+				<div class='center-line'>合影</div>
+				<div class='bottom-line'></div>
+			</div>
+			<div class="nav-item nav-3">
+				<div class='top-line'></div>
+				<div class='center-line'>奇遇</div>
+				<div class='bottom-line'></div>
+			</div>
+			<div class="nav-item nav-4">
+				<div class='top-line'></div>
+				<div class='center-line'>驯养</div>
+				<div class='bottom-line'></div>
+			</div>
+			<div class="nav-item nav-5">
+				<div class='top-line'></div>
+				<div class='center-line'>其他</div>
+				<div class='bottom-line'></div>
+			</div>
+		</div>
+	</div>
+</body>
+
+<script src='/assets/js/jquery.min.js'></script>
+<script>
+	// 轮播
+	let activeImg = 0, len = $('.banner-img').length, onOff = false
+	const timerFn = () => {
+		activeImg++
+		if (activeImg >= len) activeImg = 0
+		$('.banner-img').eq(activeImg).fadeIn(800).siblings().hide()
+	}
+	let timer = setInterval(timerFn, 5000)
+
+	// 点击跳转
+	$('.nav-item').click(function() {
+		clearInterval(timer)
+		activeImg = $(this).index()
+		$('.banner-img').eq(activeImg).fadeIn(800).siblings().hide()
+		onOff = true
+	})
+
+	// 鼠标滞留时停止轮播，移开后继续轮播
+	$('.nav-item').on('mouseout', function() {
+		if (onOff) {
+			timer = setInterval(timerFn, 5000)
+			onOff = false
+		}
+	})
+</script>

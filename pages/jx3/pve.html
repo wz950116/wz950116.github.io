@@ -1,0 +1,298 @@
+---
+layout: default
+---
+
+<link rel="stylesheet" type="text/css" href="/assets/css/jx3-pve.css" />
+<!-- 引入样式 -->
+<link rel="stylesheet" href="https://unpkg.com/element-ui@2.12.0/lib/theme-chalk/index.css">
+
+<div id="app">
+	<el-row type="flex" justify='space-around'>
+		<el-col :span='11'>
+
+			<!-- <el-image src="https://wz950116.bj.bcebos.com/jx3-pve%2Fpic-title.png" class='divider txjy'></el-image> -->
+
+			<div class="demo-image">
+				<div class="source">
+				    <div class="demo-image__lazy">
+			  			<el-image v-for="(item, index) in fb_urls" :key="index" :src="item.preSrc" :preview-src-list="previewSrcList" :alt="item.alt" fit='none' lazy @click='clipImagePreview(item.src)'>
+			  				<div slot="error" class="image-slot">
+						        <i class="el-icon-picture-outline"></i>
+					      	</div>
+			  			</el-image>
+					</div>
+				</div>
+			</div>
+
+			<!-- <el-image src="https://wz950116.bj.bcebos.com/jx3-pve%2Fpic-title.png" class='divider xj'></el-image> -->
+		  	<div class="demo-image">
+				<div class="source">
+				    <div class="demo-image__lazy">
+			  			<el-image v-for="(item, index) in xj_urls" :key="index" :src="item.preSrc" :preview-src-list="previewSrcList" :alt="item.date" fit='none' lazy @click='clipImagePreview(item.src)'>
+			  				<div slot="error" class="image-slot">
+						        <i class="el-icon-picture-outline"></i>
+					      	</div>
+			  			</el-image>
+					</div>
+				</div>
+			</div>
+
+		  	<!-- <el-image src="https://wz950116.bj.bcebos.com/jx3-pve%2Fpic-title.png" class='divider roles'></el-image> -->
+			
+			<div class="demo-image">
+				<el-row class='jx3_roles'>
+					<el-col :span='6' v-for='item in roles' :key='item.name'>
+						<div class="block" @click='openDialogEvent(item)'>
+				          	<el-avatar :src="item.avatar"></el-avatar>
+				        </div>
+						<div class="sub-title">{{ item.name }}</div>
+					</el-col>
+				</el-row>
+			</div>
+		</el-col>
+		<el-col :span='11'>
+			<div class="demo-video">
+				<div class="source">
+				    <video :src='videoSourceUrl' controls :poster="videoPosterUrl" preload="auto" width="600" ref='video'></video>
+				</div>
+				<el-collapse accordion v-model="activeNames" @change="handleChange">
+					<el-collapse-item name="bhd" :disabled="activeNames === 'bhd'">
+				        <template slot="title">
+				            <span class='video_title'>冰火岛副本</span>
+				            <el-rate v-model="start.bhd" disabled></el-rate>
+				        </template>					        
+				        <div>第一代苍天君方有崖，发掘了这座荒岛。岛中心的山峦外部覆盖暗红色石块，但内部中空遍布类似冰晶的奇石，可极大影响内力运转，故得名冰火岛。因奇石的特殊功用，被改造成为冰火监狱，经过历代苍天君的建设，监狱分为五层，越高层的囚犯带来的危害越大。冰火监狱不仅用来关押危害江湖的囚徒，也掩藏着不为人知的秘密。</div>
+				        <div>冰火岛遭到入侵，方乾得到消息，急令手下七枚前往冰火岛救援。七枚邀请玩家同他们一起进入冰火岛，除掉入侵之人。</div>
+				        <div>而围绕于伊玛目身边的势力不仅有隐元会，还有同伊玛目同源的明教和红衣教之人。伊玛目当年入中原，便是为了寻回现已为明教和红衣教两大教派教主的，原袄教长老陆危楼和阿萨辛。两教听闻伊玛目被抓消息，都不约而同地派出教中精英，欲入冰火岛一探伊玛目，获知波斯袄教秘术。</div>
+				    </el-collapse-item>
+					<el-collapse-item name="lsd" :disabled="activeNames === 'lsd'">
+				        <template slot="title">
+				            <span class='video_title'>狼神殿副本</span>
+				            <el-rate v-model="start.lsd" disabled></el-rate>
+				        </template>					        
+				        <div>辉天堑中，独孤九通过武林人士找到了他想要的解毒药，柳静海由于担心唐书雁的安危，在调查辉天堑易守难攻状况后，掩护独孤九离开了辉天堑。郭岩也在经过一番波折后与郭珠一同带走了月华，但郭岩并不知道要如何面对这个心理已经被红衣教扭曲的女儿。而可人与毛毛在与月泉淮见面后，决定继续深入狼牙堡深处的狼神殿，以完成各自的试炼，却在不经意间发现了此行的非同寻常。</div>
+				        <div>9而曲云与德夯在确认乌蒙贵天一教与狼牙的联系日益频繁后，故此怀疑乌蒙贵已将五毒禁术传授给了狼牙。曲云不愿五毒的命运因此而走向没落，在深思熟虑后决定亲身进入狼牙堡内部，瓦解乌蒙贵的邪恶计划，在搜索过程中，她发现了毛毛等人先前进入的密道，并借此密道顺利潜入狼神殿中，映入眼帘的却是一个似曾相识的身影...</div>
+				    </el-collapse-item>
+					<el-collapse-item name="htq" :disabled="activeNames === 'htq'">
+				        <template slot="title">
+				            <span class='video_title'>辉天堑副本</span>
+				            <el-rate v-model="start.htq" disabled></el-rate>
+				        </template>					        
+				        <div>安禄山觊觎大唐的繁华，暗中花费巨资，在范阳外的狼山建立了狼牙堡。利用狼山的地理位置，他选择了异常危险的区域筑起他的堡垒。安禄山认为只要在地势险峻的辉天堑设下重重障碍，即便唐军勇猛，此地也能成为他易守难攻的老巢;他也可在狼牙堡垒的内部骄奢淫逸，高枕无忧。但是，他未想到自己在此的时日过早的结束了。如今此处变成了史思明和安庆绪的避风港。</div>
+				        <div>辉天堑是狼山战善处刑场通往狼牙堡内殿的蹊径，狼牙军的在战争中夺来的宝藏、财富其实是由辉天池的正路运输进狼牙堡内部。但辉天池重兵把守，即使是武林高手也难以切入，而想要接近狼牙堡内部，唯有选择防守相对薄弱但地势陡峭的辉天堑，战事不利的史思明退居此处，也注意到了这个弱点，于是开始加强此处的防御，比如在燕然峰设下司徒的防御甲士。而由于各种因由来到燕然峰的各路豪杰打破了他的计划...</div>
+				    </el-collapse-item>
+					<el-collapse-item name="yrf" :disabled="activeNames === 'yrf'">
+				        <template slot="title">
+				            <span class='video_title'>燕然峰副本</span>
+				            <el-rate v-model="start.yrf" disabled></el-rate>
+				        </template>					        
+				        <div>狼牙堡中，隐藏着诸多高手。如今安家势力逐渐减弱，史思明和他的部下把持了整座狼牙堡的运作。</div>
+				        <div>远自天山而来的剑术高手，天山派掌门座下二弟子司晴，亦是狼牙逐日长老令狐伤的师弟，但相比门派中众人对令狐伤的崇拜，他对令狐伤却另有看法。</div>
+				        <div>狼牙堡中还有史思明从新罗请来的绳池剑宗高手，曾与霸刀山庄有过渊源，此次又在狼牙堡中，再与霸刀之人对峙。</div>
+				        <div>司徒一一与狼牙军亦交情匪浅，他为狼牙堡制作的机关皇是他此生至为得意之作。危机处处的狼牙堡，深入虎穴的众人正遭遇着难以想象的威胁。</div>
+				    </el-collapse-item>
+				    <el-collapse-item name="zss" :disabled="activeNames === 'zss'">
+				        <template slot="title">
+				            <span class='video_title'>战兽山副本</span>
+				            <el-rate v-model="start.zss" disabled></el-rate>
+				        </template>					        
+				        <div>洛阳城中，独孤九夺回的武器，在霸刀武库里被一批神秘怪物所劫，一切的线索都指向卷土重来的天一教和隐秘于范阳的狼牙堡。狼牙堡易守难攻，乃是当年安禄山暗中花费巨资，在范阳郊外的狼山所建立的堡垒。里面机关处处，还隐藏着无数狼牙军花重金请来的关外高手。而洛阳城中，此时亦聚集了诸多武林人士，他们同心齐志，欲要展开一场反攻狼牙的战斗。</div>
+				        <div>此事由霸刀山庄和丐帮牵头，加上自长安赶赴洛阳的五毒教曲云，还有浩气盟少侠穆玄英和七星之一的“开阳”可人，众人决定亲自前去狼牙堡一探，遂分成两支队伍，先由霸刀柳静海，独孤九和五毒教曲云，德夯等人开路，其后众人再行潜入，分散目标。</div>
+				        <div>而身在洛阳城中的塔纳之主唐书雁听闻此事后，也偷偷跟随在他们身后，进入了狼牙堡内。</div>
+				    </el-collapse-item>
+					<el-collapse-item name="fldg" :disabled="activeNames === 'fldg'">
+				        <template slot="title">
+				            <span class='video_title'>风雷刀谷副本</span>
+				            <el-rate v-model="start.fldg" disabled></el-rate>
+				        </template>					        
+				        <div>柳静海为追查丢失神兵线索率领山庄精锐离开霸刀山庄，五爷柳风骨也外出不知所踪，如今的庄中只留大庄主柳惊涛一人坐镇。与史思明相交的四爷柳鸾旗趁机开始了谋划许久的行动。在其劝诱下，风雷刀谷掌谷三爷柳秀岳违背了当年柳五爷在家族中颁布的令谕，开启了锻造神兵的千雷殿，要利用震离刑炉再锻神刀，欲再开霸刀山庄已经停办多年的“扬刀大会”。</div>
+				        <div>利用柳秀岳将注意力集中在千雷殿中锻刀之时，柳鸾旗控制住了妹妹柳廷芳，并会和从凌风谷道偷入风雷刀谷中的史朝英，解语等狼牙军重将，密谋将风雷刀谷中剩余的上好兵刃和矿藏偷运而去。刀谷总管柳哲和锻刀厅厅首柳愚也驻扎在此，对于史朝英和柳时清的行为，两人各有看法。</div>
+				        <div>千雷殿区域位于刀谷深处，柳五爷的两位兄长：刀谷掌谷三爷柳秀岳和四爷柳鸾旗深居于此。柳秀岳在千雷殿中重开震离刑炉，想要借由神刀出世再现霸刀风采。柳鸾旗则记恨柳五爷导致自己的儿子柳云桥成为残废，处心积虑想要夺取大权，并联合狼牙军将回家看望父亲的浩气盟摇光月弄痕软禁于此，以此威胁柳秀岳为狼牙军效力。而假借协助狼牙军入侵之名，实则为图谋九天武库的伊玛目也已经悄悄潜入此处。</div>
+				    </el-collapse-item>
+					<el-collapse-item name="syg" :disabled="activeNames === 'syg'">
+				        <template slot="title">
+				            <span class='video_title'>上阳宫副本</span>
+				            <el-rate v-model="start.syg" disabled></el-rate>
+				        </template>					        
+				        <div>至德二载九月，广平王李俶和郭子仪率领朔方军和回纥援军，向狼牙军占领的长安、洛阳进发。进过残酷的战斗，联军终于夺回了长安，接着乘胜继续向洛阳进发。</div>
+				        <div>狼牙军畏惧唐和回纥联军，只在小范围应战。洛阳行宫中，狼牙军事徐归道和"山狼"曹炎烈定下毒计，以降唐为名，引诱广平王入上阳宫受降表，欲图谋害李俶。</div>
+				        <div>建宁王李倓逃出天泣林后，隐藏在李俶身旁，此时他愿代兄长前去上阳宫，若狼牙军有诈，便将计就计攻入狼牙内部。虽知李倓此举必有深意，不过李复也赞同此策。在二人劝说下，李俶同意此计，并派遣天策军、苍云军精锐随同二人共赴上阳宫，见机行事。</div>
+				        <div>此时的观风殿中，沈眠风和柳公子，霸刀风雷刀谷叛徒柳绯君，"山狼"曹炎烈，红衣教圣女月华，还有徐归道请来坐镇的神秘人独孤修早已在观风殿中布下杀局，只等待"广平王"落入陷阱，一场斗智斗勇的唐燕角力正要拉开帷幕。</div>
+				        <div>而另外一侧的双曜亭中，安庆绪，严庄，张通儒，狼牙拜月长老黑齿元佑等人正在焦急地等待消息。被狼牙军俘虏的大唐大将哥舒翰则在一旁守卫，一边怀想过去的荣光，为自己老来失节而唉声叹气</div>
+				    </el-collapse-item>
+				    <el-collapse-item name="qhl" :disabled="activeNames === 'qhl'">
+				        <template slot="title">
+				            <span class='video_title'>秦皇陵副本</span>
+				            <el-rate v-model="start.qhl" disabled></el-rate>
+				        </template>
+				        <div>大秦当年一统天下，与早已失传的秦朝铸器术大有关系，听闻秦军当年精锐所执兵刃，远超天下各国，是以若被安禄山狼牙军得此大批利器，则攻略天下，稳操胜券，安禄山攻下长安之后，立即派遣了手下风狼、火狼、水狼率兵搜索华清宫，务必找到"始皇龙辇秘剑"的下落。郭子仪心怀社稷，请群豪夜闯华清宫，争取破坏此事！但最终龙辇秘剑被暗中潜伏的狼牙军逐日长老令狐伤夺取。</div>
+				        <div>狼牙军夺得此剑之后，安禄山继续派遣义弟令狐伤调查秘剑中所藏的秘密。</div>
+				        <div>安禄山进入秦皇陵，欲起出前年遗秘，寇岛一行人应其之邀尾随而至，江湖群侠应郭子仪之邀倾力阻止，在进入皇陵后遇到机关守卫与各路高手的重重堵截。安禄山的野心是否能够得逞，安庆绪又将如何弑父夺权，丘秋等人最终将怎样释怀，一切谜团将在此处解开。</div>
+				    </el-collapse-item>
+				    <el-collapse-item name="dxc" :disabled="activeNames === 'dxc'">
+				    	<template slot="title">
+				            <span class='video_title'>风雪稻香村副本</span>
+				            <el-rate v-model="start.dxc" disabled></el-rate>
+				        </template>
+				        <div>史朝义受安庆绪重金及权位待遇拉拢，奉其密令前往风雪稻香村暗会前任无名王毛仲，合谋杀害安禄山之计。唐简、李复等人即追踪而至，此外，为寻觅身世之谜的遗孤陈月也来到此处，穆玄英和莫雨为护其周全，也不约而同赶往此处。多股势力纷至沓来，这白雪皑皑之下的山村已然无法保持往日的宁静，狼宗、九天两股势力即将联手，天下局势愈发动荡。侠士在此将与隐元会地字一号、冷血十三鹰之黑鹰、九天老无名王毛仲及史思明之子史朝义逐一较量。</div>
+				    </el-collapse-item>
+				    <el-collapse-item name="xz" :disabled="activeNames === 'xz'">
+				    	<template slot="title">
+				            <span class='video_title'>血战天策副本</span>
+				            <el-rate v-model="start.xz" disabled></el-rate>
+				        </template>
+				    	<div>天宝年间，安史之乱持续侵扰中原大地，首当其冲的天策府数位将领在频繁鏖战之中身受重伤，这引起了狼牙军更进一步攻下天策府的企图。</div>
+				    	<div>此时江湖之中消息之士已然知晓了狼牙大军的动向，群雄驰援天策府，要将狼牙诸雄劫杀在此。</div>
+				        <div>狼牙一方不仅派出了军师徐归道调兵遣将，由"山狼"曹炎烈、“雷狼”沙叱博、“天狼”阿史那从礼分率重兵强攻天策余部。同时还出动三大长老黑齿元佑、令狐伤和苏曼莎合围身负重伤的天策高手，甚至鲜有露面的安禄山之子安庆绪也以此役为跳板登上了历史的舞台。此役也将是天策史上最惨烈的一战。女将曹雪阳为余部断后，单枪独守天策府；“天枪”杨宁旧伤未愈，连遭重创，性命危在旦夕；朱剑秋虽以智谋闻名天下，却陷入无兵可调的困境...</div>
+				    </el-collapse-item>
+				    <el-collapse-item name="dmg" :disabled="activeNames === 'dmg'">
+				    	<template slot="title">
+				            <span class='video_title'>大明宫副本</span>
+				            <el-rate v-model="start.dmg" disabled></el-rate>
+				        </template>
+				        <div>大明宫位于隋朝皇宫大兴宫（唐称太极宫）之东，始建于唐贞观八年，原名永安宫，唐太宗建造初衷是为给太上皇李渊居住，以尽孝道。但大明宫未建成，李渊就离开了人世，大明宫的修建于是停止。</div>
+				        <div>龙朔二年，唐高宗扩建，次年迁入大明宫执政。大明宫成了大唐帝国新的政治中心。</div>
+				        <div>安史之乱中，安禄山军队攻下长安，遂以大明宫作为大燕帝宫，因战乱时时常遭遇大唐义士刺杀，大明宫内遍布狼牙高手。</div>
+				    </el-collapse-item>
+				</el-collapse>
+			</div>
+		</el-col>
+	</el-row>
+
+
+	<el-dialog center fullscreen :title="dialogTitle" :visible.sync="dialogVisible">
+	  	<div class='text' v-html='roleCurrentInfo'></div>
+  		<div class='more_shadow'></div>
+	  	<el-pagination small layout="prev, pager, next" :current-page='currentPage' :page-size='1' :total="roleInfo && roleInfo.length" @current-change="handleCurrentChange"></el-pagination>
+	</el-dialog>
+</div>
+
+<script src="/assets/js/vue.js"></script>
+<script src="/assets/js/element.js"></script>
+<script>
+	document.title = '副本向'
+	new Vue({
+	    el: '#app',
+	    data() {
+			return {
+				start: {
+					bhd: 3,
+					lsd: 3,
+					htq: 2,
+					yrf: 3,
+					zss: 2,
+					fldg: 2,
+					syg: 3,
+					qhl: 5,
+					dxc: 3,
+					xz: 4,
+					dmg: 3
+				},
+				dialogVisible: false,
+				activeNames: 'bhd',
+				fb_urls: [],
+				xj_urls: [],
+		        previewSrcList: ['https://wz950116.bj.bcebos.com/jx3-pve%2Ffb%2Floading.png'],
+		        videoSourceUrl: 'https://wz950116.bj.bcebos.com/jx3-pve%2Ffb%2Fbhd.mp4',
+		        videoPosterUrl: 'https://wz950116.bj.bcebos.com/jx3-pve%2Ffb%2Fbhd_poster.jpg',
+		        roles: [],
+		        dialogTitle: '',
+		        roleInfo: [],
+		        roleCurrentInfo: '',
+		        currentPage: 1
+			}
+	    },
+	    mounted() {
+	    	$('.el-carousel__arrow--left').attr('disabled', true)
+	    	var winW = document.documentElement.clientWidth || document.body.clientWidth
+	    	if (winW < 1440) {
+				this.$message({
+					message: '建议使用1440以上分辨率浏览',
+					type: 'warning'
+				})
+	    	}
+	    	var _this = this
+	    	$.ajax({
+	            url: '/assets/data/pve.json',
+	            type: 'GET',
+	            dataType: 'json',
+	            contentType: 'application/json',
+	            success(res) {
+	            	_this.roles = res.roles
+					var fb_urls = res.fb
+					fb_urls.forEach((fb, index) => {
+						fb.preSrc = ''
+						var canvas = document.createElement('canvas')
+						var img = new Image()
+						img.onload = function(e) {
+							canvas.width = img.width < 602 ? img.width : 602
+							canvas.height = img.height < 360 ? img.height : 360
+							var scaled = img.width * .5 - 120 > 602 && img.height * .5 - 120 > 360
+							var imgW = scaled ? img.width * .5 : img.width
+							var imgH = scaled ? img.height * .5 : img.height
+							var xA = scaled ? 120 : 0
+							var yA = scaled ? 120 : 0
+							canvas.getContext('2d').drawImage(img, xA, yA, img.width, img.height, 0, 0, imgW, imgH)
+							fb.preSrc = canvas.toDataURL()
+						}
+						img.setAttribute('crossOrigin', 'anonymous')
+						img.src = fb.src
+						if (index === fb_urls.length - 1) {
+							_this.fb_urls = fb_urls
+						}
+					})
+
+					var xj_urls = res.xj
+					xj_urls.forEach((xj, index) => {
+						xj.preSrc = ''
+						var canvas = document.createElement('canvas')
+						var img = new Image()
+						img.onload = function(e) {
+							canvas.width = img.width < 602 ? img.width : 602
+							canvas.height = img.height < 360 ? img.height : 360
+							var scaled = img.width * .5 - 120 > 602 && img.height * .5 - 120 > 360
+							var imgW = scaled ? img.width * .5 : img.width
+							var imgH = scaled ? img.height * .5 : img.height
+							var xA = scaled ? 120 : 0
+							var yA = scaled ? 120 : 0
+							canvas.getContext('2d').drawImage(img, xA, yA, img.width, img.height, 0, 0, imgW, imgH)
+							xj.preSrc = canvas.toDataURL()
+						}
+						img.setAttribute('crossOrigin', 'anonymous')
+						img.src = xj.src
+						if (index === xj_urls.length - 1) {
+							_this.xj_urls = xj_urls
+						}
+					})
+	            },
+	            error() {
+	                console.log('请求失败')
+	            }
+	        })
+	    },
+	    methods: {
+	    	handleChange(val) {
+	    		this.videoSourceUrl = `https://wz950116.bj.bcebos.com/jx3-pve%2Ffb%2F${val}.mp4`
+	    		this.videoPosterUrl = `https://wz950116.bj.bcebos.com/jx3-pve%2Ffb%2F${val}_poster.jpg`
+	    	},
+	    	clipImagePreview(src) {
+	    		this.previewSrcList = [src]
+	    	},
+	    	openDialogEvent(role) {
+	    		this.currentPage = 1
+	    		this.dialogTitle = role.name
+	    		this.roleInfo = role.introduce
+	    		if (role.introduce && role.introduce.length > 0) {
+	    			this.roleCurrentInfo = role.introduce[0].replace(/\n/gm,"</p><p>")
+	    		}
+	    		this.dialogVisible = true
+	    	},
+	    	handleCurrentChange(val) {
+	    		this.currentPage = val
+	    		if (this.roleInfo[val - 1]) {
+	    			this.roleCurrentInfo = this.roleInfo[val - 1].replace(/\n/gm,"</p><p>")
+	    		}
+	    	}
+	    }
+	})
+</script>

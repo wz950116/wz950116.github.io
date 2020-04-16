@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+    <!-- ie用户使用chorme的内核 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <!-- 适配移动端 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="初心,初心不渝,空间">
+  <meta name="description" content="初心不渝的空间">
+  <title>初心的空间</title>
+  <link rel="icon" href="//wz950116.bj.bcebos.com/public%2Ffavicon.png">
+  <link rel="stylesheet" href="/assets/css/reset.css">
+  
+  <!--[if IE]>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.js"></script>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script type="text/javascript" src="/assets/js/excanvas.js"></script>
+    <script type="text/javascript" src="/assets/js/es5-shim.js"></script>
+  <![endif]-->
+
+  <!-- 检测浏览器对H5 C3支持程度进行优雅降级 -->
+  <script src="/assets/js/modernizr-2.6.2.min.js"></script>
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+
+  <script>
+    if (/AppleWebKit.*Mobile/i.test(navigator.userAgent) || (/MIDP|SymbianOS|NOKIA|SAMSUNG|LG|NEC|TCL|Alcatel|BIRD|DBTEL|Dopod|PHILIPS|HAIER|LENOVO|MOT-|Nokia|SonyEricsson|SIE-|Amoi|ZTE|Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent))) {
+      window.location.href = '/categories/theme/404.html'; 
+  }
+  </script>
+  
+  <link rel="stylesheet" href="https://unpkg.com/element-ui@2.12.0/lib/theme-chalk/index.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/jx3-pvx_mounts.css" />
+
+</head>
+<body>
+  <div id='app' style='padding: 20px;'>
+  	<div style='margin: 0 auto;'>
+      <div>
+        <div class='search_box'>
+          <el-input v-model="search" size="small" placeholder="输入关键字搜索" @input='keywordChange' @keyup.enter.native="doSearch">
+            <el-button @click="doSearch" slot="append" icon="el-icon-search"></el-button>
+          </el-input>
+        </div>
+        <el-table v-loading="loading" element-loading-spinner="el-icon-loading" element-loading-text="努力加载中..." :data="tableData" :span-method="objectSpanMethod" highlight-current-row border max-height='600'>
+          <el-table-column prop="name" label="名称" width='120' fixed>
+            <template slot-scope="scope">
+              <span @click="previewImage(scope.row)" style='cursor: pointer;'>{{ scope.row.name }}</span>
+            </template>
+          </el-table-column>
+          <el-table-column prop="suffix" label="后缀"></el-table-column>
+          <el-table-column prop="speed" label="移动速度" width='120' sortable></el-table-column>
+          <el-table-column prop="total_speed" label="综合速度" width='120' sortable></el-table-column>
+          <el-table-column prop="doubleRide" label="双人同骑" width='120'>
+           <template slot-scope="scope">
+              <i class='el-icon-check' v-if='scope.row.doubleRide'></i>
+           </template> 
+          </el-table-column>
+          <el-table-column prop="attrs_1" label="属性一" width='120'>
+            <template slot-scope="scope">
+              <el-tooltip v-if="scope.row.attrs_1.includes('劲足') || scope.row.attrs_1.includes('匹马')" effect="dark" :content="attr_detail[scope.row.attrs_1]" placement="top">
+                <div class="special_attr" style='cursor: pointer;'>
+                  {{ scope.row.attrs_1 }}
+                </div>
+              </el-tooltip>
+              <div v-else>
+                {{ scope.row.attrs_1 }}
+              </div>
+            </template>
+          </el-table-column>
+          <el-table-column prop="attrs_2" label="属性二" width='120'>
+            <template slot-scope="scope">
+              <el-tooltip v-if="scope.row.attrs_2.includes('劲足') || scope.row.attrs_2.includes('匹马')" effect="dark" :content="attr_detail[scope.row.attrs_2]" placement="top">
+                <div class="special_attr" style='cursor: pointer;'>
+                  {{ scope.row.attrs_2 }}
+                </div>
+              </el-tooltip>
+              <div v-else>
+                {{ scope.row.attrs_2 }}
+              </div>
+            </template> 
+          </el-table-column>
+          <el-table-column prop="attrs_3" label="属性三" width='120'>
+            <template slot-scope="scope">
+              <el-tooltip v-if="scope.row.attrs_3.includes('劲足') || scope.row.attrs_3.includes('匹马')" effect="dark" :content="attr_detail[scope.row.attrs_3]" placement="top">
+                <div class="special_attr" style='cursor: pointer;'>
+                  {{ scope.row.attrs_3 }}
+                </div>
+              </el-tooltip>
+              <div v-else>
+                {{ scope.row.attrs_3 }}
+              </div>
+            </template> 
+          </el-table-column>
+          <el-table-column prop="uid" label="成马UID" width='120'></el-table-column>
+          <el-table-column prop="grade" label="品质等级" width='120'></el-table-column>
+          <el-table-column prop="main_attrs_1" label="马术气力" width='120'></el-table-column>
+          <el-table-column prop="main_attrs_2" label="恢复速度" width='120'></el-table-column>
+          <el-table-column prop="main_attrs_3" label="消耗降低" width='120'></el-table-column>
+          <el-table-column prop="main_attrs_4" label="回复速度" width='120'></el-table-column>
+          <el-table-column prop="main_attrs_5" label="抗摔系数" width='120'></el-table-column>
+          <el-table-column prop="introduction" label="简介" width='220'></el-table-column>
+          <el-table-column prop="child_uid" label="马驹UID" width='220' fixed='right'></el-table-column>
+        </el-table>
+
+        <el-dialog :visible.sync="dialogVisible">
+          <div></div>
+        </el-dialog>
+      </div>
+  	</div>
+  </div>
+
+  <script src="/assets/js/vue.js"></script>
+  <script src="/assets/js/element.js"></script>
+
+  <script>
+  	document.title = '坐骑宠物篇'
+  	new Vue({
+  		el: '#app',
+  		data() {
+  			return {
+          loading: false,
+          dialogVisible: false,
+  				tableData: [],
+  				houseNames: [],
+  				objectSpanName: [],
+          fonts: [],
+          keys: ['attrs_1', 'attrs_2', 'attrs_3', 'name', 'suffix', 'child_uid'],
+          search: '劲足',
+          attr_detail: {
+            "劲足5级": "坐骑的饱食度大于86%时，移动速度额外提升12%",
+            "劲足6级": "坐骑的饱食度大于86%时，移动速度额外提升14%",
+            "劲足7级": "坐骑的饱食度大于86%时，移动速度额外提升16%",
+            "劲足8级": "坐骑的饱食度大于86%时，移动速度额外提升18%",
+            "匹马5级": "在非双人同骑的时候，速度额外提升9%",
+            "匹马6级": "在非双人同骑的时候，速度额外提升10%",
+            "匹马7级": "在非双人同骑的时候，速度额外提升12%",
+          }
+  			}
+  		},
+  		mounted() {
+        this.loading = true
+        $.ajax({
+          url: '/assets/data/pvx_mounts.json',
+          type: 'GET',
+          dataType: 'json',
+          contentType: 'application/json',
+          success: res => {
+            res.forEach(item => {
+              item.doubleRide = !!+item.doubleRide
+              if (!this.houseNames.includes(item.name)) {
+                this.houseNames.push(item.name)
+                var index = this.houseNames.indexOf(item.name)
+                this.objectSpanName[index] = 1
+              } else {
+                var index = this.houseNames.indexOf(item.name)
+                this.objectSpanName[index] = this.objectSpanName[index] ? this.objectSpanName[index] + 1 : 1
+              }
+              // 字体归类
+              if (!this.fonts.includes(item.attrs_1)) this.fonts.push(item.attrs_1)
+              if (!this.fonts.includes(item.attrs_2)) this.fonts.push(item.attrs_2)
+              if (!this.fonts.includes(item.attrs_3)) this.fonts.push(item.attrs_3)
+              if (!this.fonts.includes(item.suffix)) this.fonts.push(item.suffix)
+              if (!this.fonts.includes(item.child_uid)) this.fonts.push(item.child_uid)
+              if (!this.fonts.includes(item.name)) this.fonts.push(item.name)
+            })
+            this.tableAllData = res
+            this.doSearch()
+            this.loading = false
+          },
+          error() {
+            console.log('请求失败')
+          }
+        })
+  		},
+  		methods: {
+        previewImage(row) {
+          this.dialogVisible = true
+          console.log(row)
+        },
+        keywordChange(value) {
+          if (!this.fonts.join('').includes(value)) {
+            this.search = this.search.replace(value, '')
+            this.$message({
+              message: '关键字有误',
+              type: 'warning'
+            })
+          }
+        },
+        doSearch() {
+          this.tableData = this.tableAllData.filter(data => !this.search || this.searchKey(data))
+        },
+        searchKey(data) {
+          const result = []
+          this.keys.forEach(key => {
+            if (data[key].toLowerCase().includes(this.search.toLowerCase())) {
+              result.push(true)
+            }
+          })
+
+          return result.includes(true)
+        },
+  			objectSpanMethod({
+  				row,
+  				column,
+  				rowIndex,
+  				columnIndex
+  			}) {
+  				if (columnIndex === 0 || columnIndex === 15) {
+  					// var index = this.houseNames.indexOf(row.name), count = this.objectSpanName[index], counts = this.objectSpanName.slice(0, index).length > 0 ? this.objectSpanName.slice(0, index).reduce((total, num) => total + num) : 0
+  					// if (rowIndex === counts) {
+  					// 	return {
+  					// 		rowspan: count,
+  					// 		colspan: 1
+  					// 	}
+  					// } else {
+  					// 	return {
+  					// 		rowspan: 0,
+  					// 		colspan: 0
+  					// 	}
+  					// }
+  				}
+  			}
+  		}
+  	})
+  </script>
+
+</body>
+</html>
