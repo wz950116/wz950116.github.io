@@ -46,6 +46,7 @@ html, body {
     border: 1px solid #333333;
     background: rgba(0, 0, 0, .4);
     font: 24px "artfont" !important;
+    color: #ffffff;
 }
 .bottom-line {
     width: 38px;
@@ -56,7 +57,21 @@ html, body {
 .nav-item:hover {
     top: 0;
 }
+.nav-item:hover .center-line {
+    background: rgba(0, 0, 0, .7);
+    color: #ca0c16;
+}
 .nav-item:hover .bottom-line {
+    background: url(/assets/2.png) no-repeat center top;
+}
+.nav-item-active {
+    top: 0;
+}
+.nav-item-active .center-line {
+    background: rgba(0, 0, 0, .7);
+    color: #ca0c16;
+}
+.nav-item-active .bottom-line {
     background: url(/assets/2.png) no-repeat center top;
 }
 .banner-img {

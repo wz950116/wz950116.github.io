@@ -14,7 +14,7 @@ layout: default
 			<div class='banner-img banner-5'></div>
 		</div>
 		<div class='nav'>
-			<div class="nav-item nav-1">
+			<div class="nav-item nav-1 nav-item-active">
 				<div class='top-line'></div>
 				<div class='center-line'>风景</div>
 				<div class='bottom-line'></div>
@@ -50,6 +50,7 @@ layout: default
 	const timerFn = () => {
 		activeImg++
 		if (activeImg >= len) activeImg = 0
+		$('.nav-item').eq(activeImg).addClass('nav-item-active').siblings().removeClass('nav-item-active')
 		$('.banner-img').eq(activeImg).fadeIn(800).siblings().hide()
 	}
 	let timer = setInterval(timerFn, 5000)
@@ -58,6 +59,7 @@ layout: default
 	$('.nav-item').click(function() {
 		clearInterval(timer)
 		activeImg = $(this).index()
+		$('.nav-item').eq(activeImg).addClass('nav-item-active').siblings().removeClass('nav-item-active')
 		$('.banner-img').eq(activeImg).fadeIn(800).siblings().hide()
 		onOff = true
 	})
