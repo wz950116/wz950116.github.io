@@ -1,0 +1,140 @@
+---
+layout: default
+---
+
+<link rel="stylesheet" href="/assets/css/yys.css">
+
+<body>
+  <div class="main picture">
+    <div class="wrap">
+      <div class="scroll">
+        <div class="header">
+          <div class="nav">
+            <a class="nav-video" href="video.html">视频中心</a>
+            <a class="nav-music" href="music.html">游戏原声</a>
+            <a class="nav-picture" href="picture.html">原画壁纸</a>
+          </div>
+        </div>
+        <div class="part-1">
+          <div class="list">
+            <div class="list-head">
+              <div class="item active">
+                <img class="cover" src="https://wz950116.bj.bcebos.com/yys%2Fpublic%2F1.jpg">
+                <div class="mask"></div>
+              </div>
+              <div class='text'>
+                <span class="title">海国入侵：大岳丸</span>
+              </div>
+            </div>
+            <div class="list-foot">
+              <div class="item active">
+                <img class="cover" src="https://wz950116.bj.bcebos.com/yys%2Fpublic%2F2.jpg">
+                <div class="mask"></div>
+              </div>
+              <div class="text">
+                <span class="title">离岛之歌：不知火</span>
+              </div>
+          </div>
+          </div>
+          <div class="arrow"></div>
+          <div class="cloud-l"></div>
+          <div class="cloud-r"></div>
+        </div>
+
+        <div class="part-2">
+          <canvas id="wave" width="1366" height="85"></canvas>
+
+          <div class="tab-btn">
+            <a href="javascript:;" class='active'>御魂</a>
+            <i></i>
+            <a href="javascript:;">副本</a>
+          </div>
+
+          <div class="tab-cont active">
+            <!-- js插入 -->
+          </div>
+        </div>
+
+        <div class="footer">
+          <div class="door"></div>
+        </div>
+      </div>
+
+      <div class="shadow-top"></div>
+      <div class="shadow-left"></div>
+      <div class="shadow-right"></div>
+      <div class="shadow-bottom"></div>
+    </div>
+  </div>
+
+
+  <!-- <img class='fixed-img' src="https://yys.res.netease.com/pc/gw/20180913151832/img/bwp_10de555.gif" alt="百闻牌"> -->
+
+  <script>
+    $(document).ready(function() {
+      $('body').addClass('animate')
+    })
+
+    $('.wrap').on('scroll', function() {
+      if ($(this).scrollTop() > 150) {
+        $('.part-1').removeClass('unanimate').addClass('animate')
+      } else {
+        $('.part-1').removeClass('animate').addClass('unanimate')
+      }
+    })
+
+    $.ajax({
+      url: '/assets/data/yys_yuhun.json',
+      type: 'GET',
+      dataType: 'json',
+      contentType: 'application/json',
+      success(res) {
+        const dataArr = res.page.objects
+        dataArr.forEach((i, index) => {
+          const content = `<div class="item">
+              <div class="cover">
+                <img class="lazyload" data-src="https://wz950116.bj.bcebos.com/${i.name}" src="https://wz950116.bj.bcebos.com/${i.name}">
+                <div class="mask">
+                  <a href="https://wz950116.bj.bcebos.com/${i.name}" class="target" target="_blank">查看大图</a>
+                </div>
+              </div>
+            </div>`
+          $('.tab-cont').append(content)
+        })
+      },
+      error() {
+        console.log('请求失败')
+      }
+    })
+
+    function wave() {
+      function e() {
+        l = document.getElementById("wave"), l.width = document.documentElement.clientWidth, l.height = 85, a = l.getContext("2d"), s = l.height, h = l.width, f = Math.floor(s / 2), r = 0, t()
+      }
+
+      function t() {
+        a.clearRect(0, 0, h, s), n("#ffffff", .4, 2, 300), n("#ffffff", .6, 1.4, 530), n("#ffffff", 1, 2, 0), t.seconds = t.seconds + .003, t.t = t.seconds * Math.PI, setTimeout(t, 35)
+      }
+
+      function n(e, n, i, l) {
+        a.fillStyle = e, a.globalAlpha = n, a.beginPath(), o(t.t / .5, i, l), a.lineTo(h + 10, s), a.lineTo(0, s), a.closePath(), a.fill()
+      }
+
+      function o(e, t, n) {
+        var o = void 0,
+          l = e,
+          s = Math.sin(l) / t;
+        for (a.moveTo(r, i * s + f), o = r; h + 10 >= o; o += 10) l = e + (-r + o) / i / t, s = Math.sin(l - n) / 3, a.lineTo(o, i * s + f)
+      }
+      var i = 100,
+        l = void 0,
+        a = void 0,
+        s = void 0,
+        h = void 0,
+        f = void 0,
+        r = void 0;
+      t.seconds = 0, t.t = 0, e()
+    }
+    wave()
+  </script>
+</body>

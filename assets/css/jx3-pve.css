@@ -56,28 +56,6 @@ html, body {
 .el-image-viewer__wrapper .el-icon-circle-close {
     color: #f56c6c;
 }
-.divider {
-    display: block;
-    width: 100%;
-    line-height: 40px;
-    text-align: center;
-    margin: 40px auto 10px;
-}
-.divider .el-image__inner {
-    vertical-align: middle;
-}
-.divider.txjy {
-    background: url('https://wz950116.bj.bcebos.com/jx3-pve%2Ftitle_1.png') no-repeat center;
-    background-size: contain;
-}
-.divider.xj {
-    background: url('https://wz950116.bj.bcebos.com/jx3-pve%2Fskill-2.png') no-repeat center;
-    background-size: contain;
-}
-.divider.roles {
-    background: url('https://wz950116.bj.bcebos.com/jx3-pve%2Ftitle_3.png') no-repeat center;
-    background-size: contain;
-}
 .el-carousel {
     padding: 24px;
     border: 1px solid #a39171;

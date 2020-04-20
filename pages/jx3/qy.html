@@ -106,41 +106,6 @@ layout: default
 		.dg-wrapper .dg-center:hover .line {
 			opacity: 1;
 		}
-
-		.dg-wrapper a div.miaoshu {
-		    position: absolute;
-			left: -155px;
-		    bottom: -25px;
-		    display: block;
-		    color: #e6e6e6;
-		    font-size: 13px;
-		    width: 850px;
-		    height: 50px;
-		    line-height: 25px;
-		    text-align: center;
-		}
-
-		.dg-wrapper a div.miaoshu p {
-			display: block;
-		    width: 100%;
-		    height: 50px;
-		    overflow: hidden;
-		}
-
-		.dg-wrapper a div.miaoshu .num {
-		    position: absolute;
-		    right: -55px;
-		    top: 0;
-		}
-
-		.dg-wrapper a div.miaoshu .num i {
-		    color: #f0412a;
-		    font-style: normal;
-		}
-
-		.dg-wrapper a div.miaoshu .num u {
-		    text-decoration: none;
-		}
 		
 		.dg-container .lbbtn {
 			z-index: 1000;
@@ -177,43 +142,12 @@ layout: default
 		}
 	</style>
 </head>
+
 <body>
 	<div class="lunbo">
 		<div id="dg-container" class="dg-container">
 			<div class="dg-wrapper">
-				<a data-src="/uploads/allimg/171222/379-1G222143139.jpg" class="dg-center" style="opacity: 1; visibility: visible;">
-				    <div class="img"></div>
-				    <div class="shadow"></div>
-				    <span class='line'></span>
-				    <!-- <div class="miaoshu">
-				        <p></p>
-				        <div class="num"><i>1</i> /<u> 8</u></div>
-				    </div> -->
-				</a>
-
-				<a data-src="/uploads/allimg/171222/379-1G222143140.jpg" style="opacity: 1; visibility: visible; transform: translateX(240px) translateZ(-200px) rotateY(-45deg);" class="">
-				    <div class="img"></div>
-				    <div class="shadow"></div>
-				    <span class='line'></span>
-				</a>
-
-				<a data-src="/uploads/allimg/171222/379-1G222143140-50.jpg" style="opacity: 0; visibility: hidden; transform: translateX(450px) translateZ(-300px) rotateY(-45deg);">
-				    <div class="img"></div>
-				    <div class="shadow"></div>
-				    <span class='line'></span>
-				</a>
-
-				<a data-src="/uploads/allimg/171222/379-1G222143141.jpg" style="opacity: 0; visibility: hidden; transform: translateX(-450px) translateZ(-300px) rotateY(45deg);">
-				    <div class="img"></div>
-				    <div class="shadow"></div>
-				    <span class='line'></span>
-				</a>
-
-				<a data-src="/uploads/allimg/171222/379-1G222143145.jpg" style="opacity: 1; visibility: visible; transform: translateX(-240px) translateZ(-200px) rotateY(45deg);" class="">
-				    <div class="img"></div>
-				    <div class="shadow"></div>
-				    <span class='line'></span>
-				</a>
+				<!-- js插入 -->
 			</div>
 
 			<div class="lbbtn">
@@ -225,19 +159,48 @@ layout: default
 </body>
 
 <script type="text/javascript">
-	let num = 0,  total = $('.dg-wrapper a').length, onOff = true
 	let data = [
-		'https://wz950116.bj.bcebos.com/jx3-pvx%2F%E6%88%90%E5%B0%B1%E5%A5%87%E9%81%87%E7%AD%89%2F2020-02-23_20-30-36-000.png',
-		'https://wz950116.bj.bcebos.com/jx3-pvx%2F%E6%88%90%E5%B0%B1%E5%A5%87%E9%81%87%E7%AD%89%2F2019-12-26_19-16-18-000.png',
-		'https://wz950116.bj.bcebos.com/jx3-pvx%2F%E6%88%90%E5%B0%B1%E5%A5%87%E9%81%87%E7%AD%89%2F2019-08-07_18-40-42-000.jpg',
-		'https://wz950116.bj.bcebos.com/jx3-pvx%2F%E6%88%90%E5%B0%B1%E5%A5%87%E9%81%87%E7%AD%89%2F2018-11-25_10-56-47-000.png',
-		'https://wz950116.bj.bcebos.com/jx3-pvx%2F%E6%88%90%E5%B0%B1%E5%A5%87%E9%81%87%E7%AD%89%2F2018-06-07_22-24-14-000.png'
+		'https://wz950116.bj.bcebos.com/jx3-pvx%2Fqy%2F2020-02-23_20-30-36-000.png',
+		'https://wz950116.bj.bcebos.com/jx3-pvx%2Fqy%2F2019-12-26_19-16-18-000.png',
+		'https://wz950116.bj.bcebos.com/jx3-pvx%2Fqy%2F2019-08-07_18-40-42-000.jpg',
+		'https://wz950116.bj.bcebos.com/jx3-pvx%2Fqy%2F2018-11-25_10-56-47-000.png',
+		'https://wz950116.bj.bcebos.com/jx3-pvx%2Fqy%2F2018-06-07_22-24-14-000.png',
+		'https://wz950116.bj.bcebos.com/jx3-pvx%2Fqy%2F%E7%82%BC%E7%8B%B1%E5%8E%A8%E7%A5%9E.bmp'
 	]
-	$('.dg-wrapper .img').eq(0).css('background-image', `url(${data[0]})`)
-	$('.dg-wrapper .img').eq(1).css('background-image', `url(${data[1]})`)
-	$('.dg-wrapper .img').eq(2).css('background-image', `url(${data[2]})`)
-	$('.dg-wrapper .img').eq(3).css('background-image', `url(${data[3]})`)
-	$('.dg-wrapper .img').eq(total - 1).css('background-image', `url(${data[total - 1]})`)
+	let num = 0,  total = data.length, onOff = true
+
+	data.forEach((url, index) => {
+		let aStyle = '', imgStyle = ''
+		switch (index) {
+			case 0:
+				aStyle = 'opacity: 1; visibility: visible;'
+				break
+			case 1:
+				aStyle = 'opacity: 1; visibility: visible; transform: translateX(240px) translateZ(-200px) rotateY(-45deg);'
+				break
+			case 2:
+				aStyle = 'opacity: 0; visibility: hidden; transform: translateX(450px) translateZ(-300px) rotateY(-45deg);'
+				break
+			case total - 2:
+				aStyle = 'opacity: 0; visibility: hidden; transform: translateX(-450px) translateZ(-300px) rotateY(45deg);'
+				break
+			case total - 1:
+				aStyle = 'opacity: 1; visibility: visible; transform: translateX(-240px) translateZ(-200px) rotateY(45deg);'
+				imgStyle = 'background-position: center;'
+				break
+			default:
+				aStyle = 'opacity: 0; visibility: hidden; transform: translateX(-450px) translateZ(-300px) rotateY(45deg);'
+				break
+		}
+		const content = `
+			<a href="${url}" target="_blank" class="${index === 0 ? 'dg-center' : ''}" style="${aStyle}">
+			    <div class="img" style="${imgStyle}background-image: url(${data[index]})"></div>
+			    <div class="shadow"></div>
+			    <span class='line'></span>
+			</a>
+		`
+		$('.dg-wrapper').append(content)
+	})
 
 	$('.dg-prev').on('click', function() {
 		if (!onOff) return
