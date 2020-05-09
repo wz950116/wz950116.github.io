@@ -2,9 +2,11 @@
 layout: default
 ---
 
-<link rel="stylesheet" type="text/css" href="/assets/css/jx3-pve.css" />
-<!-- 引入样式 -->
+
+<link rel="preload" as="style" crossorigin href="https://unpkg.com/element-ui@2.12.0/lib/theme-chalk/index.css">
 <link rel="stylesheet" href="https://unpkg.com/element-ui@2.12.0/lib/theme-chalk/index.css">
+<!-- <link rel="stylesheet" href="/assets/css/element.css"> -->
+<link rel="stylesheet" type="text/css" href="/assets/css/jx3-pve.css" />
 
 <div id="app">
 	<el-row type="flex" justify='space-around'>
@@ -12,7 +14,7 @@ layout: default
 
 			<div class="demo-image">
 				<div class="source">
-				    <div class="demo-image__lazy">
+				    <div class="demo-image__lazy fb_urls">
 			  			<el-image v-for="(item, index) in fb_urls" :key="index" :src="item.preSrc" :preview-src-list="previewSrcList" :alt="item.alt" fit='none' lazy @click='clipImagePreview(item.src)'>
 			  				<div slot="error" class="image-slot">
 						        <i class="el-icon-picture-outline"></i>
@@ -21,10 +23,9 @@ layout: default
 					</div>
 				</div>
 			</div>
-
 		  	<div class="demo-image">
 				<div class="source">
-				    <div class="demo-image__lazy">
+				    <div class="demo-image__lazy xj_urls">
 			  			<el-image v-for="(item, index) in xj_urls" :key="index" :src="item.preSrc" :preview-src-list="previewSrcList" :alt="item.date" fit='none' lazy @click='clipImagePreview(item.src)'>
 			  				<div slot="error" class="image-slot">
 						        <i class="el-icon-picture-outline"></i>
@@ -48,7 +49,11 @@ layout: default
 		<el-col :span='11'>
 			<div class="demo-video">
 				<div class="source">
-				    <video :src='videoSourceUrl' controls :poster="videoPosterUrl" preload="auto" width="600" ref='video'></video>
+				    <img :src="videoPosterUrl" width="600" alt="">
+				    <div class="index-clickArea-exCZ0" @click='dialogVideoPlayer = true'>
+				    	<div class="index-playBtnBorder-3opK4"></div>
+						<div class="index-playBtn-4hA5j"></div>
+				    </div>
 				</div>
 				<el-collapse accordion v-model="activeNames" @change="handleChange">
 					<el-collapse-item name="bhd" :disabled="activeNames === 'bhd'">
@@ -160,6 +165,14 @@ layout: default
   		<div class='more_shadow'></div>
 	  	<el-pagination small layout="prev, pager, next" :current-page='currentPage' :page-size='1' :total="roleInfo && roleInfo.length" @current-change="handleCurrentChange"></el-pagination>
 	</el-dialog>
+
+	<div class="video-dialog" v-if='dialogVideoPlayer'>
+		<div class='video-player'>
+			<video :src='videoSourceUrl' controls :poster="videoPosterUrl" preload="auto" width="800" height="450" ref='video'></video>
+			<a class="video-player-dialog-close" href="javascript:;" @click='dialogVideoPlayer = false'>×</a>
+		</div>
+		<div class="mask"></div>
+	</div>
 </div>
 
 <script src="/assets/js/vue.js"></script>
@@ -184,6 +197,7 @@ layout: default
 					dmg: 3
 				},
 				dialogVisible: false,
+				dialogVideoPlayer: false,
 				activeNames: 'bhd',
 				fb_urls: [],
 				xj_urls: [],
@@ -194,10 +208,29 @@ layout: default
 		        dialogTitle: '',
 		        roleInfo: [],
 		        roleCurrentInfo: '',
-		        currentPage: 1
+		        currentPage: 1,
+		        initShowNum: 3,
+		        fbGroupNum: 1,
+		        xjGroupNum: 1,
+		        responseData: {}
 			}
 	    },
 	    mounted() {
+			$('.fb_urls').on('scroll', function() {
+				if ($(this).scrollTop() > 370 * _this.initShowNum * _this.fbGroupNum - 100) {
+					const lastImageNum = _this.initShowNum * _this.fbGroupNum + 2
+					_this.clipImage(_this.responseData.fb.slice(lastImageNum, lastImageNum + _this.initShowNum), 'fb_urls')
+					_this.fbGroupNum++
+				}
+			})
+			$('.xj_urls').on('scroll', function() {
+				if ($(this).scrollTop() > 370 * _this.initShowNum * _this.xjGroupNum - 100) {
+					const lastImageNum = _this.initShowNum * _this.xjGroupNum + 2
+					_this.clipImage(_this.responseData.xj.slice(lastImageNum, lastImageNum + _this.initShowNum), 'xj_urls')
+					_this.xjGroupNum++
+				}
+			})
+
 	    	$('.el-carousel__arrow--left').attr('disabled', true)
 	    	var winW = document.documentElement.clientWidth || document.body.clientWidth
 	    	if (winW < 1440) {
@@ -206,6 +239,7 @@ layout: default
 					type: 'warning'
 				})
 	    	}
+
 	    	var _this = this
 	    	$.ajax({
 	            url: '/assets/data/pve.json',
@@ -213,52 +247,13 @@ layout: default
 	            dataType: 'json',
 	            contentType: 'application/json',
 	            success(res) {
-	            	_this.roles = res.roles
-					var fb_urls = res.fb
-					fb_urls.forEach((fb, index) => {
-						fb.preSrc = ''
-						var canvas = document.createElement('canvas')
-						var img = new Image()
-						img.onload = function(e) {
-							canvas.width = img.width < 602 ? img.width : 602
-							canvas.height = img.height < 360 ? img.height : 360
-							var scaled = img.width * .5 - 120 > 602 && img.height * .5 - 120 > 360
-							var imgW = scaled ? img.width * .5 : img.width
-							var imgH = scaled ? img.height * .5 : img.height
-							var xA = scaled ? 120 : 0
-							var yA = scaled ? 120 : 0
-							canvas.getContext('2d').drawImage(img, xA, yA, img.width, img.height, 0, 0, imgW, imgH)
-							fb.preSrc = canvas.toDataURL()
-						}
-						img.setAttribute('crossOrigin', 'anonymous')
-						img.src = fb.src
-						if (index === fb_urls.length - 1) {
-							_this.fb_urls = fb_urls
-						}
-					})
+	            	_this.responseData = res
 
-					var xj_urls = res.xj
-					xj_urls.forEach((xj, index) => {
-						xj.preSrc = ''
-						var canvas = document.createElement('canvas')
-						var img = new Image()
-						img.onload = function(e) {
-							canvas.width = img.width < 602 ? img.width : 602
-							canvas.height = img.height < 360 ? img.height : 360
-							var scaled = img.width * .5 - 120 > 602 && img.height * .5 - 120 > 360
-							var imgW = scaled ? img.width * .5 : img.width
-							var imgH = scaled ? img.height * .5 : img.height
-							var xA = scaled ? 120 : 0
-							var yA = scaled ? 120 : 0
-							canvas.getContext('2d').drawImage(img, xA, yA, img.width, img.height, 0, 0, imgW, imgH)
-							xj.preSrc = canvas.toDataURL()
-						}
-						img.setAttribute('crossOrigin', 'anonymous')
-						img.src = xj.src
-						if (index === xj_urls.length - 1) {
-							_this.xj_urls = xj_urls
-						}
-					})
+	            	_this.roles = res.roles
+
+					_this.clipImage(res.fb.slice(0, _this.initShowNum + 2), 'fb_urls')
+
+					_this.clipImage(res.xj.slice(0, _this.initShowNum + 2), 'xj_urls')
 	            },
 	            error() {
 	                console.log('请求失败')
@@ -269,6 +264,30 @@ layout: default
 	    	handleChange(val) {
 	    		this.videoSourceUrl = `https://wz950116.bj.bcebos.com/jx3-pve%2Ffb%2F${val}.mp4`
 	    		this.videoPosterUrl = `https://wz950116.bj.bcebos.com/jx3-pve%2Ffb%2F${val}_poster.jpg`
+	    	},
+	    	clipImage(data, name) {
+				var _this = this
+				data.forEach((d, index) => {
+					_this.$set(d, 'preSrc', '')
+					var canvas = document.createElement('canvas')
+					var img = new Image()
+					img.onload = function(e) {
+						canvas.width = img.width < 602 ? img.width : 602
+						canvas.height = img.height < 360 ? img.height : 360
+						var scaled = img.width * .5 - 120 > 602 && img.height * .5 - 120 > 360
+						var imgW = scaled ? img.width * .5 : img.width
+						var imgH = scaled ? img.height * .5 : img.height
+						var xA = scaled ? 120 : 0
+						var yA = scaled ? 120 : 0
+						canvas.getContext('2d').drawImage(img, xA, yA, img.width, img.height, 0, 0, imgW, imgH)
+						d.preSrc = canvas.toDataURL()
+					}
+					img.setAttribute('crossOrigin', 'anonymous')
+					img.src = d.src
+					if (index === data.length - 1) {
+						_this[name] = _this[name].concat(data)
+					}
+				})
 	    	},
 	    	clipImagePreview(src) {
 	    		this.previewSrcList = [src]

@@ -100,7 +100,46 @@ html, body {
     min-height: 600px;
 }
 .demo-video .source {
+    position: relative;
     padding: 24px;
+}
+.demo-video .source .index-clickArea-exCZ0 {
+    cursor: pointer;
+}
+.demo-video .source .index-clickArea-exCZ0 .index-playBtnBorder-3opK4 {
+    background-image: url(https://wz950116.bj.bcebos.com/jx3-pve%2Fvideo_player_outline.png);
+    position: absolute;
+    width: 138px;
+    height: 138px;
+    top: 50%;
+    left: 50%;
+    margin-left: -69px;
+    margin-top: -69px;
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    animation: index-rotate-1-xBg 2s linear infinite;
+}
+.demo-video .source .index-clickArea-exCZ0 .index-playBtn-4hA5j {
+    background-image: url(https://wz950116.bj.bcebos.com/jx3-pve%2Fplay-icon-97825657.png.webp);
+    position: absolute;
+    width: 138px;
+    height: 138px;
+    left: 50%;
+    top: 50%;
+    margin-left: -69px;
+    margin-top: -69px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+@keyframes index-rotate-1-xBg {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(1turn)
+    }
 }
 .demo-video .el-collapse {
     border: none;
@@ -160,9 +199,7 @@ html, body {
     right: 20px;
     z-index: 999;
 }
-.el-dialog__headerbtn {
 
-}
 .el-dialog__headerbtn .el-dialog__close {
     color: #f56c6c !important;
     font-weight: 700 !important;
@@ -187,4 +224,49 @@ html, body {
 }
 .el-message__icon, .el-message__content {
     font-size: 18px !important;
+}
+
+.video-dialog {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 1988;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+}
+.video-dialog .video-player {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -400px;
+    margin-top: -225px;
+    z-index: 1992;
+}
+.video-dialog .video-player video {
+    outline: none;
+}
+.video-dialog .video-player .video-player-dialog-close {
+    position: absolute;
+    right: -90px;
+    top: -60px;
+    display: block;
+    width: 44px;
+    height: 44px;
+    line-height: 44px;
+    font-size: 0;
+    text-align: center;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAAmUlEQVR42uWY0QqAIAxF9/8/XURQD6bpvNfzYCAFutvBtrkVx30FON4HCuC6BwjyvK86sQrgC2IFSKHfvdAF0IJwgFT10oYqgB4IBcivvUxoxk4umFkfJuEhYMcWD386tbOlfEfp9ekoUsX/VBjbE9EWO4H7BB4deJ7AMyZ+duCnKF5P4JUVXmPi1Tbed+AdGN6L4l05/n/iBMYc97Fe/vBDAAAAAElFTkSuQmCC);
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform ease-in-out 0.3s, -webkit-transform ease-in-out 0.3s;
+}
+.video-dialog .video-player .video-player-dialog-close:hover {
+    transform: rotate(180deg);
+}
+.video-dialog .mask {
+    height: 100%;
+    background: rgb(0, 0, 0);
+    opacity: 0.7;
+    z-index: 1991;
 }
