@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Table, Tag, Input, Button, Space } from 'antd';
+import { Table, Tag, Input, Button, Space, BackTop, Tooltip } from 'antd';
 import Highlighter from 'react-highlight-words';
 import { SearchOutlined } from '@ant-design/icons';
 import dataSource from './pvx_mounts.json';
@@ -109,6 +109,16 @@ function App() {
     return a.speed - b.speed
   })
 
+  const attr_detail = {
+    "劲足5级": "坐骑的饱食度大于86%时，移动速度额外提升12%",
+    "劲足6级": "坐骑的饱食度大于86%时，移动速度额外提升14%",
+    "劲足7级": "坐骑的饱食度大于86%时，移动速度额外提升16%",
+    "劲足8级": "坐骑的饱食度大于86%时，移动速度额外提升18%",
+    "匹马5级": "在非双人同骑的时候，速度额外提升9%",
+    "匹马6级": "在非双人同骑的时候，速度额外提升10%",
+    "匹马7级": "在非双人同骑的时候，速度额外提升12%",
+  }
+
   const columns = [
     {
       title: '名称',
@@ -157,10 +167,22 @@ function App() {
               if (!tag) return null;
               let color = tag === '双骑' ? 'volcano' : tag.includes('劲足') || tag.includes('匹马') ? 'geekblue' : 'green';
               return (
-                <Tag color={color} key={tag}>
-                  {tag.toUpperCase()}
-                </Tag>
-              );
+                <React.Fragment>
+                  {
+                    attr_detail[tag] ? (
+                      <Tooltip placement="top" title={attr_detail[tag]} key={tag}>
+                        <Tag color={color} key={tag}>
+                          {tag.toUpperCase()}
+                        </Tag>
+                      </Tooltip>
+                    ) : (
+                      <Tag color={color} key={tag}>
+                        {tag.toUpperCase()}
+                      </Tag>
+                    )
+                  }
+                </React.Fragment>
+              )
             })}
           </span>
         )
@@ -184,7 +206,12 @@ function App() {
   ];
   
   return (
-    <Table {...state} columns={columns} dataSource={dataSource} pagination={false} />
+    <React.Fragment>
+      <Table {...state} columns={columns} dataSource={dataSource} pagination={false} />
+      <BackTop>
+        <div className="ant-back-top-content"><div className="ant-back-top-icon"></div></div>
+      </BackTop>
+    </React.Fragment>
   );
 }
 
