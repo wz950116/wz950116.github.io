@@ -84,7 +84,7 @@ function getColumnSearchProps(dataIndex) {
 };
 
 // 展开
-const expandable = { expandedRowRender: record => <p>{dataDescription[record.name]}</p> };
+const expandable = { expandedRowRender: record => <p>{dataDescription[record.name] || dataDescription[record.name + record.suffix]}</p> };
 
 function App() {
   const state = {
@@ -108,6 +108,8 @@ function App() {
   filters.sort((a, b) => {
     return a.speed - b.speed
   })
+
+  console.log(_filters)
 
   const attr_detail = {
     "劲足5级": "坐骑的饱食度大于86%时，移动速度额外提升12%",
@@ -151,13 +153,17 @@ function App() {
       title: '属性',
       dataIndex: 'tags',
       render: (text, row, index) => {
-        const tags = [row.attrs_1, row.attrs_2, row.attrs_3]
+        const tags = [row.attrs_1, row.attrs_2, row.attrs_3, row.attrs_4]
         if (row.attrs_2.includes('劲足') || row.attrs_2.includes('匹马')) {
           const index = tags.indexOf(row.attrs_2)
           swapArr(tags, index, 0)
         }
         if (row.attrs_3.includes('劲足') || row.attrs_3.includes('匹马')) {
           const index = tags.indexOf(row.attrs_3)
+          swapArr(tags, index, 0)
+        }
+        if (row.attrs_4.includes('劲足') || row.attrs_4.includes('匹马')) {
+          const index = tags.indexOf(row.attrs_4)
           swapArr(tags, index, 0)
         }
         if (row.doubleRide === '1') tags.unshift('双骑')
@@ -167,7 +173,7 @@ function App() {
               if (!tag) return null;
               let color = tag === '双骑' ? 'volcano' : tag.includes('劲足') || tag.includes('匹马') ? 'geekblue' : 'green';
               return (
-                <React.Fragment>
+                <React.Fragment key={tag}>
                   {
                     attr_detail[tag] ? (
                       <Tooltip placement="top" title={attr_detail[tag]} key={tag}>
