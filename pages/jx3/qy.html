@@ -3,8 +3,6 @@ layout: default
 ---
 
 <head>
-	<meta charset="UTF-8">
-	<title></title>
 	<style>
 		* {
 			padding: 0;
@@ -195,7 +193,7 @@ layout: default
 				break
 		}
 		const content = `
-			<a href="${url}" target="_blank" class="${index === 0 ? 'dg-center' : ''}" style="${aStyle}">
+			<a href="${url}" target="_blank" rel='noreferrer noopener' class="${index === 0 ? 'dg-center' : ''}" style="${aStyle}">
 			    <div class="img" style="${imgStyle}background-image: url(${data[index]})"></div>
 			    <div class="shadow"></div>
 			    <span class='line'></span>

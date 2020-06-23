@@ -52,7 +52,7 @@ html, body {
     width: 38px;
     height: 81px;
     margin: 0 auto;
-    background: url(https://wz950116.bj.bcebos.com/jx3-pvx%2Fnav-1.png) no-repeat center top;
+    background: url(https://wz950116.bj.bcebos.com/jx3-pvx%2Fassets%2Fnav-1.png) no-repeat center top;
 }
 .nav-item:hover {
     top: 0;
@@ -62,7 +62,7 @@ html, body {
     color: #ca0c16;
 }
 .nav-item:hover .bottom-line {
-    background: url(https://wz950116.bj.bcebos.com/jx3-pvx%2Fnav-2.png) no-repeat center top;
+    background: url(https://wz950116.bj.bcebos.com/jx3-pvx%2Fassets%2Fnav-2.png) no-repeat center top;
 }
 .nav-item-active {
     top: 0;
@@ -72,7 +72,7 @@ html, body {
     color: #ca0c16;
 }
 .nav-item-active .bottom-line {
-    background: url(https://wz950116.bj.bcebos.com/jx3-pvx%2Fnav-2.png) no-repeat center top;
+    background: url(https://wz950116.bj.bcebos.com/jx3-pvx%2Fassets%2Fnav-2.png) no-repeat center top;
 }
 .banner-img {
     display: none;
@@ -84,22 +84,22 @@ html, body {
 }
 .banner-1 {
     display: block;
-    background: url(https://wz950116.bj.bcebos.com/jx3-pvx%2F%E5%8D%95%E4%BA%BA%2Fcy%2F2020-03-28_18-56-24-000.jpg) no-repeat center;
+    background: url("https://wz950116.bj.bcebos.com/jx3-pvx%2Fqy%2F2020-05-17_18-09-00-000.png") no-repeat center;
     background-size: cover;
 }
 .banner-2 {
-    background: url(https://wz950116.bj.bcebos.com/jx3-pvx%2F%E5%90%88%E5%BD%B1%2F2020-02-14_21-22-23-001.jpg) no-repeat center;
+    background: url("https://wz950116.bj.bcebos.com/jx3-pvx%2F%E5%9D%90%E9%AA%91%2F2019-12-08_23-40-14-001.jpg") no-repeat center;
     background-size: cover;
 }
 .banner-3 {
-    background: url(https://wz950116.bj.bcebos.com/jx3-pvx%2Fqy%2F2020-05-17_18-09-00-000.png) no-repeat center;
+    background: url("https://wz950116.bj.bcebos.com/jx3-pvx%2F%E6%8E%89%E8%90%BD%2F2019-08-19_20-13-59-000.png") no-repeat center;
     background-size: cover;
 }
 .banner-4 {
-    background: url(https://wz950116.bj.bcebos.com/jx3-pvx%2F%E5%8D%95%E4%BA%BA%2Fcy%2F2019-12-08_23-40-14-001.jpg) no-repeat center;
+    background: url("https://wz950116.bj.bcebos.com/jx3-pvx%2F%E9%A3%8E%E6%99%AF%2Fcy%2F2020-03-15_20-08-35-000.jpg") no-repeat center;
     background-size: cover;
 }
 .banner-5 {
-    background: url(https://wz950116.bj.bcebos.com/jx3-pvx%2F%E5%85%B6%E4%BB%96%2F2019-11-29_20-35-31-000.png) no-repeat center;
+    background: url("https://wz950116.bj.bcebos.com/jx3-pvx%2F%E5%90%88%E5%BD%B1%2F2020-02-14_21-22-23-001.jpg") no-repeat center;
     background-size: cover;
 }

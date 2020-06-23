@@ -1,0 +1,252 @@
+---
+layout: default
+---
+
+<style>
+	@font-face {
+	    font-family: "artfont";
+	    src: url('/assets/fonts/pvx_diaoluo.eot') format('eot');
+	    src: local('☺'), url('/assets/fonts/pvx_diaoluo.eot?#iefix') format('embedded-opentype'), url('/assets/fonts/pvx_diaoluo.ttf') format('truetype');
+	}
+
+	* {
+	    font-family: "artfont";
+	    font-style: normal;
+	}
+
+	body {
+		background: #dddddd;
+	}
+
+	#container {
+	    width: 920px;
+	    padding: 0 20px;
+	    margin: 0 auto 100px;
+	}
+
+	#grid {
+	    margin: 100px 0 20px;
+	}
+
+	#grid::after {
+		clear: both;
+		display: block;
+		height: 0;
+		content: "";
+	}
+
+	#grid li {
+	    float: left;
+	    width: 290px;
+	    height: 188px;
+	    list-style: none;
+	    margin: 0 25px 25px 0;
+	    position: relative;
+	    overflow: hidden;
+	    border-top: 1px solid rgba(255, 255, 255, 0.25);
+	    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+	    transition: all 0.15s ease-in;
+	    background-repeat: no-repeat;
+	    background-position: center;
+	    background-size: cover;
+	    cursor: pointer;
+	}
+
+	#grid li:nth-child(3n) {
+	    margin-right: 0;
+	}
+
+	#grid li:hover {
+	    z-index: 2;
+	    transform: scale(1.2) translateY(-40px);
+	    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+	}
+
+	#grid li:hover .shadow {
+	    display: none;
+	}
+
+	#grid li:nth-child(3n-2):hover {
+	    transform: scale(1.2) translateY(-30px) rotate(-2.5deg);
+	}
+
+	#grid li:nth-child(3n):hover {
+	    transform: scale(1.2) translateY(-30px) rotate(2.5deg);
+	}
+
+	#grid li img {
+	    display: block;
+	    width: 100%;
+	    height: 151px;
+	}
+
+	#grid li .details {
+	    position: absolute;
+	    bottom: 0;
+	    background: #fff;
+	    background: rgba(255, 255, 255, 0.87);
+	    border-top: 1px solid #fff;
+	    width: 270px;
+	    padding: 10px;
+	    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.35);
+	    font-size: 26px;
+	}
+
+	#grid li .details h3 {
+	    margin-bottom: 0px;
+	    letter-spacing: -1px;
+	}
+
+	#grid li .shadow {
+	    position: absolute;
+	    left: 0;
+	    right: 0;
+	    top: 0;
+	    bottom: 0;
+	    background: rgba(0, 0, 0, .3);
+	}
+
+	#information {
+	    z-index: 20;
+	}
+
+	.ant-pagination {
+	    box-sizing: border-box;
+	    margin: 0;
+	    padding: 0;
+	    color: rgba(0,0,0,.65);
+	    font-size: 14px;
+	    font-variant: tabular-nums;
+	    line-height: 1.5715;
+	    list-style: none;
+	    font-feature-settings: 'tnum';
+	    text-align: center;
+	}
+	.ant-pagination-prev, .ant-pagination-next {
+	    display: inline-block;
+	    min-width: 32px;
+	    height: 32px;
+	    color: rgba(0,0,0,.65);
+	    font-family: Arial;
+	    line-height: 32px;
+	    text-align: center;
+	    vertical-align: middle;
+	    list-style: none;
+	    border-radius: 2px;
+	    cursor: pointer;
+	    transition: all .3s;
+	}
+	.ant-pagination-prev {
+		margin-right: 8px;
+	}
+	.ant-pagination-disabled {
+		cursor: not-allowed;
+	}
+	.ant-pagination-item {
+	    display: inline-block;
+	    min-width: 32px;
+	    height: 32px;
+	    margin-right: 8px;
+	    font-family: Arial;
+	    line-height: 30px;
+	    text-align: center;
+	    vertical-align: middle;
+	    list-style: none;
+	    background-color: #fff;
+	    border: 1px solid #d9d9d9;
+	    border-radius: 2px;
+	    outline: 0;
+	    cursor: pointer;
+	    user-select: none;
+	}
+	.ant-pagination-item-active {
+	    font-weight: 500;
+	    background: #fff;
+	    border-color: #1890ff;
+	}
+	.ant-pagination-item a {
+	    display: block;
+	    padding: 0 6px;
+	    color: rgba(0,0,0,.65);
+	    transition: none;
+	    font-size: 22px;
+	}
+	.ant-pagination-item-active a {
+	    color: #1890ff;
+	}
+</style>
+
+<body>
+    <div id="container">
+      	<ul id="grid" class="group">
+		    <!-- js插入 -->
+		</ul>
+		<ul id="information">
+		    <!-- js插入 -->
+		</ul>
+		<!-- 分页 -->
+		<ul class="ant-pagination"></ul>
+    </div>
+
+    <script>
+        let data = []
+        let activePage = 0
+        $.ajax({
+            url: '/assets/data/pvx_diaoluo.json',
+            type: 'GET',
+            dataType: 'json',
+            contentType: 'application/json',
+            success(res) {
+                data = res.data
+                len = parseInt(data.length / 12) + 1
+                res.data.forEach((item, index) => {
+                    if (index < 12) {
+                        $('#grid').append(`
+                            <li style="background-image: url(${ item.src })" data="${ item.src }">
+                              <div class="details">
+                                <h3>${ item.label }</h3>
+                              </div>
+                              <div class="shadow"></div>
+                            </li>
+                        `)
+                    }
+                })
+                for (let i = 0; i < len; i++) {
+                	$('.ant-pagination').append(`
+						<li title=${ i + 1 } class="ant-pagination-item ant-pagination-item-${ i + 1 } ${ i === activePage ? 'ant-pagination-item-active' : '' }">
+							<a>${ i + 1 }</a>
+						</li>
+                	`)
+                }
+            },
+            error() {
+                console.log('请求失败')
+            }
+        })
+
+        $('#grid').on('click', 'li', function() {
+        	window.open($(this).attr('data'))
+        })
+
+        $('.ant-pagination').on('click', 'li', function() {
+        	// 先清空
+        	$('#grid').html('')
+        	
+        	activePage = $(this).index()
+        	data.forEach((item, index) => {
+        		if (index >= 12 * activePage && index < 12 * ( activePage + 1 )) {
+		        	$('#grid').append(`
+		                <li style="background-image: url(${ item.src })" data="${ item.src }">
+		                  <div class="details">
+		                    <h3>${ item.label }</h3>
+		                  </div>
+		                  <div class="shadow"></div>
+		                </li>
+		            `)
+        		}
+        	})
+
+        	$('.ant-pagination li').removeClass('ant-pagination-item-active').eq(activePage).addClass('ant-pagination-item-active')
+        })
+    </script>
+</body>
