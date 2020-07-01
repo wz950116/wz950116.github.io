@@ -50,11 +50,11 @@ layout: default
 		$('.nav-item').eq(activeImg).addClass('nav-item-active').siblings().removeClass('nav-item-active')
 		$('.banner-img').eq(activeImg).fadeIn(800).siblings().hide()
 	}
-	let timer = setInterval(timerFn, 8000)
+	// let timer = setInterval(timerFn, 8000)
 
 	// 点击跳转
 	$('.nav-item').click(function() {
-		clearInterval(timer)
+		// clearInterval(timer)
 		activeImg = $(this).index()
 		$('.nav-item').eq(activeImg).addClass('nav-item-active').siblings().removeClass('nav-item-active')
 		$('.banner-img').eq(activeImg).fadeIn(800).siblings().hide()
@@ -64,7 +64,7 @@ layout: default
 	// 鼠标滞留时停止轮播，移开后继续轮播
 	$('.nav-item').on('mouseout', function() {
 		if (onOff) {
-			timer = setInterval(timerFn, 8000)
+			// timer = setInterval(timerFn, 8000)
 			onOff = false
 		}
 	})
