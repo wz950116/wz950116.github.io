@@ -9,9 +9,8 @@ layout: default
 <link rel="stylesheet" type="text/css" href="/assets/css/jx3-pve.css" />
 
 <div id="app">
-	<el-row type="flex" justify='space-around'>
-		<el-col :span='11'>
-
+	<el-row type="flex" justify='space-around' class='el-row'>
+		<el-col :span='11' class='el-col-11'>
 			<div class="demo-image">
 				<div class="source">
 				    <div class="demo-image__lazy fb_urls">
@@ -46,11 +45,11 @@ layout: default
 				</el-row>
 			</div>
 		</el-col>
-		<el-col :span='11'>
+		<el-col :span='11' class='el-col-11'>
 			<div class="demo-video">
 				<div class="source">
 				    <img :src="videoPosterUrl" width="600" alt="">
-				    <div class="index-clickArea-exCZ0" @click='dialogVideoPlayer = true'>
+				    <div class="index-clickArea-exCZ0" @click='openVideo'>
 				    	<div class="index-playBtnBorder-3opK4"></div>
 						<div class="index-playBtn-4hA5j"></div>
 				    </div>
@@ -166,7 +165,7 @@ layout: default
 	  	<el-pagination small layout="prev, pager, next" :current-page='currentPage' :page-size='1' :total="roleInfo && roleInfo.length" @current-change="handleCurrentChange"></el-pagination>
 	</el-dialog>
 
-	<div class="video-dialog" v-if='dialogVideoPlayer'>
+	<div class="video-dialog" v-show='dialogVideoPlayer' style="display:none;">
 		<div class='video-player'>
 			<video :src='videoSourceUrl' controls :poster="videoPosterUrl" preload="auto" width="800" height="450" ref='video'></video>
 			<a class="video-player-dialog-close" href="javascript:;" @click='dialogVideoPlayer = false'>×</a>
@@ -216,6 +215,12 @@ layout: default
 			}
 	    },
 	    mounted() {
+	    	const loading = this.$loading({
+				lock: true,
+				text: '',
+				spinner: 'el-icon-loading'
+			})
+
 			$('.fb_urls').on('scroll', function() {
 				if ($(this).scrollTop() > 370 * _this.initShowNum * _this.fbGroupNum - 100) {
 					const lastImageNum = _this.initShowNum * _this.fbGroupNum + 2
@@ -254,6 +259,10 @@ layout: default
 					_this.clipImage(res.fb.slice(0, _this.initShowNum + 2), 'fb_urls')
 
 					_this.clipImage(res.xj.slice(0, _this.initShowNum + 2), 'xj_urls')
+
+					setTimeout(() => {
+						loading.close()
+					}, 2000)
 	            },
 	            error() {
 	                console.log('请求失败')
@@ -302,10 +311,14 @@ layout: default
 	    		this.dialogVisible = true
 	    	},
 	    	handleCurrentChange(val) {
+	    		$('.el-dialog__body .text').scrollTop(0)
 	    		this.currentPage = val
 	    		if (this.roleInfo[val - 1]) {
 	    			this.roleCurrentInfo = this.roleInfo[val - 1].replace(/\n/gm,"</p><p>")
 	    		}
+	    	},
+	    	openVideo() {
+	    		this.dialogVideoPlayer = true
 	    	}
 	    }
 	})

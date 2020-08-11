@@ -22,6 +22,13 @@ html, body {
     background-attachment: fixed;
     overflow: auto;
 }
+.el-row {
+    display: flex;
+    justify-content: space-around;
+}
+.el-col-11 {
+    width: calc(11 / 24);
+}
 .demo-image {
     width: 100%;
     min-width: 650px;
@@ -172,9 +179,7 @@ html, body {
 .el-dialog {
     background: url("https://wz950116.bj.bcebos.com/jx3-pve%2Fassets%2Fbg_new.jpg") no-repeat center !important;
     background-size: cover !important;
-}
-.el-dialog::-webkit-scrollbar {
-    display: none;
+    overflow: hidden !important;
 }
 .el-dialog__header {
     border-bottom: 1px solid #f1f1f1;
@@ -183,12 +188,19 @@ html, body {
 .el-dialog__header .el-dialog__title {
     font-size: 24px;
 }
+.el-dialog__body {
+    padding-top: 0 !important;
+}
 .el-dialog__body .text {
     width: 100%;
+    height: calc(100vh - 220px);
     overflow: auto;
     font-size: 18px;
     line-height: 24px;
-    padding-bottom: 100px;
+    padding: 10px 0 100px 0;
+}
+.el-dialog__body .text::-webkit-scrollbar {
+    display: none;
 }
 .el-dialog__body .text p {
     text-indent: 2em;
