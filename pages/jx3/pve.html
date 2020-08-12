@@ -3,9 +3,9 @@ layout: default
 ---
 
 
-<link rel="preload" as="style" crossorigin href="https://unpkg.com/element-ui@2.12.0/lib/theme-chalk/index.css">
+<!-- <link rel="preload" as="style" crossorigin href="https://unpkg.com/element-ui@2.12.0/lib/theme-chalk/index.css"> -->
 <link rel="stylesheet" href="https://unpkg.com/element-ui@2.12.0/lib/theme-chalk/index.css">
-<!-- <link rel="stylesheet" href="/assets/css/element.css"> -->
+<link rel="stylesheet" href="/assets/css/element.css">
 <link rel="stylesheet" type="text/css" href="/assets/css/jx3-pve.css" />
 
 <div id="app">
@@ -201,7 +201,7 @@ layout: default
 				fb_urls: [],
 				xj_urls: [],
 		        previewSrcList: ['https://wz950116.bj.bcebos.com/jx3-pve%2Ffb%2Floading.png'],
-		        videoSourceUrl: 'https://wz950116.bj.bcebos.com/jx3-pve%2Ffb%2Fbhd.mp4',
+		        videoSourceUrl: '',
 		        videoPosterUrl: 'https://wz950116.bj.bcebos.com/jx3-pve%2Ffb%2Fbhd_poster.jpg',
 		        roles: [],
 		        dialogTitle: '',
@@ -211,7 +211,8 @@ layout: default
 		        initShowNum: 3,
 		        fbGroupNum: 1,
 		        xjGroupNum: 1,
-		        responseData: {}
+		        responseData: {},
+		        currentVideo: 'bhd'
 			}
 	    },
 	    mounted() {
@@ -271,7 +272,7 @@ layout: default
 	    },
 	    methods: {
 	    	handleChange(val) {
-	    		this.videoSourceUrl = `https://wz950116.bj.bcebos.com/jx3-pve%2Ffb%2F${val}.mp4`
+	    		this.currentVideo = val
 	    		this.videoPosterUrl = `https://wz950116.bj.bcebos.com/jx3-pve%2Ffb%2F${val}_poster.jpg`
 	    	},
 	    	clipImage(data, name) {
@@ -318,6 +319,7 @@ layout: default
 	    		}
 	    	},
 	    	openVideo() {
+	    		this.videoSourceUrl = `https://wz950116.bj.bcebos.com/jx3-pve%2Ffb%2F${this.currentVideo}.mp4`
 	    		this.dialogVideoPlayer = true
 	    	}
 	    }

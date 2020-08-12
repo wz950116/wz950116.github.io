@@ -109,6 +109,8 @@ html, body {
 .demo-video .source {
     position: relative;
     padding: 24px;
+    width: 600px;
+    height: 337px;
 }
 .demo-video .source .index-clickArea-exCZ0 {
     cursor: pointer;
