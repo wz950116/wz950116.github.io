@@ -310,13 +310,18 @@ layout: default
 	    			this.roleCurrentInfo = role.introduce[0].replace(/\n/gm,"</p><p>")
 	    		}
 	    		this.dialogVisible = true
+	    		this.$nextTick(() => {
+	    			$('.el-dialog__body .text').scrollTop(0)
+	    		})
 	    	},
 	    	handleCurrentChange(val) {
-	    		$('.el-dialog__body .text').scrollTop(0)
 	    		this.currentPage = val
 	    		if (this.roleInfo[val - 1]) {
 	    			this.roleCurrentInfo = this.roleInfo[val - 1].replace(/\n/gm,"</p><p>")
 	    		}
+	    		this.$nextTick(() => {
+	    			$('.el-dialog__body .text').scrollTop(0)
+	    		})
 	    	},
 	    	openVideo() {
 	    		this.videoSourceUrl = `https://wz950116.bj.bcebos.com/jx3-pve%2Ffb%2F${this.currentVideo}.mp4`
