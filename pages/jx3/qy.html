@@ -13,7 +13,11 @@ layout: default
 			width: 100%;
 			height: 100%;
 			overflow: hidden;
-			background: url(https://jx3.xoyo.com/gn/assets/images/page6/homepage/bg-box/bg-3.110a2b78.jpg) no-repeat;
+		}
+
+		body {
+			position: relative;
+			background: url(https://wz950116.bj.bcebos.com/jx3-pvx%2F%E6%8E%89%E8%90%BD%2Fassets%2Fxfe-layer-31-b80156dd.jpg.webp) no-repeat;
 			background-size: cover;
 		}
 
@@ -37,10 +41,10 @@ layout: default
 		}
 
 		.dg-wrapper {
+		    position: relative;
 		    width: 598px;
 		    height: 470px;
 		    margin: 0 auto;
-		    position: relative;
 	        transform-style: preserve-3d;
 	        perspective: 1000px;
 		}
@@ -67,7 +71,7 @@ layout: default
 		    height: 100%;
 		    overflow: hidden;
 		    background-repeat: no-repeat;
-		    background-position: center -200px;
+		    background-position: center;
 		}
 
 		.dg-wrapper a .shadow {
@@ -78,12 +82,9 @@ layout: default
 			bottom: 0;
 		    width: 100%;
 		    height: 100%;
-		    background: rgba(0, 0, 0, .5) url('https://wz950116.bj.bcebos.com/jx3-sl%2Fpublic%2Fcheck.png') no-repeat center;
+		    background: #000000 url('https://wz950116.bj.bcebos.com/jx3-sl%2Fpublic%2Fcheck.png') no-repeat center;
 		    display: block;
-		}
-
-		.dg-wrapper .dg-center .shadow {
-			display: none;
+		    opacity: .5;
 		}
 
 		.dg-wrapper a .line {
@@ -97,8 +98,12 @@ layout: default
 		    opacity: .3;
 		}
 
+		.dg-wrapper .dg-center .shadow {
+			opacity: 0;
+		}
+
 		.dg-wrapper .dg-center:hover .shadow {
-			display: block;
+			opacity: .5;
 		}
 
 		.dg-wrapper .dg-center:hover .line {
@@ -112,31 +117,36 @@ layout: default
 		.dg-container .lbbtn span {
 			position: absolute;
 		    display: block;
-		    background: url(http://static.cubejoy.com/store/images/lun2.png) no-repeat;
 		    cursor: pointer;
 		    top: 200px;
-		    width: 25px;
-		    height: 17px;
+		    width: 52px;
+		    height: 104px; 
 		    opacity: 0.8;
-		    transform: rotate(90deg);
+		    transition: .2s linear;
 		}
 
 		.dg-container .lbbtn span.dg-prev {
-		    background-position: -24px 1px;
-    		left: 60px;
+		    background: url('https://wz950116.bj.bcebos.com/jx3-pvx%2F%E5%A5%87%E9%81%87%2Fassets%2Farrow_left.png') no-repeat center;
+    		left: 40px;
 		}
 
 		.dg-container .lbbtn span.dg-prev:hover {
-			background-position: -24px -16px;
+    		left: 30px;
 		}
 
 		.dg-container .lbbtn span.dg-next {
-			background-position: 1px 1px;
-    		right: 60px;
+		    background: url('https://wz950116.bj.bcebos.com/jx3-pvx%2F%E5%A5%87%E9%81%87%2Fassets%2Farrow_right.png') no-repeat center;
+    		right: 40px;
 		}
 
 		.dg-container .lbbtn span.dg-next:hover {
-			background-position: 1px -16px;
+    		right: 30px;
+		}
+
+		.sidebar {
+			position: absolute;
+			top: -24px;
+			right: -7px;
 		}
 	</style>
 </head>
@@ -154,6 +164,8 @@ layout: default
             </div>
 		</div>
 	</div>
+
+	<img class='sidebar' src="https://wz950116.bj.bcebos.com/jx3-pvx%2F%E6%8E%89%E8%90%BD%2Fassets%2Fxfe-layer-50-80ede9b5.png.webp">
 </body>
 
 <script type="text/javascript">
@@ -197,7 +209,7 @@ layout: default
 		}
 		const content = `
 			<a href="javascript:void(0);" data-url="${url}" data-index=${index} class="${index === 0 ? 'dg-center' : ''}" style="${aStyle}">
-			    <div class="img" style="${imgStyle}background-image: url(${data[index]})"></div>
+			    <div class="img" style="${imgStyle}background-image: url(${data[index].slice(0, -4) + 'x1.png'})"></div>
 			    <div class="shadow"></div>
 			    <span class='line'></span>
 			</a>
