@@ -113,8 +113,8 @@ body {
 }
 .module h2 {
     float: left;
-    width: 73px;
-    height:44px;
+    width: 70px;
+    height: 45px;
     margin: 0 10px 0 70px;
     vertical-align: top;
 }
@@ -162,13 +162,12 @@ body {
     float: left;
 }
 .part2 h2 {
-    width: 70px;
-    background: url('https://bj.bcebos.com/v1/wz950116/public/number_img_2.png') no-repeat center;
+    background: url('https://bj.bcebos.com/v1/wz950116/public/number_img_2.png') no-repeat left center;
 }
 .part3 {
     width: 400px;
     float: left;
 }
 .part3 h2 {
-    background: url('https://bj.bcebos.com/v1/wz950116/public/number_img_3.png') no-repeat center;
+    background: url('https://bj.bcebos.com/v1/wz950116/public/number_img_3.png') no-repeat left center;
 }
