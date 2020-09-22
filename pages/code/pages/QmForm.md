@@ -99,7 +99,7 @@ data(){
 
 ## 示例代码
 
-![图例](../images/qmfrom.jpg)
+![图例](/images/qmfrom.jpg)
 
 ```javascript
         form: {
