@@ -16,19 +16,21 @@ layout: default
         </h2>
         <div class="hj_list">
             <div class="hj_box_btn">
-                <a href="javascript:;" class="a1">九十年代</a>
-                <a href="javascript:;" class="a2 active">一百年代</a>
-                <a href="javascript:;" class="a3">九五年代</a>
+                <a href="javascript:;" class="a4 active">奉天证道</a>
+                <a href="javascript:;" class="a3">世外蓬莱</a>
+                <a href="javascript:;" class="a2">剑胆琴心</a>
+                <a href="javascript:;" class="a1">安史之乱</a>
             </div>
             <div class="pic_box">
-                <div class="pic_list" style="display: none;">
-                    <ul class="piclist"></ul>
-                </div>
-
                 <div class="pic_list" style="display: block;">
                     <ul class="piclist"></ul>
                 </div>
-
+                <div class="pic_list" style="display: none;">
+                    <ul class="piclist"></ul>
+                </div>
+                <div class="pic_list" style="display: none;">
+                    <ul class="piclist"></ul>
+                </div>
                 <div class="pic_list" style="display: none;">
                     <ul class="piclist"></ul>
                 </div>
@@ -260,14 +262,14 @@ layout: default
 		scrolltotop.init();
 
 		$.ajax({
-			url: '/assets/data/100sl.json',
+			url: '/assets/data/110sl.json',
 			type: 'GET',
 			dataType: 'json',
 			contentType: 'application/json',
 			success(res) {
 				var dataArr = res.data
 				dataArr.forEach((i, index) => {
-					$('.piclist').eq(1).append(`<li date=${i.alt} size3=${i.src} style='margin-top: ${index % 2 == 1 ? '50px' : '0'}'>
+					$('.piclist').eq(0).append(`<li date=${i.alt} size3=${i.src} style='margin-top: ${index % 2 == 1 ? '50px' : '0'}'>
 		                            <div class='img_box' style='background-image:url(${i.thumbnail})'></div>
 		                            <div class="picdetails"></div>
 		                            <span></span>
@@ -280,6 +282,26 @@ layout: default
 			}
 		})
 		function requestImage() {
+			$.ajax({
+				url: '/assets/data/100sl.json',
+				type: 'GET',
+				dataType: 'json',
+				contentType: 'application/json',
+				success(res) {
+					var dataArr = res.data
+					dataArr.forEach((i, index) => {
+						$('.piclist').eq(1).append(`<li date=${i.alt} size3=${i.src} style='margin-top: ${index % 2 == 1 ? '50px' : '0'}'>
+			                            <div class='img_box' style='background-image:url(${i.thumbnail})'></div>
+			                            <div class="picdetails"></div>
+			                            <span></span>
+			                        </li>`)
+					})
+				},
+				error() {
+					console.log('请求失败')
+				}
+			})
+
 			$.ajax({
 				url: '/assets/data/95sl.json',
 				type: 'GET',
@@ -308,7 +330,7 @@ layout: default
 				success(res) {
 					var dataArr = res.data
 					dataArr.forEach((i, index) => {
-						$('.piclist').eq(0).append(`<li date=${i.alt} size3=${i.src} style='margin-top: ${index % 2 == 1 ? '50px' : '0'}'>
+						$('.piclist').eq(3).append(`<li date=${i.alt} size3=${i.src} style='margin-top: ${index % 2 == 1 ? '50px' : '0'}'>
 			                            <div class='img_box' style='background-image:url(${i.thumbnail})'></div>
 			                            <div class="picdetails"></div>
 			                            <span></span>
