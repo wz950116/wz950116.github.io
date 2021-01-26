@@ -88,8 +88,7 @@ html, body {
     background-size: cover;
 }
 .banner-2 {
-    background: url("https://wz950116.bj.bcebos.com/jx3-pvx%2F%E5%A5%87%E9%81%87%2F2020-07-24_22-48-29-000.png") no-repeat;
-    background-size: cover;
+    background: #000000 url("https://bj.bcebos.com/v1/wz950116/jx3-pvx/奇遇/assets/5b02b0e3d991eda7.png") no-repeat center;
 }
 .banner-3 {
     background: url("https://wz950116.bj.bcebos.com/jx3-pvx%2F%E6%8E%89%E8%90%BD%2F2019-08-19_20-13-59-000.png") no-repeat;
