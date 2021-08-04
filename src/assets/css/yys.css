@@ -1,0 +1,490 @@
+@charset "UTF-8";
+
+.fixed-img {
+    position: fixed;
+    right: -22px;
+    bottom: 40px;
+    width: 210px;
+    height: auto;
+    z-index: 11;
+}
+
+.main {
+    position: relative;
+    margin: auto;
+    box-sizing: border-box;
+    padding: 105px 50px 50px;
+    max-width: 1920px;
+    min-width: 1366px;
+    max-height: 1080px;
+    min-height: 768px;
+    width: 100%;
+    height: 100%;
+    background: url(https://wz950116.bj.bcebos.com/yys%2Fpublic%2Fbg_f35f83e.jpg) 50% 0 no-repeat;
+    background-size: cover;
+}
+
+.wrap {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border: 5px solid #a99362;
+    overflow: auto;
+}
+
+.wrap::-webkit-scrollbar {
+    display: none;
+}
+
+.shadow-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 25px;
+    background: url(https://wz950116.bj.bcebos.com/yys%2Fpublic%2Fshadow_top_ccac46f.png) repeat-x;
+    pointer-events: none;
+}
+
+.shadow-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 12px;
+    height: 1574px;
+    background: url(https://wz950116.bj.bcebos.com/yys%2Fpublic%2Fshadow_left_f93e674.png) repeat-y;
+    pointer-events: none;
+}
+
+.shadow-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 12px;
+    height: 1574px;
+    background: url(https://wz950116.bj.bcebos.com/yys%2Fpublic%2Fshadow_right_614fe45.png) repeat-y;
+    pointer-events: none;
+}
+
+.shadow-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 25px;
+    background: url(https://wz950116.bj.bcebos.com/yys%2Fpublic%2Fshadow_bottom_8a5873f.png) repeat-x;
+    pointer-events: none;
+}
+
+.header {
+    position: absolute;
+    z-index: 1;
+    top: 30px;
+    left: 0;
+    width: 100%;
+}
+
+.header .nav {
+    position: absolute;
+    top: 0;
+    right: 30px;
+    opacity: 0;
+    transform: translateX(250px);
+}
+
+.animate .nav {
+    opacity: 1;
+    transform: none;
+    transition: all 1s;
+}
+
+.header .nav a {
+    position: relative;
+    float: left;
+    margin: 0 8px;
+    box-sizing: border-box;
+    padding: 0 12px;
+    width: 42px;
+    font-size: 16px;
+    color: #c5b99c;
+    border: 1px solid transparent;
+    transition: all .5s;
+    text-decoration: none;
+}
+
+.picture .nav .nav-picture {
+    padding-top: 20px;
+    padding-bottom: 50px;
+    color: #af9b6e;
+    border: 1px solid #a99362;
+}
+
+.header .nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 15px;
+    height: 47px;
+    background: url(https://wz950116.bj.bcebos.com/yys%2Fpublic%2Fb_nav_b95f1f0.png) no-repeat;
+    opacity: 0;
+    transition: all .5s;
+}
+
+.header .nav a:hover {
+    padding-top: 20px;
+    padding-bottom: 50px;
+    color: #af9b6e;
+    border: 1px solid #a99362;
+}
+
+.header .nav a:hover::after {
+    opacity: 1;
+}
+
+.picture .nav .nav-picture::after {
+    opacity: 1;
+}
+
+.part-1 {
+    position: relative;
+    width: 100%;
+    height: 937px;
+    background: url(https://wz950116.bj.bcebos.com/yys%2Fpublic%2Fbg_584c250.jpg) 50% 0 no-repeat;
+    overflow: hidden;
+}
+
+.part-1 .list {
+    position: absolute;
+    z-index: 1;
+    top: 280px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-around;
+    filter: blur(16px);
+    transform: translateY(50px);
+    transition: all 1s .5s;
+    opacity: 0;
+}
+
+.animate .list {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
+
+.part-1 .list-head,
+.part-1 .list-foot {
+    position: relative;
+    width: 550px;
+    height: 406px;
+}
+
+.part-1 .item {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 346px;
+    overflow: hidden;
+    box-shadow: 0 10px 15px 0 rgba(162, 189, 184, .7);
+}
+
+.part-1 .list-head .item {
+    top: 0;
+}
+
+.part-1 .list-foot .item {
+    bottom: 0;
+}
+
+.part-1 .text {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+}
+
+.part-1 .list-head .text {
+    bottom: 0;
+}
+
+.part-1 .list-foot .text {
+    top: 0;
+}
+
+.part-1 .text .title {
+    color: #af9b6e;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+}
+
+.part-1 .cover {
+    transform: scale(1.06);
+    transition: transform .3s cubic-bezier(0.215, .61, .355, 1);
+}
+
+.part-1 .mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .58);
+    opacity: 0;
+    transition: opacity .3s cubic-bezier(0.215, .61, .355, 1);
+}
+
+.part-1 .mask::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    border: 1px solid #d7cdb6;
+    transition: margin .3s cubic-bezier(0.215, .61, .355, 1);
+    margin: 10px;
+}
+
+.animate .part-1 .item:hover>.mask {
+    opacity: 1;
+}
+
+.animate .part-1 .item:hover>.cover {
+    transform: scale(1);
+}
+
+
+.arrow {
+    position: absolute;
+    left: 50%;
+    bottom: 138px;
+    width: 24px;
+    height: 76px;
+    margin-left: -12px;
+    background: url(https://wz950116.bj.bcebos.com/yys%2Fpublic%2Farrow_66d1c03.png) no-repeat;
+}
+
+.part-1 .cloud-l {
+    left: 0;
+    position: absolute;
+    bottom: 0;
+    width: 500px;
+    height: 325px;
+    transform: translateX(-100%);
+    background-image: url(https://wz950116.bj.bcebos.com/yys%2Fpublic%2Fcloud_l_281cf0b.png);
+    background-repeat: no-repeat;
+}
+
+.part-1 .cloud-r {
+    right: 0;
+    position: absolute;
+    bottom: 0;
+    width: 500px;
+    height: 325px;
+    transform: translateX(100%);
+    background-image: url(https://wz950116.bj.bcebos.com/yys%2Fpublic%2Fcloud_r_412c9cb.png);
+    background-repeat: no-repeat;
+}
+
+.part-1.animate .cloud-l,
+.part-1.animate .cloud-r {
+    transform: none;
+    transition: all 1s;
+}
+
+.part-1.unanimate .cloud-l {
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+
+.part-1.unanimate .cloud-r {
+    transform: translateX(100%);
+    transition: all 1s;
+}
+
+.part-2 {
+    position: relative;
+}
+
+.part-2 canvas {
+    position: absolute;
+    top: -85px;
+    left: 0;
+    width: 100%;
+    height: 85px;
+    display: inline-block;
+}
+
+.part-2 .tab-btn {
+    position: relative;
+    width: 1200px;
+    margin: 28px auto 50px;
+    border-bottom: 1px solid #d7cdb6;
+    font-size: 0;
+}
+
+.part-2 .tab-btn a {
+    position: relative;
+    display: inline-block;
+    padding: 0 45px;
+    height: 58px;
+    font-size: 16px;
+    line-height: 58px;
+    vertical-align: middle;
+    color: #999;
+    transition: all .5s;
+}
+
+.part-2 .tab-btn a::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 15px;
+    height: 13px;
+    background: url(https://wz950116.bj.bcebos.com/yys%2Fpublic%2Ftab_405ad13.png) no-repeat;
+    opacity: 0;
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+    transition: all .5s;
+}
+
+.part-2 .tab-btn a:after {
+    content: '';
+    position: absolute;
+    bottom: -11px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 1px;
+    height: 24px;
+    background-color: #af9b6e;
+    opacity: 0;
+    -webkit-transform: translateY(5px);
+    transform: translateY(5px);
+    transition: all .5s;
+}
+
+.part-2 .tab-btn a.active,
+.part-2 .tab-btn a:hover {
+    color: #af9b6e;
+}
+
+.part-2 .tab-btn a.active:before,
+.part-2 .tab-btn a:hover:before,
+.part-2 .tab-btn a.active:after,
+.part-2 .tab-btn a:hover:after {
+    opacity: 1;
+    transform: none;
+}
+
+.part-2 .tab-btn i {
+    display: inline-block;
+    width: 17px;
+    height: 58px;
+    vertical-align: middle;
+    background: url(https://wz950116.bj.bcebos.com/yys%2Fpublic%2Ftab_split_052315b.png) 0 50% no-repeat;
+}
+
+.part-2 .tab-cont {
+    opacity: 1;
+    filter: blur(0);
+    transition: all 1s 1s;
+    margin: 0 auto;
+    width: 1230px;
+    overflow: hidden;
+}
+
+.part-2 .tab-cont .item {
+    position: relative;
+    float: left;
+    margin: 15px;
+    box-sizing: border-box;
+    width: 380px;
+    border: 1px solid #ccc;
+    box-shadow: 0 3px 0 0 rgba(0, 0, 0, .05);
+}
+
+.part-2 .tab-cont .cover {
+    position: relative;
+    margin: 2px;
+    width: 374px;
+    min-height: 210px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.part-2 .tab-cont .cover img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    max-width: 100%;
+    background-color: #ddd;
+}
+
+.part-2 .tab-cont .mask {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .58);
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+.part-2 .tab-cont .cover:hover>.mask {
+    opacity: 1;
+}
+
+.part-2 .tab-cont .target {
+    display: block;
+    position: relative;
+    margin: 10px;
+    box-sizing: border-box;
+    width: 140px;
+    height: 40px;
+    font-size: 14px;
+    line-height: 40px;
+    text-align: center;
+    color: #d7cdb6;
+    border: 1px solid #d7cdb6;
+    transition: all .5s;
+}
+
+.footer {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background: url(https://wz950116.bj.bcebos.com/yys%2Fpublic%2Ffooter_76bc3fa.jpg) 50% 0 no-repeat;
+    overflow: hidden;
+}
+
+.footer .door {
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 194px;
+    height: 230px;
+    background: url(https://wz950116.bj.bcebos.com/yys%2Fpublic%2Ffooter_door_aa320d1.png) no-repeat;
+    transition: all .5s;
+}

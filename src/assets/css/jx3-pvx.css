@@ -1,0 +1,113 @@
+﻿@charset "UTF-8";
+
+@font-face {
+    font-family: "artfont";
+    src: url('../fonts/pvx.eot') format('eot');
+    src: local('☺'), url('../fonts/pvx.eot?#iefix') format('embedded-opentype'), url('../fonts/pvx.ttf') format('truetype');
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.icon-ffanhui- {
+    position: fixed;
+    left: 20px;
+    top: 10px;
+    font-size: 48px;
+    color: #d81e06;
+    cursor: pointer;
+    z-index: 99;
+}
+.container, .box  {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+.nav {
+    position: fixed;
+    right: 20px;
+    top: 0;
+}
+.nav-item {
+    position: relative;
+    top: -25px;
+    float: left;
+    margin-right: 40px;
+    cursor: pointer;
+    transition: all .3s;
+}
+.top-line {
+    width: 2px;
+    height: 50px;
+    background: #333333;
+    margin: 0 auto;
+}
+.center-line {
+    width: 40px;
+    height: 200px;
+    padding-top: 60px;
+    text-align: center;
+    box-sizing: border-box;
+    border: 1px solid #333333;
+    background: rgba(0, 0, 0, .4);
+    font: 24px "artfont" !important;
+    color: #ffffff;
+}
+.bottom-line {
+    width: 38px;
+    height: 81px;
+    margin: 0 auto;
+    background: url(https://wz950116.bj.bcebos.com/jx3-pvx%2Fassets%2Fnav-1.png) no-repeat center top;
+}
+.nav-item:hover {
+    top: 0;
+}
+.nav-item:hover .center-line {
+    background: rgba(0, 0, 0, .7);
+    color: #ca0c16;
+}
+.nav-item:hover .bottom-line {
+    background: url(https://wz950116.bj.bcebos.com/jx3-pvx%2Fassets%2Fnav-2.png) no-repeat center top;
+}
+.nav-item-active {
+    top: 0;
+}
+.nav-item-active .center-line {
+    background: rgba(0, 0, 0, .7);
+    color: #ca0c16;
+}
+.nav-item-active .bottom-line {
+    background: url(https://wz950116.bj.bcebos.com/jx3-pvx%2Fassets%2Fnav-2.png) no-repeat center top;
+}
+.banner-img {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-width: 1366px;
+    cursor: pointer;
+}
+.banner-1 {
+    display: block;
+    background: url("https://wz950116.bj.bcebos.com/jx3-pvx%2F%E5%9D%90%E9%AA%91%2F2020-11-08_21-54-19-000.png") no-repeat center;
+    background-size: cover;
+}
+.banner-2 {
+    background: #000000 url("https://bj.bcebos.com/v1/wz950116/jx3-pvx/奇遇/assets/5b02b0e3d991eda7.png") no-repeat center;
+}
+.banner-3 {
+    background: #000000 url("https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/assets/renxiaheshan2.png") no-repeat center;
+    background-size: cover;
+}
+.banner-4 {
+    background: url("https://wz950116.bj.bcebos.com/jx3-pvx%2F%E5%8D%95%E4%BA%BA%2F%E9%81%93%E9%95%BF%2F2021-01-14_23-37-07-000.jpg") no-repeat center;
+    background-size: cover;
+}
+.banner-5 {
+    background: url("https://wz950116.bj.bcebos.com/jx3-pvx%2F%E5%90%88%E5%BD%B1%2F2020-08-28_22-29-51-000.jpg") no-repeat center;
+    background-size: cover;
+}

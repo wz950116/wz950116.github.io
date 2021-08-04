@@ -1,0 +1,85 @@
+@charset "UTF-8";
+
+* {
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+}
+
+.el-table {
+    border: 1px solid #aaaaaa !important;
+}
+
+.el-table--scrollable-x th.gutter {
+    width: 17px !important;
+    display: table-cell !important;
+}
+
+.el-table--scrollable-y th.gutter {
+    width: 17px !important;
+    display: table-cell !important;
+}
+
+.el-table .cell {
+    text-align: center;
+}
+
+.el-table th {
+    /*padding: 2px 0 !important;*/
+    background: #f5f7fa !important;
+    border-color: #aaaaaa !important;
+}
+
+.el-table th:hover {
+    background: linear-gradient(#f5f7fa, #e2e9f4) !important;
+}
+
+.el-table td {
+    padding: 0 !important;
+    border-color: #aaaaaa !important;
+}
+
+.el-table td .cell {
+    line-height: 26px;
+    font-size: 16px;
+}
+
+.el-table tr.current-row>td {
+    background: #ffffff !important;
+}
+
+.el-table tr.current-row>td[rowspan="1"] {
+    background: #e0eafa !important;
+}
+
+.el-table__body tr.hover-row>td {
+    background: #ffffff !important;
+}
+
+.el-table__body tr.hover-row>td[rowspan="1"] {
+    background: #e0eafa !important;
+}
+
+.caret-wrapper {
+    /*display: none !important;*/
+}
+
+.special_attr {
+    color: red;
+    cursor: pointer;
+}
+
+.search_box {
+    float: right;
+    width: 30%;
+    min-width: 300px;
+    margin-bottom: 20px;
+}
+
+.el-input__inner {
+    font-size: 16px;
+}
+
+.el-tooltip__popper {
+    font-size: 16px;
+}
