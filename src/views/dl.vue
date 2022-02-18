@@ -7,6 +7,10 @@
       <ul id="grid" class="group">
         <li v-for="item in data.slice(activePage * pageNum, (activePage + 1) * pageNum)" :key="item.src" @click="checkDetail(item)">
           <div class="img-name">{{ item.label }}</div>
+          <div class="img-desc">
+            <div class="img-type">{{ item.type }}</div>
+            <div class="img-date">{{ item.date ? item.date.slice(0, 10) : '具体不详' }}</div>
+          </div>
           <el-image src="https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/assets/previewImg.png" :preview-src-list="state.previewSrcList"></el-image>
         </li>
       </ul>
@@ -84,7 +88,6 @@ const checkDetail = (data) => {
 #grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   margin: 100px 0 20px;
 }
 
@@ -135,6 +138,20 @@ const checkDetail = (data) => {
   margin-top: -94px;
   width: 100%;
   height: 100%;
+}
+#grid li .img-desc {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  line-height: 36px;
+  font-size: 18px;
+}
+#grid li .img-desc .img-type {
+  width: 50px;
+  text-align: left;
 }
 
 .ant-pagination {

@@ -30,29 +30,6 @@
           </div>
         </div>
         <div class="demo-image">
-          <div class="source">
-            <div class="demo-image__lazy xj_urls">
-              <el-image
-                v-for="(item, index) in state.xj_urls"
-                :key="index"
-                :src="item.src"
-                :preview-src-list="state.previewSrcList"
-                :alt="item.date"
-                fit="none"
-                lazy
-                @click="clipImagePreview(item.src)"
-              >
-                <template v-slot:error class="image-slot">
-                  <span @click="clipImagePreview(item.src)">{{ item.alt }}</span>
-                </template>
-                <template v-slot:placeholder class="image-slot">
-                  <span @click="clipImagePreview(item.src)">{{ item.alt }}</span>
-                </template>
-              </el-image>
-            </div>
-          </div>
-        </div>
-        <div class="demo-image">
           <el-row class="jx3_roles">
             <el-col v-for="item in state.roles" :key="item.name" :span="6">
               <div class="block" @click="openDialogEvent(item)">
@@ -123,10 +100,9 @@ const state = reactive({
   activeNames: 'bhd',
   dps_urls: [],
   fb_urls: [],
-  xj_urls: [],
-  previewSrcList: ['https://wz950116.bj.bcebos.com/jx3-pve%2Ffb%2Floading.png'],
+  previewSrcList: ['https://wz950116.bj.bcebos.com/jx3-pve%2F秘境%2Floading.png'],
   videoSourceUrl: '',
-  videoPosterUrl: 'https://wz950116.bj.bcebos.com/jx3-pve%2Ffb%2Fbhd_poster.jpg',
+  videoPosterUrl: 'https://wz950116.bj.bcebos.com/jx3-pve%2F秘境%2Fbhd_poster.jpg',
   roles: [],
   dialogTitle: '',
   roleInfo: [],
@@ -134,14 +110,13 @@ const state = reactive({
   currentPage: 1,
   initShowNum: 3,
   fbGroupNum: 1,
-  xjGroupNum: 1,
   responseData: {},
   currentVideo: 'bhd'
 })
 
 const handleChange = (val) => {
   state.currentVideo = val
-  state.videoPosterUrl = `https://wz950116.bj.bcebos.com/jx3-pve%2Ffb%2F${val}_poster.jpg`
+  state.videoPosterUrl = `https://wz950116.bj.bcebos.com/jx3-pve%2F秘境%2F${val}_poster.jpg`
   state.videoPosterLoading = proxy.$loading({
     lock: true,
     text: ''
@@ -179,7 +154,7 @@ const handleCurrentChange = (val) => {
 let emit = defineEmit(['click'])
 const openVideo = () => {
   emit('click')
-  state.videoSourceUrl = `https://wz950116.bj.bcebos.com/jx3-pve%2Ffb%2F${state.currentVideo}.mp4`
+  state.videoSourceUrl = `https://wz950116.bj.bcebos.com/jx3-pve%2F副本%2F${state.currentVideo}.mp4`
   state.dialogVideoPlayer = true
 }
 onMounted(() => {
@@ -200,7 +175,6 @@ onMounted(() => {
   state.responseData = res
   state.roles = res.roles
   state.dps_urls = res.dps
-  state.xj_urls = res.xj
   state.fb_urls = res.fb
 
   setTimeout(() => {

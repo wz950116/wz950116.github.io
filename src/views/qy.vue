@@ -26,6 +26,9 @@
 import { onMounted } from "vue"
 onMounted(() => {
   const data = [
+    "https://bj.bcebos.com/v1/wz950116/jx3-pvx/奇遇/2022-02-13_23-52-36-000.jpg",
+    "https://bj.bcebos.com/v1/wz950116/jx3-pvx/奇遇/2022-01-23_14-40-58-000.jpg",
+    "https://bj.bcebos.com/v1/wz950116/jx3-pvx/奇遇/2022-01-19_19-38-29-000.jpg",
     "https://bj.bcebos.com/v1/wz950116/jx3-pvx/奇遇/2021-06-14_21-18-07-000.jpg",
     "https://bj.bcebos.com/v1/wz950116/jx3-pvx/奇遇/2021-05-16_21-44-40-000.jpg",
     "https://bj.bcebos.com/v1/wz950116/jx3-pvx/奇遇/2021-04-30_23-58-32-000.jpg",
@@ -36,7 +39,6 @@ onMounted(() => {
     "https://wz950116.bj.bcebos.com/jx3-pvx%2F%E5%A5%87%E9%81%87%2F2020-06-22_21-23-00-000.png",
     "https://wz950116.bj.bcebos.com/jx3-pvx%2F%E5%A5%87%E9%81%87%2F2020-06-06_13-27-56-000.png",
     "https://wz950116.bj.bcebos.com/jx3-pvx%2F%E5%A5%87%E9%81%87%2F2020-05-17_16-27-53-000.png",
-    "https://wz950116.bj.bcebos.com/jx3-pvx%2F%E5%A5%87%E9%81%87%2F2020-05-17_13-14-03-000.png",
     "https://wz950116.bj.bcebos.com/jx3-pvx%2F%E5%A5%87%E9%81%87%2F2020-02-23_20-30-36-000.png",
     "https://wz950116.bj.bcebos.com/jx3-pvx%2F%E5%A5%87%E9%81%87%2F2019-12-26_19-16-18-000.png",
     "https://wz950116.bj.bcebos.com/jx3-pvx%2F%E5%A5%87%E9%81%87%2F2019-08-07_18-40-42-000.jpg",

@@ -1,3 +1,10 @@
+/*
+ * @Description: 
+ * @Author: wangzhen
+ * @Date: 2021-02-19 16:03:55
+ * @LastEditTime: 2022-02-17 16:57:12
+ * @LastEditors: wangzhen
+ */
 import { createApp } from 'vue';
 import App from './App.vue';
 import ElementPlus from 'element-plus';
@@ -9,19 +16,19 @@ const router = createRouter({
   history,
   routes: [{
     path: '/',
-    component: () => import('./views/index.vue')
+    component: () => import(/* webpackChunkName: "index" */ './views/index.vue')
   }, {
     path: '/sl',
-    component: () => import('./views/sl.vue')
+    component: () => import(/* webpackChunkName: "sl" */ './views/sl.vue')
   }, {
     path: '/pvx',
-    component: () => import('./views/pvx.vue')
+    component: () => import(/* webpackChunkName: "pvx" */ './views/pvx.vue')
   }, {
     path: '/pve',
-    component: () => import('./views/pve.vue')
+    component: () => import(/* webpackChunkName: "pve" */ './views/pve.vue')
   }, {
     path: '/qy',
-    component: () => import('./views/qy.vue')
+    component: () => import(/* webpackChunkName: "qy" */ './views/qy.vue')
   }, {
     path: '/dl',
     component: () => import('./views/dl.vue')

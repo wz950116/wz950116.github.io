@@ -1,22 +1,29 @@
+<!--
+ * @Description: 
+ * @Author: wangzhen
+ * @Date: 2021-02-24 15:59:23
+ * @LastEditTime: 2022-02-17 16:36:26
+ * @LastEditors: wangzhen
+-->
 <template>
   <audio src="https://wz950116.bj.bcebos.com/public%2Fbg.mp3" loop="loop" autoplay="autoplay">您的浏览器不支持 audio 标签</audio>
   <div class="home">
     <div class="app">
       <div class="module part1">
         <h2></h2>
-        <span>试炼之地</span>
-        <div class="bg">
-          <img src="https://bj.bcebos.com/v1/wz950116/public/jx3sl.png" alt />
-        </div>
-        <div class="button" @click="$router.push('/sl')">点击进入</div>
-      </div>
-      <div class="module part2">
-        <h2></h2>
         <span>休闲向</span>
         <div class="bg">
           <img src="https://bj.bcebos.com/v1/wz950116/public/jx3pvx.png" alt />
         </div>
         <div class="button" @click="$router.push('/pvx')">点击进入</div>
+      </div>
+      <div class="module part2">
+        <h2></h2>
+        <span>试炼之地</span>
+        <div class="bg">
+          <img src="https://bj.bcebos.com/v1/wz950116/public/jx3sl.png" alt />
+        </div>
+        <div class="button" @click="$router.push('/sl')">点击进入</div>
       </div>
       <div class="module part3">
         <h2></h2>
