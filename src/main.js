@@ -2,13 +2,13 @@
  * @Description: 
  * @Author: wangzhen
  * @Date: 2021-02-19 16:03:55
- * @LastEditTime: 2022-02-17 16:57:12
+ * @LastEditTime: 2022-03-01 17:10:06
  * @LastEditors: wangzhen
  */
 import { createApp } from 'vue';
 import App from './App.vue';
 import ElementPlus from 'element-plus';
-import 'element-plus/lib/theme-chalk/index.css';
+import 'element-plus/dist/index.css'
 import { createWebHashHistory, createRouter } from 'vue-router';
 
 const history = createWebHashHistory();
@@ -31,7 +31,10 @@ const router = createRouter({
     component: () => import(/* webpackChunkName: "qy" */ './views/qy.vue')
   }, {
     path: '/dl',
-    component: () => import('./views/dl.vue')
+    component: () => import(/* webpackChunkName: "dl" */ './views/dl.vue')
+  }, {
+    path: '/code',
+    component: () => import(/* webpackChunkName: "code" */ './views/code/utils.vue')
   }]
 });
 

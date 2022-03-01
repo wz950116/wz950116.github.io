@@ -151,10 +151,10 @@ const handleCurrentChange = (val) => {
     $('.el-dialog__body .text').scrollTop(0)
   })
 }
-let emit = defineEmit(['click'])
+// let emit = defineEmit(['click'])
 const openVideo = () => {
-  emit('click')
-  state.videoSourceUrl = `https://wz950116.bj.bcebos.com/jx3-pve%2F副本%2F${state.currentVideo}.mp4`
+  // emit('click')
+  state.videoSourceUrl = `https://wz950116.bj.bcebos.com/jx3-pve%2F秘境%2F${state.currentVideo}.mp4`
   state.dialogVideoPlayer = true
 }
 onMounted(() => {
@@ -183,6 +183,6 @@ onMounted(() => {
 })
 </script>
 
-<style type="text/css">
+<style scoped type="text/css">
 @import '../assets/css/jx3-pve.css';
 </style>

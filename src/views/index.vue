@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: wangzhen
  * @Date: 2021-02-24 15:59:23
- * @LastEditTime: 2022-02-17 16:36:26
+ * @LastEditTime: 2022-03-01 16:20:51
  * @LastEditors: wangzhen
 -->
 <template>
@@ -77,6 +77,6 @@ onUnmounted(() => {
 })
 </script>
 
-<style type="text/css">
+<style scoped type="text/css">
 @import '../assets/css/index.css';
 </style>

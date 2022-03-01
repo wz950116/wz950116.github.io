@@ -1,25 +1,27 @@
 <template>
-  <div class="back">
-    <i class="iconfont icon-ffanhui-" @click="$router.push('/pvx')"></i>
-  </div>
+  <div class="qy-wrapper">
+    <div class="back">
+      <i class="iconfont icon-ffanhui-" @click="$router.push('/pvx')"></i>
+    </div>
 
-  <div class="lunbo">
-    <div id="dg-container" class="dg-container">
-      <div class="dg-wrapper">
-        <!-- js插入 -->
-      </div>
+    <div class="lunbo">
+      <div id="dg-container" class="dg-container">
+        <div class="dg-wrapper">
+          <!-- js插入 -->
+        </div>
 
-      <div class="lbbtn">
-        <span class="dg-prev"></span>
-        <span class="dg-next"></span>
+        <div class="lbbtn">
+          <span class="dg-prev"></span>
+          <span class="dg-next"></span>
+        </div>
       </div>
     </div>
-  </div>
 
-  <img
-    class="sidebar"
-    src="https://wz950116.bj.bcebos.com/jx3-pvx%2F%E6%8E%89%E8%90%BD%2Fassets%2Fxfe-layer-50-80ede9b5.png.webp"
-  />
+    <img
+      class="sidebar"
+      src="https://wz950116.bj.bcebos.com/jx3-pvx%2F%E6%8E%89%E8%90%BD%2Fassets%2Fxfe-layer-50-80ede9b5.png.webp"
+    />
+  </div>
 </template>
 
 <script setup>
@@ -174,17 +176,13 @@ onMounted(() => {
 })
 </script>
 
-<style type="text/css">
-html,
-body {
+<style lang="scss" type="text/css">
+.qy-wrapper {
+  position: relative;
   width: 100%;
   height: 100%;
   overflow: hidden;
-}
-
-body {
-  position: relative;
-  background: url(https://wz950116.bj.bcebos.com/jx3-pvx%2F%E6%8E%89%E8%90%BD%2Fassets%2Fxfe-layer-31-b80156dd.jpg.webp)
+  background: url('https://wz950116.bj.bcebos.com/jx3-pvx%2F%E6%8E%89%E8%90%BD%2Fassets%2Fxfe-layer-31-b80156dd.jpg.webp')
     no-repeat;
   background-size: cover;
 }

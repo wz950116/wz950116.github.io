@@ -17,7 +17,7 @@
           <div v-if="activeTab === tab" class="pic_list">
             <ul ref="piclist" class="piclist">
               <li v-for="(i, index) in state.tableData[activeTab]" :key="i.thumbnail" :style="{ marginTop: index % 2 == 1 ? '50px' : '0' }">
-                <el-image class="img_box" :src="i.thumbnail" :preview-src-list="state.previewSrcList" :alt="i.alt" fit="none" lazy @click="checkDetail(i)"></el-image>
+                <el-image class="img_box" :src="i.thumbnail" :alt="i.alt" fit="none" lazy @click="checkDetail(i)"></el-image>
                 <div class="picdetails"></div>
                 <span></span>
               </li>
@@ -38,6 +38,8 @@
   </div>
 
   <div v-show="!dialogVisible" class="more_shadow"></div>
+
+  <el-image-viewer v-if="dialogVisible" :url-list="state.previewSrcList" @close="closeImgViewer" />
 </template>
 
 <script setup>
@@ -67,19 +69,10 @@ const state = reactive({
     SL_95: '剑胆琴心',
     SL_90: '安史之乱'
   },
-  previewSrcList: [
-    'https://fuss10.elemecdn.com/8/27/f01c15bb73e1ef3793e64e6b7bbccjpeg.jpeg',
-    'https://fuss10.elemecdn.com/1/8e/aeffeb4de74e2fde4bd74fc7b4486jpeg.jpeg'
-  ]
+  previewSrcList: []
 })
 
-onMounted(() => {
-  document.addEventListener('click', (e) => {
-		if (e.target.classList.contains('el-icon-close')) {
-			dialogVisible.value = false
-		}
-	}, false)
-})
+onMounted(() => { })
 
 const tabClick = (name) => {
   activeTab.value = name
@@ -94,6 +87,12 @@ const checkDetail = (data) => {
       loading.value = false
     }
   })
+}
+// 关闭查看大图
+const closeImgViewer = () => {
+  loading.value = false
+  dialogVisible.value = false
+  state.previewSrcList = []
 }
 // 保存图片到本地
 const downloadImage = () => {
@@ -119,6 +118,9 @@ const downloadImage = () => {
 </script>
 
 <style type="text/css">
+</style>
+
+<style scoped>
 @font-face {
   font-family: 'artfont';
   src: url('../assets/fonts/sl.eot') format('eot');
@@ -129,28 +131,12 @@ const downloadImage = () => {
   font-family: 'artfont';
   font-style: normal;
 }
-
-body {
-  width: 100%;
-  font-size: 12px;
-  min-width: 1200px;
-  max-width: 1920px;
-  background: #000000 url(https://wz950116.bj.bcebos.com/jx3-sl%2Fpublic%2Fbg.jpg) no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-}
-body::-webkit-scrollbar {
-  display: none;
-}
-</style>
-
-<style scoped>
 .more_shadow {
   position: fixed;
   bottom: 0;
   width: 100%;
   height: 200px;
-  background: url(https://wz950116.bj.bcebos.com/jx3-pve%2Fassets%2Fshadow.png) no-repeat center top;
+  background: url('https://wz950116.bj.bcebos.com/jx3-pve%2Fassets%2Fshadow.png') no-repeat center top;
   z-index: 99;
 }
 
@@ -165,8 +151,19 @@ body::-webkit-scrollbar {
 }
 
 .box {
-  width: 100%;
   position: relative;
+  width: 100%;
+  min-width: 1200px;
+  max-width: 1920px;
+  height: 100%;
+  font-size: 12px;
+  background: #000000 url('https://wz950116.bj.bcebos.com/jx3-sl%2Fpublic%2Fbg.jpg') no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.box::-webkit-scrollbar {
+  display: none;
 }
 
 .hj_w1200 {
@@ -214,7 +211,7 @@ body::-webkit-scrollbar {
 }
 
 .hj_box_btn a.active {
-  background: url(https://wz950116.bj.bcebos.com/jx3-sl%2Fpublic%2Fp_line.png) no-repeat center bottom;
+  background: url('https://wz950116.bj.bcebos.com/jx3-sl%2Fpublic%2Fp_line.png') no-repeat center bottom;
   color: #f2e2bf;
 }
 
@@ -268,7 +265,7 @@ body::-webkit-scrollbar {
   right: 90px;
   width: 80px;
   height: 80px;
-  background: url(https://wz950116.bj.bcebos.com/jx3-sl%2Fpublic%2Fclose.png);
+  background: url('https://wz950116.bj.bcebos.com/jx3-sl%2Fpublic%2Fclose.png');
   z-index: 99;
 }
 
