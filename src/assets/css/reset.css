@@ -26,43 +26,6 @@ span,
 a {
     margin: 0;
     padding: 0;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-button,
-input,
-select,
-textarea {
-    font-size: 100%;
-    font-weight: normal
-}
-
-html {
-    _filter: expression(document.execCommand("BackgroundImageCache", false, true));
-}
-
-ul,
-li,
-div,
-dl,
-dt,
-dd {
-    list-style: none;
-}
-
-h1.wm-public {
-    height: 0px;
-    line-height: 0px;
-    font-size: 0px;
 }
 
 a {
@@ -70,7 +33,6 @@ a {
 }
 
 a {
-    blr: expression(this.onFocus=this.blur());
     outline: none;
 }
 

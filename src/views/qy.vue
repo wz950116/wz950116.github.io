@@ -1,7 +1,7 @@
 <template>
   <div class="qy-wrapper">
     <div class="back">
-      <i class="iconfont icon-ffanhui-" @click="$router.push('/pvx')"></i>
+      <i class="iconfont icon-ffanhui-" @click="$router.replace('/layout/pvx')"></i>
     </div>
 
     <div class="lunbo">

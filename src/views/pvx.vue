@@ -1,13 +1,21 @@
+<!--
+ * @Description: 
+ * @Author: wangzhen
+ * @Date: 2021-02-24 16:31:09
+ * @LastEditTime: 2022-03-02 11:48:59
+ * @LastEditors: wangzhen
+-->
+
 <template>
   <div class="back">
-    <i class="iconfont icon-ffanhui-" @click="$router.push('/')"></i>
+    <i class="iconfont icon-ffanhui-" @click="$router.replace('/layout')"></i>
   </div>
 
   <div class="container">
     <div class="box">
       <div class="banner-img banner-1" @click="mountsClick"></div>
-      <div class="banner-img banner-2" @click="$router.push('/qy')"></div>
-      <div class="banner-img banner-3" @click="$router.push('/dl')"></div>
+      <div class="banner-img banner-2" @click="$router.push('/layout/qy')"></div>
+      <div class="banner-img banner-3" @click="$router.push('/layout/dl')"></div>
       <div class="banner-img banner-4"></div>
       <div class="banner-img banner-5"></div>
     </div>

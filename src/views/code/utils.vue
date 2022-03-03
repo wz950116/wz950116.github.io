@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: wangzhen
  * @Date: 2022-03-01 17:08:48
- * @LastEditTime: 2022-03-01 17:12:41
+ * @LastEditTime: 2022-03-02 15:34:56
  * @LastEditors: wangzhen
 -->
 
@@ -16,7 +16,12 @@
 import utils from './utils.md'
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+:deep(ul) {
+  margin: 10px;
+  padding: 20px;
+}
+
 .code-wrapper {
   width: 100%;
   height: 100%;
@@ -26,5 +31,6 @@ import utils from './utils.md'
   color: #ffffff;
   padding: 20px;
   box-sizing: border-box;
+  font-size: 16px;
 }
 </style>

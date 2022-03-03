@@ -1,5 +1,5 @@
 ## 相关模块
-``` bash
+```javascript
 import CryptoJS from 'crypto-js'
 import MD5 from 'crypto-js/md5'
 import gcoord from 'gcoord'
@@ -10,7 +10,7 @@ import CreateAPI from 'vue-create-api';
 import ClipboardJS from 'clipboard';
 ```
 ## 微信语音转换功能
-``` bash
+```javascript
 function wechatSign(jsApiList = ['getLocation']) {
   const hostUrl = /(Android)/i.test(navigator.userAgent) ? location.href.split('#')[0] : window.entryUrl;
   var nonceStr = (function() {
@@ -55,15 +55,15 @@ export async function getWx() {
 }
 ```
 ## 引入第三方小型组件或者全局注册公共组件
-``` bash
+```javascript
 import Reality from 'xxxx';
 Vue.use(CreateAPI);
 Vue.createAPI(Reality, true);
-# 调用该组件内部AAA方法
+// 调用该组件内部AAA方法
 this.$createReality().show()
 ```
 ## 解决加减乘除精度丢失问题
-``` bash
+```javascript
 export function numberFixed(a, b, symbol = '+') {
   let result = ''
   switch (symbol) {
@@ -102,7 +102,7 @@ export function numberFixed(a, b, symbol = '+') {
 }
 ```
 ## 复制插件
-``` bash
+```javascript
 export function initClipboardJS() {
   const clipboard = new ClipboardJS('#description')
   clipboard.on('success', function() {
@@ -113,7 +113,7 @@ export function initClipboardJS() {
 ```
 ## 时间相关
 * 格式化
-``` bash
+```javascript
 export function formatTime(time, pattern) {
   if (arguments.length === 0) {
     return null
@@ -145,7 +145,7 @@ export function formatTime(time, pattern) {
 }
 ```
 * 获取每个月第一天0时时间戳
-``` bash
+```javascript
 export function getFirstDay() {
   // 获取当天0点时间戳
   const todayStart = +new Date().setHours(0, 0, 0, 0)
@@ -153,7 +153,7 @@ export function getFirstDay() {
 }
 ```
 * 距离指定日期剩余时间
-``` bash
+```javascript
 export function remainTime(endTime) {
   if (endTime === '' || endTime === undefined) return ''
   // 现在时间
@@ -175,7 +175,7 @@ export function remainTime(endTime) {
 }
 ```
 * 获取某个月的日历表
-``` bash
+```javascript
 export function initCalendar(year = new Date().getFullYear(), month = new Date().getMonth() + 1) {
   const calendars2 = [];
   const riliStyle2 = [];
@@ -240,7 +240,7 @@ export function initCalendar(year = new Date().getFullYear(), month = new Date()
 ```
 ## 导出excel
 * 返回blob转base64形式
-``` bash
+```javascript
 export function _downloadFile(resBlob, fileName) {
   const reader = new FileReader()
   // 转换为base64，可以直接放入a标签href
@@ -257,7 +257,7 @@ export function _downloadFile(resBlob, fileName) {
 }
 ```
 * 返回二进制流转blob形式 reponseType: arraybuffer
-``` bash
+```javascript
 export function downloadFile(resBlob, fileName) {
   // 获取文件流,将流转换为excle
   const blob = new Blob([resBlob], {
@@ -275,7 +275,7 @@ export function downloadFile(resBlob, fileName) {
 }
 ```
 ## 深拷贝
-``` bash
+```javascript
 export function deepCopy(obj) {
   var result = Array.isArray(obj) ? [] : {}
   for (var key in obj) {
@@ -291,7 +291,7 @@ export function deepCopy(obj) {
 }
 ```
 ## 根据ID获取该节点的所有父节点的数组对象
-``` bash
+```javascript
 export function getParentId(list, value, children = 'children', key = 'id', extraKey = 'userId') {
   for (const i in list) {
     if (list[i][key] === value || list[i][extraKey] === value) {
@@ -307,7 +307,7 @@ export function getParentId(list, value, children = 'children', key = 'id', extr
 }
 ```
 ## 根据ID获取该节点的对象
-``` bash
+```javascript
 export function getId(list, value, children = 'children', key = 'id', extraKey = 'userId') {
   for (const i in list) {
     if (list[i][key] === value || list[i][extraKey] === value) {
@@ -323,7 +323,7 @@ export function getId(list, value, children = 'children', key = 'id', extraKey =
 }
 ```
 ## 精确到指定小数点 解决了toFixed不精确的js BUG
-``` bash
+```javascript
 export function toFixed(num, iCount) {
   // iCount 保留几位小数
   var srcValue = num;
@@ -386,13 +386,13 @@ export function toFixed(num, iCount) {
 }
 ```
 ## 坐标转换（WGS84：天地图、 GCJ02：高德、 BD09：百度）
-``` bash
+```javascript
 export function transformPoint(target, type = 'WGS84', targetType = 'GCJ02') {
   return gcoord.transform(target, gcoord[type], gcoord[targetType])
 }
 ```
 ## 防抖动
-``` bash
+```javascript
 export function debounce(func, delay) {
   let timer
   return function (...args) {
@@ -406,7 +406,7 @@ export function debounce(func, delay) {
 }
 ```
 ## 节流
-``` bash
+```javascript
 export function throttle(func, delay) {
   var timer = null;
   return function () {
@@ -423,20 +423,20 @@ export function throttle(func, delay) {
 ```
 ## 加密
 * Base64
-``` bash
+```javascript
 export const base64 = {
   en: (data) => CryptoJS.enc.Base64.stringify(CryptoJS.enc.Utf8.parse(data)),
   de: (data) => CryptoJS.enc.Base64.parse(data).toString(CryptoJS.enc.Utf8)
 }
 ```
 * MD5加密
-``` bash
+```javascript
 export function encryptMD5(password) {
   return MD5(password).toString()
 }
 ```
 * AES
-``` bash
+```javascript
 # 加密 需要约定好盐值keyStr
 export function encrypt(word, keyStr) {
   keyStr = keyStr || 'abcdefgabcdefg12'
@@ -454,7 +454,7 @@ export function decrypt(word, keyStr) {
 }
 ```
 ## 验证浏览器版本
-``` bash
+```javascript
 const browser = Bowser.getParser(window.navigator.userAgent)
 export const isValidBrowser = browser.satisfies({
   windows: {
@@ -470,7 +470,7 @@ export const isValidBrowser = browser.satisfies({
 })
 ```
 ## 判断是否为JSON对象
-``` bash
+```javascript
 export function isJSON(val) {
   // 传入JSON字符串
   if (typeof val !== 'string') {
@@ -489,7 +489,7 @@ export function isJSON(val) {
 }
 ```
 ## 判断设备
-``` bash
+```javascript
 export function equip() {
   if (navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)) {
     return '移动端'
@@ -498,7 +498,7 @@ export function equip() {
 }
 ```
 ## 判断对象是否一致
-``` bash
+```javascript
 export function isObjectValueEqual(a, b) {
   var aProps = Object.keys(a);
   var bProps = Object.keys(b);
@@ -519,7 +519,7 @@ export function isObjectValueEqual(a, b) {
 }
 ```
 ## 本地存储
-``` bash
+```javascript
 export const storage = {
   get(key) {
     return localStorage.getItem(key);
@@ -537,7 +537,7 @@ export const storage = {
 }
 ```
 ## 截图上传
-``` bash
+```javascript
 export const shot = async () => {
   const loading = this.$loading({
     lock: true,
@@ -576,7 +576,7 @@ export const shot = async () => {
 ```
 ## 正则相关
 * 千分位化
-``` bash
+```javascript
 export function thousands(value, digit) {
   if (value === '' || value === undefined || value === null || isNaN(value)) return
   if (!digit) {
@@ -593,7 +593,7 @@ export function thousands(value, digit) {
 }
 ```
 * 身份证
-``` bash
+```javascript
 export function isCardNo(card) {
   // 身份证号码为15位或者18位，15位时全为数字，18位前17位为数字，最后一位是校验位，可能为数字或字符X
   var reg = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
@@ -605,7 +605,7 @@ export function isCardNo(card) {
 }
 ```
 * 银行卡
-``` bash
+```javascript
 export function isBankCard(card) {
   var reg = new RegExp(/^([1-9]{1})(\d{11}|\d{15}|\d{16}|\d{17}|\d{18})$/)
   if (reg.test(card) === false) {
@@ -616,7 +616,7 @@ export function isBankCard(card) {
 }
 ```
 * 手机号
-``` bash
+```javascript
 export function validateTelephone(obj) {
   var pattern = /(^(\d{3,4}-)?\d{7,8})$|(^1[3|4|5|7|8][0-9]{9})/;
   if (pattern.test(obj)) {
@@ -627,14 +627,14 @@ export function validateTelephone(obj) {
 }
 ```
 * URL
-``` bash
+```javascript
 export function validateURL(textval) {
   const urlregex = /^(https?|http?|ftp):\/\/([a-zA-Z0-9.-]+(:[a-zA-Z0-9.&%$-]+)*@)*((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9][0-9]?)(\.(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])){3}|([a-zA-Z0-9-]+\.)*[a-zA-Z0-9-]+\.(com|edu|gov|int|mil|net|org|biz|arpa|info|name|pro|aero|coop|museum|[a-zA-Z]{2}))(:[0-9]+)*(\/($|[a-zA-Z0-9.,?'\\+&%$#=~_-]+))*$/
   return urlregex.test(textval)
 }
 ```
 * 获取URL中指定参数值
-``` bash
+```javascript
 export function getQueryString(name) {
   const href = window.location.href
   const reg = new RegExp(name + '=[^&|#|\/]*')
@@ -643,14 +643,14 @@ export function getQueryString(name) {
 }
 ```
 * 邮箱
-``` bash
+```javascript
 export function validateEmail(email) {
   let emails = email.replace(/^\s+|\s+$/g, "");
   return /^[\w\-+]+(\.[\w\-+]+)*@(\w-?)+(\.\w{2,})+$/.test(emails);
 }
 ```
 * 整数
-``` bash
+```javascript
 export function isInteger(val) {
   if (typeof obj === 'number' && !isNaN(num) && num % 1 === 0) {
     return true
@@ -662,7 +662,7 @@ export function isInteger(val) {
 }
 ```
 * 正整数
-``` bash
+```javascript
 export function validateNumber(str) {
   const reg = /^[0-9]*[1-9][0-9]*$/
   return reg.test(str)
@@ -670,7 +670,7 @@ export function validateNumber(str) {
 }
 ```
 * 数值
-``` bash
+```javascript
 export function validateNumber(str) {
   const regPos = /^\d+(\.\d+)?$/
   const regNeg = /^(-(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*)))$/
@@ -678,7 +678,7 @@ export function validateNumber(str) {
 }
 ```
 * 验证密码至少 8 位，需包含数字、英文字母、特殊符号（~!@#$%^&*）
-``` bash
+```javascript
 export function validateStrongPassword(str) {
   const reg = /^(?=.*\d)(?=.*[a-zA-Z])(?=.*[~!@#$%^&*])[\da-zA-Z~!@#$%^&*]{8,}$/
   return reg.test(str)

@@ -1,6 +1,6 @@
 <template>
   <div class="back">
-    <i class="iconfont icon-ffanhui-" @click="$router.push('/')"></i>
+    <i class="iconfont icon-ffanhui-" @click="$router.replace('/layout')"></i>
   </div>
 
   <div class="jx3-pve">

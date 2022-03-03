@@ -2,9 +2,10 @@
  * @Description: 
  * @Author: wangzhen
  * @Date: 2021-02-24 15:59:23
- * @LastEditTime: 2022-03-01 16:20:51
+ * @LastEditTime: 2022-03-02 11:46:52
  * @LastEditors: wangzhen
 -->
+
 <template>
   <audio src="https://wz950116.bj.bcebos.com/public%2Fbg.mp3" loop="loop" autoplay="autoplay">您的浏览器不支持 audio 标签</audio>
   <div class="home">
@@ -15,7 +16,7 @@
         <div class="bg">
           <img src="https://bj.bcebos.com/v1/wz950116/public/jx3pvx.png" alt />
         </div>
-        <div class="button" @click="$router.push('/pvx')">点击进入</div>
+        <div class="button" @click="$router.replace('/layout/pvx')">点击进入</div>
       </div>
       <div class="module part2">
         <h2></h2>
@@ -23,7 +24,7 @@
         <div class="bg">
           <img src="https://bj.bcebos.com/v1/wz950116/public/jx3sl.png" alt />
         </div>
-        <div class="button" @click="$router.push('/sl')">点击进入</div>
+        <div class="button" @click="$router.replace('/layout/sl')">点击进入</div>
       </div>
       <div class="module part3">
         <h2></h2>
@@ -31,7 +32,7 @@
         <div class="bg">
           <img src="https://bj.bcebos.com/v1/wz950116/public/jx3pve.png" alt />
         </div>
-        <div class="button" @click="$router.push('/pve')">点击进入</div>
+        <div class="button" @click="$router.replace('/layout/pve')">点击进入</div>
       </div>
     </div>
   </div>
