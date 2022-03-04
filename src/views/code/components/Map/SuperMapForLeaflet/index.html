@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_2338664_3ims9vxileh.css">
+
+  <!-- leaflet -->
+  <link rel="stylesheet" href="<%= webpackConfig.output.publicPath %>leaflet/leaflet.css">
+  <script src="<%= webpackConfig.output.publicPath %>leaflet/leaflet.js"></script>
+  <link rel="stylesheet" href="<%= webpackConfig.output.publicPath %>leaflet/cluster/prunecluster.css">
+  <script src="<%= webpackConfig.output.publicPath %>leaflet/cluster/prunecluster.js"></script>
+  <!-- supermap -->
+  <link rel="stylesheet" href="<%= webpackConfig.output.publicPath %>leaflet/iclient-leaflet.min.css" />
+  <script type="text/javascript" src="<%= webpackConfig.output.publicPath %>leaflet/iclient-leaflet.js"></script>
+
+  <title></title>
+</head>
+
+<body>
+  <noscript>
+    <strong>We're sorry but qsh-enforce doesn't work properly without JavaScript
+      enabled. Please enable it to continue.</strong>
+  </noscript>
+  <div id="app"></div>
+
+  <!-- this.map = new MapContainer({
+    target: 'map_1',
+    center: position,
+    zoom: 12,
+    markerDisabled: true,
+    crs: window.L.CRS.TianDiTu_WGS84,
+    popup: 'checkDevice',
+    graphicSelect: (data) => {
+      console.log(data)
+    }
+  })
+  this.map.addPoints('normal', this.position) -->
+</body>
+
+</html>

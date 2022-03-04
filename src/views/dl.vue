@@ -88,7 +88,7 @@ const checkDetail = (data) => {
 #grid {
   display: flex;
   flex-wrap: wrap;
-  margin: 100px 0 20px;
+  margin: 30px 0 5px;
 }
 
 #grid li {

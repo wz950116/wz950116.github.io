@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: wangzhen
  * @Date: 2021-02-19 16:03:55
- * @LastEditTime: 2022-03-02 13:46:26
+ * @LastEditTime: 2022-03-04 16:02:24
  * @LastEditors: wangzhen
 -->
 
@@ -18,5 +18,6 @@
 html, body, #app {
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 </style>

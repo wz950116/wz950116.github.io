@@ -519,6 +519,7 @@ export function isObjectValueEqual(a, b) {
 }
 ```
 ## 本地存储
+* storage
 ```javascript
 export const storage = {
   get(key) {
@@ -533,6 +534,21 @@ export const storage = {
   },
   remove(key) {
     localStorage.removeItem(key);
+  }
+}
+```
+* cookie
+```javascript
+import Cookies from 'js-cookie'
+export const cookie = {
+  get(key) {
+    return Cookies.get(key)
+  },
+  set(key, value) {
+    return Cookies.set(key, value)
+  },
+  remove(key) {
+    Cookies.remove(key)
   }
 }
 ```

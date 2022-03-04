@@ -5,7 +5,7 @@
 
   <div class="jx3-pve">
     <el-row type="flex" justify="space-around" class="el-row">
-      <el-col :span="10" class="el-col-10">
+      <el-col :span="11">
         <div class="demo-image">
           <div class="source">
             <div class="demo-image__lazy dps_urls">
@@ -40,7 +40,7 @@
           </el-row>
         </div>
       </el-col>
-      <el-col :span="10" class="el-col-10">
+      <el-col :span="11">
         <div class="demo-video">
           <div class="source">
             <img id="video-poster" :src="state.videoPosterUrl" width="600" alt @load="videoPosterLoad" />
@@ -53,7 +53,6 @@
             <el-collapse-item v-for="item in state.fb_urls" :key="item.key" :name="item.code" :disabled="state.activeNames === item.code">
               <template #title>
                 <span class="video_title">{{ item.name }}</span>
-                <el-rate v-model="item.level" disabled></el-rate>
               </template>
               <div>{{ item.desc }}</div>
             </el-collapse-item>
@@ -64,9 +63,7 @@
 
     <el-dialog center fullscreen :title="state.dialogTitle" v-model="state.dialogVisible">
       <div class="text" v-html="state.roleCurrentInfo"></div>
-      <div class="more_shadow"></div>
       <el-pagination
-        small
         layout="prev, pager, next"
         :current-page="state.currentPage"
         :page-size="1"
@@ -151,9 +148,7 @@ const handleCurrentChange = (val) => {
     $('.el-dialog__body .text').scrollTop(0)
   })
 }
-// let emit = defineEmit(['click'])
 const openVideo = () => {
-  // emit('click')
   state.videoSourceUrl = `https://wz950116.bj.bcebos.com/jx3-pve%2F秘境%2F${state.currentVideo}.mp4`
   state.dialogVideoPlayer = true
 }
@@ -163,7 +158,6 @@ onMounted(() => {
     text: ''
   })
 
-  $('.el-carousel__arrow--left').attr('disabled', true)
   var winW = document.documentElement.clientWidth || document.body.clientWidth
   if (winW < 1440) {
     proxy.$message({
@@ -183,6 +177,84 @@ onMounted(() => {
 })
 </script>
 
-<style scoped type="text/css">
+<style scoped>
 @import '../assets/css/jx3-pve.css';
+</style>
+
+<style lang="scss">
+.jx3-pve {
+  .el-dialog {
+    background: url("https://wz950116.bj.bcebos.com/jx3-pve%2Fassets%2Fbg_new.jpg") no-repeat center !important;
+    background-size: cover !important;
+    overflow: hidden !important;
+  }
+  .el-dialog__header {
+    border-bottom: 1px solid #f1f1f1;
+    padding: 15px 20px !important;
+  }
+  .el-dialog__header .el-dialog__title {
+    font-size: 24px;
+  }
+  .el-dialog__body {
+    padding-top: 0 !important;
+  }
+  .el-dialog__body .text {
+    width: 100%;
+    height: calc(100vh - 140px);
+    overflow: auto;
+    font-size: 18px;
+    line-height: 24px;
+    padding-top: 10px;
+  }
+  .el-dialog__body .text::-webkit-scrollbar-track-piece {
+    background-color: transparent;
+  }
+  .el-dialog__body .text::-webkit-scrollbar {
+    width: 9px;
+    height: 9px;
+  }
+  .el-dialog__body .text::-webkit-scrollbar-thumb {
+    background-color: #98e3d6;
+    background-clip: padding-box;
+    min-height: 28px;
+    border-radius: 10px;
+  }
+  .el-dialog__body .text::-webkit-scrollbar-thumb:hover {
+    background-color: #6edbc8;
+  }
+  .el-dialog__body .text p {
+    text-indent: 2em;
+  }
+  .el-dialog__body .el-pagination {
+    position: fixed;
+    bottom: 13px;
+    right: 20px;
+    z-index: 999;
+  }
+  .el-dialog__headerbtn .el-dialog__close {
+    color: #f56c6c !important;
+    font-weight: 700 !important;
+  }
+
+  .el-image-viewer__mask {
+    opacity: 1 !important;
+  }
+
+  .el-message {
+    padding-top: 18px;
+  }
+  .el-message__icon {
+    color: transparent !important;
+  }
+  .el-message__icon, .el-message__content {
+    font-size: 18px !important;
+  }
+
+  .el-pagination button {
+    background: transparent !important;
+  }
+  .el-pagination .el-pager li {
+    background: transparent !important;
+  }
+}
 </style>
