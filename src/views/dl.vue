@@ -38,7 +38,7 @@ const state = reactive({
 })
 // 打开查看大图
 const checkDetail = (data) => {
-  state.previewSrcList = [data.src]
+  state.previewSrcList = data.src instanceof Array ? data.src : [data.src]
 }
 </script>
 
