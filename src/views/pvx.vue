@@ -14,8 +14,8 @@
   <div class="container">
     <div class="box">
       <div class="banner-img banner-1" @click="mountsClick"></div>
-      <div class="banner-img banner-2" @click="$router.push('/layout/qy')"></div>
-      <div class="banner-img banner-3" @click="$router.push('/layout/dl')"></div>
+      <div class="banner-img banner-2" @click="$router.push('/qy')"></div>
+      <div class="banner-img banner-3" @click="$router.push('/dl')"></div>
       <div class="banner-img banner-4"></div>
       <div class="banner-img banner-5"></div>
     </div>

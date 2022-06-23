@@ -16,7 +16,7 @@
         <div class="bg">
           <img src="https://bj.bcebos.com/v1/wz950116/public/jx3pvx.png" alt />
         </div>
-        <div class="button" @click="$router.replace('/layout/pvx')">点击进入</div>
+        <div class="button" @click="$router.replace('/pvx')">点击进入</div>
       </div>
       <div class="module part2">
         <h2></h2>
@@ -24,7 +24,7 @@
         <div class="bg">
           <img src="https://bj.bcebos.com/v1/wz950116/public/jx3sl.png" alt />
         </div>
-        <div class="button" @click="$router.replace('/layout/sl')">点击进入</div>
+        <div class="button" @click="$router.replace('/sl')">点击进入</div>
       </div>
       <div class="module part3">
         <h2></h2>
@@ -32,7 +32,7 @@
         <div class="bg">
           <img src="https://bj.bcebos.com/v1/wz950116/public/jx3pve.png" alt />
         </div>
-        <div class="button" @click="$router.replace('/layout/pve')">点击进入</div>
+        <div class="button" @click="$router.replace('/pve')">点击进入</div>
       </div>
     </div>
   </div>

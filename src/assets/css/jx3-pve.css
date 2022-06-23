@@ -22,7 +22,7 @@
 .jx3-pve {
     min-width: 1420px;
     height: 100%;
-    padding: 70px 0;
+    padding-top: 70px;
     box-sizing: border-box;
     background: url("https://wz950116.bj.bcebos.com/jx3-pve%2Fassets%2Fbg.jpg") no-repeat center top;
     background-attachment: fixed;
@@ -33,17 +33,37 @@
     justify-content: space-around;
 }
 .demo-image {
+    position: relative;
     width: 100%;
-    min-width: 650px;
-    border: 1px solid #a39171;
-    border-radius: 3px;
-    margin-bottom: 20px;
 }
-.demo-image .source {
-    padding: 24px;
+.year-tabs {
+    position: absolute;
+    left: 20px;
+    top: -20px;
+    display: flex;
+    z-index: 10;
+}
+.year-tabs .year-tab {
+    width: 39px;
+    height: 150px;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 24px;
+    background: #ffffff url(https://bj.bcebos.com/v1/wz950116/jx3-pve/assets/year_tab.png) center bottom no-repeat;
+    background-size: contain;
+    margin-right: 20px;
+    border: 3px solid #c2a060;
+    cursor: pointer;
+    user-select: none;
+}
+.year-tabs .year-tab:nth-child(even) {
+    margin-top: 20px;
+}
+.year-tabs .year-tab-active {
+    color: #EA644A;
 }
 .demo-image__lazy {
-    height: 400px;
+    height: calc(100vh - 140px);
     overflow-y: auto;
 }
 .demo-image__lazy::-webkit-scrollbar {
@@ -69,45 +89,93 @@
 .el-image-viewer__wrapper .el-icon-circle-close {
     color: #f56c6c;
 }
+.prview-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
 .jx3_roles {
     padding: 20px;
     padding-bottom: 0;
 }
-.jx3_roles .el-col-6 {
+.jx3_roles .el-col {
     text-align: center;
     margin-bottom: 20px;
 }
-.jx3_roles .el-col-6 .block .el-avatar {
+.jx3_roles .el-col .block .el-avatar {
     width: 60px;
     height: 60px;
     transition: all 0.2s ease-in-out;
     cursor: pointer;
 }
-.jx3_roles .el-col-6 .block .el-avatar img {
+.jx3_roles .el-col .block .el-avatar img {
     width: 60px;
     height: 60px;
 }
-.jx3_roles .el-col-6 .block .el-avatar:hover {
+.jx3_roles .el-col .block .el-avatar:hover {
     transform: rotate(70deg);
 }
-.jx3_roles .el-col-6 .sub-title {
+.jx3_roles .el-col .sub-title {
     line-height: 28px;
     color: #ffffff;
 }
 
-.demo-video {
+.video-dialog {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 1988;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+}
+.video-dialog .video-player-dialog-close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    display: block;
+    width: 44px;
+    height: 44px;
+    line-height: 44px;
+    font-size: 0;
+    text-align: center;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAAmUlEQVR42uWY0QqAIAxF9/8/XURQD6bpvNfzYCAFutvBtrkVx30FON4HCuC6BwjyvK86sQrgC2IFSKHfvdAF0IJwgFT10oYqgB4IBcivvUxoxk4umFkfJuEhYMcWD386tbOlfEfp9ekoUsX/VBjbE9EWO4H7BB4deJ7AMyZ+duCnKF5P4JUVXmPi1Tbed+AdGN6L4l05/n/iBMYc97Fe/vBDAAAAAElFTkSuQmCC);
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform ease-in-out 0.3s, -webkit-transform ease-in-out 0.3s;
+    z-index: 9999;
+}
+.video-dialog .video-player .video-player-dialog-close {
+    right: -90px;
+    top: -60px;
+}
+.video-dialog .video-player-dialog-close:hover {
+    transform: rotate(180deg);
+}
+/* 视频列表 */
+.video-dialog .demo-video {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1992;
+    display: flex;
+    width: 100%;
     min-height: 600px;
 }
-.demo-video .source {
+.video-dialog .demo-video .source {
     position: relative;
-    padding: 0 24px 24px;
+    display: flex;
+    align-items: center;
     width: 600px;
-    height: 337px;
+    height: 100%;
 }
-.demo-video .source .index-clickArea-exCZ0 {
+.video-dialog .demo-video .source .index-clickArea-exCZ0 {
     cursor: pointer;
 }
-.demo-video .source .index-clickArea-exCZ0 .index-playBtnBorder-3opK4 {
+.video-dialog .demo-video .source .index-clickArea-exCZ0 .index-playBtnBorder-3opK4 {
     background-image: url("https://wz950116.bj.bcebos.com/jx3-pve%2Fassets%2Fvideo_player_outline.png");
     position: absolute;
     width: 138px;
@@ -121,7 +189,7 @@
     background-repeat: no-repeat;
     animation: index-rotate-1-xBg 2s linear infinite;
 }
-.demo-video .source .index-clickArea-exCZ0 .index-playBtn-4hA5j {
+.video-dialog .demo-video .source .index-clickArea-exCZ0 .index-playBtn-4hA5j {
     background-image: url("https://wz950116.bj.bcebos.com/jx3-pve%2Fassets%2Fplay-icon-97825657.png.webp");
     position: absolute;
     width: 138px;
@@ -143,14 +211,20 @@
     }
 }
 
-.demo-video :deep(.el-collapse) {
+.video-dialog .demo-video :deep(.el-collapse) {
+    height: 90vh;
+    margin: 20px 0;
+    overflow-y: auto;
     border: none;
 }
-.demo-video :deep(.el-collapse .el-collapse-item__header) {
+.video-dialog .demo-video :deep(.el-collapse)::-webkit-scrollbar {
+    display: none;
+}
+.video-dialog .demo-video :deep(.el-collapse .el-collapse-item__header) {
     background-color: transparent !important;
     border-bottom: none;
 }
-.demo-video :deep(.el-collapse .video_title) {
+.video-dialog .demo-video :deep(.el-collapse .video_title) {
     display: inline-block;
     height: 20px;
     line-height: 20px;
@@ -158,28 +232,19 @@
     font-size: 22px;
     color: #bd0c0c;
 }
-.demo-video :deep(.el-collapse div) {
+.video-dialog .demo-video :deep(.el-collapse div) {
     font-size: 18px;
 }
-.demo-video :deep(.el-collapse .el-collapse-item__arrow.el-icon-arrow-right) {
+.video-dialog .demo-video :deep(.el-collapse .el-collapse-item__arrow.el-icon-arrow-right) {
     color: #ffffff;
 }
-.demo-video :deep(.el-collapse .el-collapse-item__wrap) {
+.video-dialog .demo-video :deep(.el-collapse .el-collapse-item__wrap) {
     background-color: transparent !important;
 }
-.demo-video :deep(.el-collapse .el-collapse-item__wrap .el-collapse-item__content) {
+.video-dialog .demo-video :deep(.el-collapse .el-collapse-item__wrap .el-collapse-item__content) {
     color: #ffffff !important;
 }
-
-.video-dialog {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    z-index: 1988;
-    top: 0px;
-    left: 0px;
-    overflow: hidden;
-}
+/* 视频播放 */
 .video-dialog .video-player {
     position: absolute;
     left: 50%;
@@ -191,27 +256,8 @@
 .video-dialog .video-player video {
     outline: none;
 }
-.video-dialog .video-player .video-player-dialog-close {
-    position: absolute;
-    right: -90px;
-    top: -60px;
-    display: block;
-    width: 44px;
-    height: 44px;
-    line-height: 44px;
-    font-size: 0;
-    text-align: center;
-    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAAmUlEQVR42uWY0QqAIAxF9/8/XURQD6bpvNfzYCAFutvBtrkVx30FON4HCuC6BwjyvK86sQrgC2IFSKHfvdAF0IJwgFT10oYqgB4IBcivvUxoxk4umFkfJuEhYMcWD386tbOlfEfp9ekoUsX/VBjbE9EWO4H7BB4deJ7AMyZ+duCnKF5P4JUVXmPi1Tbed+AdGN6L4l05/n/iBMYc97Fe/vBDAAAAAElFTkSuQmCC);
-    background-position: center;
-    background-repeat: no-repeat;
-    transition: transform ease-in-out 0.3s, -webkit-transform ease-in-out 0.3s;
-}
-.video-dialog .video-player .video-player-dialog-close:hover {
-    transform: rotate(180deg);
-}
 .video-dialog .mask {
     height: 100%;
     background: rgb(0, 0, 0);
-    opacity: 0.7;
     z-index: 1991;
 }

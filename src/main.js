@@ -20,22 +20,22 @@ const router = createRouter({
     children: [{
       path: '',
       component: () => import(/* webpackChunkName: "index" */ './views/index.vue')
-    }, {
-      path: 'sl',
-      component: () => import(/* webpackChunkName: "sl" */ './views/sl.vue')
-    }, {
-      path: 'pvx',
-      component: () => import(/* webpackChunkName: "pvx" */ './views/pvx.vue')
-    }, {
-      path: 'pve',
-      component: () => import(/* webpackChunkName: "pve" */ './views/pve.vue')
-    }, {
-      path: 'qy',
-      component: () => import(/* webpackChunkName: "qy" */ './views/qy.vue')
-    }, {
-      path: 'dl',
-      component: () => import(/* webpackChunkName: "dl" */ './views/dl.vue')
     }]
+  }, {
+    path: '/sl',
+    component: () => import(/* webpackChunkName: "sl" */ './views/sl.vue')
+  }, {
+    path: '/pvx',
+    component: () => import(/* webpackChunkName: "pvx" */ './views/pvx.vue')
+  }, {
+    path: '/pve',
+    component: () => import(/* webpackChunkName: "pve" */ './views/pve.vue')
+  }, {
+    path: '/qy',
+    component: () => import(/* webpackChunkName: "qy" */ './views/qy.vue')
+  }, {
+    path: '/dl',
+    component: () => import(/* webpackChunkName: "dl" */ './views/dl.vue')
   }, {
     path: '/code',
     component: () => import(/* webpackChunkName: "code" */ './views/code/utils.vue')
