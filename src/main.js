@@ -37,6 +37,9 @@ const router = createRouter({
     path: '/dl',
     component: () => import(/* webpackChunkName: "dl" */ './views/dl.vue')
   }, {
+    path: '/printscreen',
+    component: () => import(/* webpackChunkName: "dl" */ './views/printscreen.vue')
+  }, {
     path: '/code',
     component: () => import(/* webpackChunkName: "code" */ './views/code/utils.vue')
   }]

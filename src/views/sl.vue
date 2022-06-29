@@ -117,9 +117,6 @@ const downloadImage = () => {
 }
 </script>
 
-<style type="text/css">
-</style>
-
 <style scoped>
 @font-face {
   font-family: 'artfont';
