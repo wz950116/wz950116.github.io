@@ -13,11 +13,11 @@
           </div>
 
           <div class="next" @click="swapFirstLast(true)">
-            <img src="https://bj.bcebos.com/v1/wz950116/jx3-pvx/单人/assets/icon_next.png" alt="" />
+            <img src="https://bj.bcebos.com/v1/wz950116/jx3-pvx/截图/assets/icon_next.png" alt="" />
           </div>
 
           <div class="prev" @click="swapFirstLast(false)">
-            <img src="https://bj.bcebos.com/v1/wz950116/jx3-pvx/单人/assets/icon_prev.png" alt="" />
+            <img src="https://bj.bcebos.com/v1/wz950116/jx3-pvx/截图/assets/icon_prev.png" alt="" />
           </div>
         </div>
         <!-- 视频 -->
@@ -52,25 +52,25 @@ const state = reactive({
   timer: null,
   bgIndex: 0,
   bgImgs: [
-    'https://bj.bcebos.com/v1/wz950116/jx3-pvx/单人/assets/index-layer-46-706af0a7.png.webp',
-    'https://bj.bcebos.com/v1/wz950116/jx3-pvx/单人/assets/bg-20db2c28.jpg.webp',
-    'https://bj.bcebos.com/v1/wz950116/jx3-pvx/单人/assets/bg-fff72bf0.jpg.webp'
+    'https://bj.bcebos.com/v1/wz950116/jx3-pvx/截图/assets/index-layer-46-706af0a7.png.webp',
+    'https://bj.bcebos.com/v1/wz950116/jx3-pvx/截图/assets/bg-20db2c28.jpg.webp',
+    'https://bj.bcebos.com/v1/wz950116/jx3-pvx/截图/assets/bg-fff72bf0.jpg.webp'
   ],
   list: [
-    'https://bj.bcebos.com/v1/wz950116/jx3-pvx/单人/无上正等正觉/thumbnail/2022-06-18_23-26-30-000.jpg',
-    'https://bj.bcebos.com/v1/wz950116/jx3-pvx/单人/无上正等正觉/thumbnail/2022-05-30_00-26-43-000.jpg',
-    'https://bj.bcebos.com/v1/wz950116/jx3-pvx/单人/无上正等正觉/thumbnail/JX3 Online Super-Resolution 2022.05.29 - 23.48.37.73.jpg',
-    'https://bj.bcebos.com/v1/wz950116/jx3-pvx/单人/无上正等正觉/thumbnail/JX3 Online Super-Resolution 2022.05.30 - 00.02.14.35.jpg',
-    'https://bj.bcebos.com/v1/wz950116/jx3-pvx/单人/无上正等正觉/thumbnail/JX3 Online Super-Resolution 2022.05.30 - 00.16.25.37.jpg',
-    'https://bj.bcebos.com/v1/wz950116/jx3-pvx/单人/无上正等正觉/thumbnail/JX3 Online Super-Resolution 2022.05.30 - 00.25.04.16.jpg',
-    'https://bj.bcebos.com/v1/wz950116/jx3-pvx/单人/无上正等正觉/thumbnail/JX3 Online Super-Resolution 2022.05.30 - 00.31.30.92.jpg',
-    'https://bj.bcebos.com/v1/wz950116/jx3-pvx/单人/无上正等正觉/thumbnail/JX3 Online Super-Resolution 2022.05.30 - 00.37.24.59.jpg',
-    'https://bj.bcebos.com/v1/wz950116/jx3-pvx/单人/无上正等正觉/thumbnail/JX3 Online Super-Resolution 2022.05.30 - 00.47.56.27.jpg',
-    'https://bj.bcebos.com/v1/wz950116/jx3-pvx/单人/无上正等正觉/thumbnail/JX3 Online Super-Resolution 2022.06.03 - 23.02.54.52.jpg',
-    'https://bj.bcebos.com/v1/wz950116/jx3-pvx/单人/无上正等正觉/thumbnail/JX3 Online Super-Resolution 2022.06.27 - 23.52.47.38.jpg',
-    'https://bj.bcebos.com/v1/wz950116/jx3-pvx/单人/无上正等正觉/thumbnail/JX3 Online Super-Resolution 2022.06.27 - 23.55.47.26.jpg',
-    'https://bj.bcebos.com/v1/wz950116/jx3-pvx/单人/无上正等正觉/thumbnail/JX3 Online Super-Resolution 2022.06.28 - 00.12.07.61.jpg',
-    'https://bj.bcebos.com/v1/wz950116/jx3-pvx/单人/无上正等正觉/thumbnail/JX3 Online Super-Resolution 2022.06.28 - 00.14.34.21.jpg'
+    'https://bj.bcebos.com/v1/wz950116/jx3-pvx/截图/无上正等正觉/thumbnail/2022-06-18_23-26-30-000.jpg',
+    'https://bj.bcebos.com/v1/wz950116/jx3-pvx/截图/无上正等正觉/thumbnail/2022-05-30_00-26-43-000.jpg',
+    'https://bj.bcebos.com/v1/wz950116/jx3-pvx/截图/无上正等正觉/thumbnail/JX3 Online Super-Resolution 2022.05.29 - 23.48.37.73.jpg',
+    'https://bj.bcebos.com/v1/wz950116/jx3-pvx/截图/无上正等正觉/thumbnail/JX3 Online Super-Resolution 2022.05.30 - 00.02.14.35.jpg',
+    'https://bj.bcebos.com/v1/wz950116/jx3-pvx/截图/无上正等正觉/thumbnail/JX3 Online Super-Resolution 2022.05.30 - 00.16.25.37.jpg',
+    'https://bj.bcebos.com/v1/wz950116/jx3-pvx/截图/无上正等正觉/thumbnail/JX3 Online Super-Resolution 2022.05.30 - 00.25.04.16.jpg',
+    'https://bj.bcebos.com/v1/wz950116/jx3-pvx/截图/无上正等正觉/thumbnail/JX3 Online Super-Resolution 2022.05.30 - 00.31.30.92.jpg',
+    'https://bj.bcebos.com/v1/wz950116/jx3-pvx/截图/无上正等正觉/thumbnail/JX3 Online Super-Resolution 2022.05.30 - 00.37.24.59.jpg',
+    'https://bj.bcebos.com/v1/wz950116/jx3-pvx/截图/无上正等正觉/thumbnail/JX3 Online Super-Resolution 2022.05.30 - 00.47.56.27.jpg',
+    'https://bj.bcebos.com/v1/wz950116/jx3-pvx/截图/无上正等正觉/thumbnail/JX3 Online Super-Resolution 2022.06.03 - 23.02.54.52.jpg',
+    'https://bj.bcebos.com/v1/wz950116/jx3-pvx/截图/无上正等正觉/thumbnail/JX3 Online Super-Resolution 2022.06.27 - 23.52.47.38.jpg',
+    'https://bj.bcebos.com/v1/wz950116/jx3-pvx/截图/无上正等正觉/thumbnail/JX3 Online Super-Resolution 2022.06.27 - 23.55.47.26.jpg',
+    'https://bj.bcebos.com/v1/wz950116/jx3-pvx/截图/无上正等正觉/thumbnail/JX3 Online Super-Resolution 2022.06.28 - 00.12.07.61.jpg',
+    'https://bj.bcebos.com/v1/wz950116/jx3-pvx/截图/无上正等正觉/thumbnail/JX3 Online Super-Resolution 2022.06.28 - 00.14.34.21.jpg'
   ]
 })
 
@@ -87,7 +87,7 @@ const showDetail = (src) => {
 }
 
 const openVideo = () => {
-  state.videoSourceUrl = `https://bj.bcebos.com/v1/wz950116/jx3-pvx/单人/无上正等正觉/剑网3 - 梦江南 @ 电信五区(点卡区) 2022-06-12 23-39-29.mp4`
+  state.videoSourceUrl = `https://bj.bcebos.com/v1/wz950116/jx3-pvx/截图/无上正等正觉/剑网3 - 梦江南 @ 电信五区(点卡区) 2022-06-12 23-39-29.mp4`
   state.dialogVideoPlayer = true
 }
 
@@ -205,15 +205,15 @@ onUnmounted(() => {
   margin: 0 auto;
   transition: all 2s;
   &.bg-0 {
-    background: url('https://bj.bcebos.com/v1/wz950116/jx3-pvx/单人/assets/index-layer-46-706af0a7.png.webp') no-repeat center;
+    background: url('https://bj.bcebos.com/v1/wz950116/jx3-pvx/截图/assets/index-layer-46-706af0a7.png.webp') no-repeat center;
     background-size: cover;
   }
   &.bg-1 {
-    background: url('https://bj.bcebos.com/v1/wz950116/jx3-pvx/单人/assets/bg-20db2c28.jpg.webp') no-repeat center;
+    background: url('https://bj.bcebos.com/v1/wz950116/jx3-pvx/截图/assets/bg-20db2c28.jpg.webp') no-repeat center;
     background-size: cover;
   }
   &.bg-2 {
-    background: url('https://bj.bcebos.com/v1/wz950116/jx3-pvx/单人/assets/bg-fff72bf0.jpg.webp') no-repeat center;
+    background: url('https://bj.bcebos.com/v1/wz950116/jx3-pvx/截图/assets/bg-fff72bf0.jpg.webp') no-repeat center;
     background-size: cover;
   }
   .grid_8 {
@@ -270,7 +270,7 @@ onUnmounted(() => {
       .rotate {
         width: 176px;
         height: 176px;
-        background: url('https://bj.bcebos.com/v1/wz950116/jx3-pvx/单人/assets/annals_rotate_6666b73.png') no-repeat center / 100%;
+        background: url('https://bj.bcebos.com/v1/wz950116/jx3-pvx/截图/assets/annals_rotate_6666b73.png') no-repeat center / 100%;
         position: absolute;
         left: 50%;
         top: 50%;

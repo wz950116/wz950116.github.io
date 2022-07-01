@@ -40,6 +40,9 @@ const router = createRouter({
     path: '/printscreen',
     component: () => import(/* webpackChunkName: "dl" */ './views/printscreen.vue')
   }, {
+    path: '/excel',
+    component: () => import(/* webpackChunkName: "code" */ './views/excel.vue')
+  }, {
     path: '/code',
     component: () => import(/* webpackChunkName: "code" */ './views/code/utils.vue')
   }]

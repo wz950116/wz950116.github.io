@@ -97,17 +97,17 @@ html, body {
     background-size: cover;
 }
 .banner-2 {
-    background: #000000 url("https://bj.bcebos.com/v1/wz950116/jx3-pvx/奇遇/assets/summary.png") no-repeat center;
+    background: url("https://bj.bcebos.com/wz950116/jx3-pvx/截图/assets/JX3 Online Super-Resolution 2022.06.28 - 00.12.07.61.jpg") no-repeat center;
+    background-size: cover;
 }
 .banner-3 {
+    background: #000000 url("https://bj.bcebos.com/v1/wz950116/jx3-pvx/奇遇/assets/summary.png") no-repeat center;
+}
+.banner-4 {
     background: #000000 url("https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/assets/renxiaheshan2.png") no-repeat center;
     background-size: cover;
 }
-.banner-4 {
-    background: url("https://wz950116.bj.bcebos.com/jx3-pvx%2F%E5%8D%95%E4%BA%BA%2F%E9%81%93%E9%95%BF%2F2021-01-14_23-37-07-000.jpg") no-repeat center;
-    background-size: cover;
-}
 .banner-5 {
-    background: url("https://wz950116.bj.bcebos.com/jx3-pvx%2F%E5%90%88%E5%BD%B1%2F2020-08-28_22-29-51-000.jpg") no-repeat center;
+    background: #000000;
     background-size: cover;
 }
