@@ -222,7 +222,7 @@ onUnmounted(() => {
     max-width: 1920px;
     height: 100vh;
     margin: 0 auto;
-    background: url('https://bj.bcebos.com/v1/wz950116/jx3-pvx/%E5%8D%95%E4%BA%BA/assets/index-layer-38-f6c8e05e.png.webp') no-repeat top center;
+    background: url('https://bj.bcebos.com/v1/wz950116/jx3-pvx/截图/assets/index-layer-38-f6c8e05e.png.webp') no-repeat top center;
     background-size: contain;
     margin-top: 30px;
     .title {
