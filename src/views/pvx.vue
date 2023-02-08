@@ -52,7 +52,7 @@
 <script setup>
 import { onMounted } from 'vue';
 const mountsClick = () => {
-  window.open('http://wz950116.com/mounts/index.html');
+  window.open('/mounts/index.html');
 };
 onMounted(() => {
   // 轮播

@@ -11,24 +11,21 @@
   <div class="home">
     <div class="app">
       <div class="module part1">
-        <h2></h2>
-        <span>休闲向</span>
+        <div class="tl">休闲向</div>
         <div class="bg">
           <img src="https://bj.bcebos.com/v1/wz950116/public/jx3pvx.png" alt />
         </div>
         <div class="button" @click="$router.replace('/pvx')">点击进入</div>
       </div>
       <div class="module part2">
-        <h2></h2>
-        <span>试炼之地</span>
+        <div class="tl">试炼之地</div>
         <div class="bg">
           <img src="https://bj.bcebos.com/v1/wz950116/public/jx3sl.png" alt />
         </div>
         <div class="button" @click="$router.replace('/sl')">点击进入</div>
       </div>
       <div class="module part3">
-        <h2></h2>
-        <span>副本向</span>
+        <div class="tl">副本向</div>
         <div class="bg">
           <img src="https://bj.bcebos.com/v1/wz950116/public/jx3pve.png" alt />
         </div>

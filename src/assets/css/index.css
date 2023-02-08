@@ -112,25 +112,18 @@ body {
     background-size: contain;
     opacity: .8;
 }
-.module h2 {
-    float: left;
-    width: 70px;
-    height: 45px;
-    margin: 0 10px 0 70px;
-    vertical-align: top;
-}
-.module span {
-    float: left;
+.module .tl {
     font-size: 28px;
     vertical-align: top;
     color: #666666;
     user-select: none;
+    text-align: center;
 }
 .module .bg {
     width: 100%;
     height: 250px;
     line-height: 250px;
-    margin: 60px auto 20px;
+    margin: 10px auto 20px;
     text-align: center;
 }
 .module .bg img {

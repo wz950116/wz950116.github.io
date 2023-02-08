@@ -16,6 +16,7 @@ const markdownRenderer = require('markdown-it')();
 
 // https://vitejs.dev/config/
 export default defineConfig({
+	// base: '/v1/wz950116/dist/',
 	resolve: {
 		alias: {
 			'@': path.resolve(__dirname, 'src'),
