@@ -4,7 +4,7 @@
 			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2023-01-31_17-32-01-000.jpg",
 			"date": "2023-01-31_17-32-01-000",
 			"origin": "秘境西津渡",
-			"type": "装备",
+			"type": "其他",
 			"label": "墨龙坠"
 		},
 		{
@@ -12,16 +12,16 @@
 				"https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2023-01-12_20-49-05-000.jpg",
 				"https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2023-01-02_22-27-57-000.jpg"
 			],
-			"date": "2023-01-12_20-49-05-000",
+			"date": "2023-01-02_22-27-57-000",
 			"origin": "秘境百战异闻录",
-			"type": "特效",
+			"type": "其他",
 			"label": "武技殊影图"
 		},
 		{
 			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2023-01-12_00-16-29-000.jpg",
 			"date": "2023-01-12_00-16-29-000",
 			"origin": "活动龙门飞剑",
-			"type": "装备",
+			"type": "其他",
 			"label": "真・龙门飞剑"
 		},
 		{
@@ -92,7 +92,7 @@
 				"https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2022-10-28_02-03-18-000.jpg",
 				"https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2022-07-23_14-36-20-000.jpg"
 			],
-			"date": "2022-10-28_02-03-18-000",
+			"date": "2022-07-23_14-36-20-000",
 			"origin": "秘境河阳之战",
 			"type": "玩具",
 			"label": "云鹤报捷"
@@ -778,8 +778,8 @@
 		},
 		{
 			"src": [
-				"https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2019-08-19_20-13-59-000.png",
-				"https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2021-08-07_21-56-40-000.jpg"
+				"https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2021-08-07_21-56-40-000.jpg",
+				"https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2019-08-19_20-13-59-000.png"
 			],
 			"date": "2019-08-19_20-13-59-000",
 			"origin": "秘境狼神殿",
@@ -792,13 +792,6 @@
 			"origin": "秘境巨冥湾",
 			"type": "装备",
 			"label": "五相斩"
-		},
-		{
-			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2019-07-22_18-58-05-000.png",
-			"date": "2019-07-22_18-58-05-000",
-			"origin": "任务",
-			"type": "玄晶",
-			"label": "未锻打的归海玄晶陨铁"
 		},
 		{
 			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2019-07-11_20-13-37-000.png",
@@ -815,21 +808,12 @@
 			"label": "天怒惊霆戟"
 		},
 		{
-			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2019-06-02_20-15-29-000.jpg",
-			"date": "2019-06-02_20-15-29-000",
-			"origin": "秘境荒血路",
-			"type": "玄晶",
-			"label": "归墟玄晶"
-		},
-		{
-			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2019-05-08_22-27-33-000.png",
-			"date": "2019-05-08_22-27-33-000",
-			"origin": "秘境荒血路",
-			"type": "玄晶",
-			"label": "归墟玄晶"
-		},
-		{
-			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2019-05-08_21-38-27-000.png",
+			"src": [
+				"https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2019-06-02_20-15-29-000.jpg",
+				"https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2019-07-22_18-58-05-000.png",
+				"https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2019-05-08_22-27-33-000.png",
+				"https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2019-05-08_21-38-27-000.png"
+			],
 			"date": "2019-05-08_21-38-27-000",
 			"origin": "秘境荒血路",
 			"type": "玄晶",
@@ -867,13 +851,6 @@
 			"label": "因花生"
 		},
 		{
-			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2018-10-21_14-27-22-000.png",
-			"date": "2018-10-21_14-27-22-000",
-			"origin": "秘境燕然峰",
-			"type": "玄晶",
-			"label": "醉月玄晶"
-		},
-		{
 			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2018-10-14_20-14-36-000.png",
 			"date": "2018-10-14_20-14-36-000",
 			"origin": "秘境会战唐门",
@@ -902,114 +879,43 @@
 			"label": "庭湘坠"
 		},
 		{
-			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2018-04-22_22-12-46-000.jpg",
-			"date": "2018-04-22_22-12-46-000",
-			"origin": "秘境燕然峰",
+			"src": [
+				"https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2018-10-21_14-27-22-000.png",
+				"https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2018-04-22_22-12-46-000.jpg",
+				"https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2018-04-11_20-26-57-000.png",
+				"https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2018-04-10_21-48-07-000.png",
+				"https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2017-12-04_21-41-16-000.png",
+				"https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/14.jpg",
+				"https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/13.jpg",
+				"https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/12.jpg",
+				"https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/15.jpg",
+				"https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/11.jpg",
+				"https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/10.jpg"
+			],
+			"origin": "秘境仙侣庭院、秘境千雷殿、秘境燕然峰",
 			"type": "玄晶",
 			"label": "醉月玄晶"
 		},
 		{
-			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2018-04-11_20-26-57-000.png",
-			"date": "2018-04-11_20-26-57-000",
-			"origin": "任务",
-			"type": "玄晶",
-			"label": "未锻打的星月玄晶陨铁"
-		},
-		{
-			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2018-04-10_21-48-07-000.png",
-			"date": "2018-04-10_21-48-07-000",
-			"origin": "秘境燕然峰",
-			"type": "玄晶",
-			"label": "醉月玄晶"
-		},
-		{
-			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2017-12-04_21-41-16-000.png",
-			"date": "2017-12-04_21-41-16-000",
-			"origin": "秘境千雷殿",
-			"type": "玄晶",
-			"label": "醉月玄晶"
-		},
-		{
-			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/14.jpg",
-			"origin": "秘境花月别院",
-			"type": "玄晶",
-			"label": "醉月玄晶"
-		},
-		{
-			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/13.jpg",
-			"origin": "秘境花月别院",
-			"type": "玄晶",
-			"label": "醉月玄晶"
-		},
-		{
-			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/12.jpg",
-			"origin": "秘境花月别院",
-			"type": "玄晶",
-			"label": "醉月玄晶"
-		},
-		{
-			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/15.jpg",
-			"origin": "秘境花月别院",
-			"type": "玄晶",
-			"label": "醉月玄晶"
-		},
-		{
-			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/11.jpg",
-			"origin": "秘境花月别院",
-			"type": "玄晶",
-			"label": "醉月玄晶"
-		},
-		{
-			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/10.jpg",
-			"origin": "秘境仙侣庭院",
-			"type": "玄晶",
-			"label": "醉月玄晶"
-		},
-		{
-			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/9.jpg",
-			"origin": "秘境逐虎驱狼",
+			"src": [
+				"https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/9.jpg",
+				"https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/7-1.png",
+				"https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/8.jpg",
+				"https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/7.jpg", 
+				"https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/6.jpg",
+				"https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/5.jpg"
+			],
+			"origin": "秘境大明宫、秘境秦皇陵、秘境逐虎驱狼",
 			"type": "玄晶",
 			"label": "沉沙玄晶"
 		},
 		{
-			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/8.jpg",
-			"origin": "秘境逐虎驱狼",
-			"type": "玄晶",
-			"label": "沉沙玄晶"
-		},
-		{
-			"src": ["https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/7.jpg", "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/7-1.png"],
-			"origin": "秘境逐虎驱狼",
-			"type": "玄晶",
-			"label": "沉沙玄晶"
-		},
-		{
-			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/6.jpg",
-			"origin": "秘境秦皇陵",
-			"type": "玄晶",
-			"label": "沉沙玄晶"
-		},
-		{
-			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/5.jpg",
-			"origin": "秘境大明宫",
-			"type": "玄晶",
-			"label": "沉沙玄晶"
-		},
-		{
-			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/4.jpg",
-			"origin": "秘境南诏皇宫",
-			"type": "玄晶",
-			"label": "化玉玄晶"
-		},
-		{
-			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/1.jpg",
-			"origin": "秘境南诏皇宫",
-			"type": "玄晶",
-			"label": "化玉玄晶"
-		},
-		{
-			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2.jpg",
-			"origin": "秘境烛龙殿",
+			"src": [
+				"https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/4.jpg",
+				"https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/1.jpg",
+				"https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2.jpg"
+			],
+			"origin": "秘境烛龙殿、秘境南诏皇宫",
 			"type": "玄晶",
 			"label": "化玉玄晶"
 		},
