@@ -64,7 +64,6 @@ const state = reactive({
     'https://bj.bcebos.com/v1/wz950116/jx3-pvx/截图/无上正等正觉/thumbnail/JX3 Online Super-Resolution 2022.05.30 - 00.16.25.37.jpg',
     'https://bj.bcebos.com/v1/wz950116/jx3-pvx/截图/无上正等正觉/thumbnail/JX3 Online Super-Resolution 2022.05.30 - 00.25.04.16.jpg',
     'https://bj.bcebos.com/v1/wz950116/jx3-pvx/截图/无上正等正觉/thumbnail/JX3 Online Super-Resolution 2022.05.30 - 00.31.30.92.jpg',
-    'https://bj.bcebos.com/v1/wz950116/jx3-pvx/截图/无上正等正觉/thumbnail/JX3 Online Super-Resolution 2022.05.30 - 00.37.24.59.jpg',
     'https://bj.bcebos.com/v1/wz950116/jx3-pvx/截图/无上正等正觉/thumbnail/JX3 Online Super-Resolution 2022.05.30 - 00.47.56.27.jpg',
     'https://bj.bcebos.com/v1/wz950116/jx3-pvx/截图/无上正等正觉/thumbnail/JX3 Online Super-Resolution 2022.06.03 - 23.02.54.52.jpg',
     'https://bj.bcebos.com/v1/wz950116/jx3-pvx/截图/无上正等正觉/thumbnail/JX3 Online Super-Resolution 2022.06.27 - 23.52.47.38.jpg',
