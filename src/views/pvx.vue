@@ -13,8 +13,8 @@
 
   <div class="container">
     <div class="box">
-      <div class="banner-img banner-1" @click="mountsClick"></div>
-      <div class="banner-img banner-2" @click="$router.push('/printscreen')"></div>
+      <div class="banner-img banner-1" @click="$router.push('/printscreen')"></div>
+      <div class="banner-img banner-2" @click="mountsClick"></div>
       <div class="banner-img banner-3" @click="$router.push('/dl')"></div>
       <div class="banner-img banner-4" @click="$router.push('/qy')"></div>
       <div class="banner-img banner-5"></div>
@@ -22,12 +22,12 @@
     <div class="nav">
       <div class="nav-item nav-1 nav-item-active">
         <div class="top-line"></div>
-        <div class="center-line">坐骑</div>
+        <div class="center-line">截图</div>
         <div class="bottom-line"></div>
       </div>
       <div class="nav-item nav-2">
         <div class="top-line"></div>
-        <div class="center-line">截图</div>
+        <div class="center-line">坐骑</div>
         <div class="bottom-line"></div>
       </div>
       <div class="nav-item nav-3">
