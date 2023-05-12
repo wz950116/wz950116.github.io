@@ -26,7 +26,7 @@
               <div :class="[ 'year-tab', { 'year-tab-active': state.activeYear === '剑胆琴心' } ]" @click="yearTabChange('剑胆琴心')">剑胆琴心</div>
               <div :class="[ 'year-tab', { 'year-tab-active': state.activeYear === '世外蓬莱' } ]" @click="yearTabChange('世外蓬莱')">世外蓬莱</div>
               <div :class="[ 'year-tab', { 'year-tab-active': state.activeYear === '奉天证道' } ]" @click="yearTabChange('奉天证道')">奉天证道</div>
-              <div :class="[ 'year-tab', { 'year-tab-active': false } ]">待定</div>
+              <div :class="[ 'year-tab', { 'year-tab-active': state.activeYear === '横刀断浪' } ]" @click="yearTabChange('横刀断浪')">横刀断浪</div>
             </div>
             <div class="demo-image__lazy dps_urls">
               <el-image

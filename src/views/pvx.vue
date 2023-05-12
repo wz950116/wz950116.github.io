@@ -15,8 +15,8 @@
     <div class="box">
       <div class="banner-img banner-1" @click="mountsClick"></div>
       <div class="banner-img banner-2" @click="$router.push('/printscreen')"></div>
-      <div class="banner-img banner-3" @click="$router.push('/qy')"></div>
-      <div class="banner-img banner-4" @click="$router.push('/dl')"></div>
+      <div class="banner-img banner-3" @click="$router.push('/dl')"></div>
+      <div class="banner-img banner-4" @click="$router.push('/qy')"></div>
       <div class="banner-img banner-5"></div>
     </div>
     <div class="nav">
@@ -32,12 +32,12 @@
       </div>
       <div class="nav-item nav-3">
         <div class="top-line"></div>
-        <div class="center-line">奇遇</div>
+        <div class="center-line">掉落</div>
         <div class="bottom-line"></div>
       </div>
       <div class="nav-item nav-4">
         <div class="top-line"></div>
-        <div class="center-line">掉落</div>
+        <div class="center-line">奇遇</div>
         <div class="bottom-line"></div>
       </div>
       <div class="nav-item nav-5">
@@ -59,6 +59,11 @@ onMounted(() => {
   let activeImg = 0,
     len = $('.banner-img').length,
     onOff = false;
+  $('.nav-item')
+    .eq(activeImg)
+    .addClass('nav-item-active')
+    .siblings()
+    .removeClass('nav-item-active');
   const timerFn = () => {
     activeImg++;
     if (activeImg >= len) activeImg = 0;

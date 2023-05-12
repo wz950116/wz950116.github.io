@@ -150,7 +150,7 @@ const checkDetail = (data) => {
   font-size: 18px;
 }
 #grid li .img-desc .img-type {
-  width: 50px;
+  width: 100px;
   text-align: left;
 }
 

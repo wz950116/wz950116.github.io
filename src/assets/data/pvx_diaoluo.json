@@ -1,18 +1,25 @@
 {
 	"data": [
 		{
+			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2023-05-14_16-48-15-000.jpg",
+			"date": "2023-05-14_16-48-15-000",
+			"origin": "秘境武狱黑牢",
+			"type": "玩具",
+			"label": "象心灵犀"
+		},
+		{
+			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2023-04-13_22-13-21-000.jpg",
+			"date": "2023-04-13_22-13-21-000",
+			"origin": "藏锋宝箱",
+			"type": "头像",
+			"label": "像韵・吹雪"
+		},
+		{
 			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2023-03-30_23-16-20-000.jpg",
 			"date": "2023-03-30_23-16-20-000",
 			"origin": "秘境幽藤馆",
 			"type": "挂件",
 			"label": "羽客藏锋"
-		},
-		{
-			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2023-03-30_22-58-14-000.jpg",
-			"date": "2023-03-30_22-58-14-000",
-			"origin": "秘境百战异闻录",
-			"type": "招式要诀",
-			"label": "《华散曲黑洞》招式要诀・五重"
 		},
 		{
 			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2023-03-29_23-05-53-000.jpg",
@@ -29,20 +36,6 @@
 			"label": "龙纹石碎片"
 		},
 		{
-			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2023-03-27_22-57-56-000.jpg",
-			"date": "2023-03-27_22-57-56-000",
-			"origin": "秘境百战异闻录",
-			"type": "招式要诀",
-			"label": "《花钱消灾》招式要诀・五重"
-		},
-		{
-			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2023-03-21_22-58-46-000.jpg",
-			"date": "2023-03-21_22-58-46-000",
-			"origin": "秘境百战异闻录",
-			"type": "招式要诀",
-			"label": "《冥府滑行》招式要诀・五重"
-		},
-		{
 			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2023-02-13_23-07-59-000.jpg",
 			"date": "2023-02-13_23-07-59-000",
 			"origin": "秘境百战异闻录",
@@ -50,18 +43,17 @@
 			"label": "《气经・残卷》"
 		},
 		{
-			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2023-02-13_23-05-49-000.jpg",
-			"date": "2023-02-13_23-05-49-000",
-			"origin": "秘境百战异闻录",
-			"type": "招式要诀",
-			"label": "《特制金创药》招式要诀・五重"
-		},
-		{
-			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2023-02-10_21-45-00-000.jpg",
+			"src": [
+				"https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2023-03-30_22-58-14-000.jpg",
+				"https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2023-03-27_22-57-56-000.jpg",
+				"https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2023-03-21_22-58-46-000.jpg",
+				"https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2023-02-13_23-05-49-000.jpg",
+				"https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2023-02-10_21-45-00-000.jpg"
+			],
 			"date": "2023-02-10_21-45-00-000",
 			"origin": "秘境百战异闻录",
-			"type": "招式要诀",
-			"label": "《飞云回转刀》招式要诀・五重"
+			"type": "其他",
+			"label": "招式要诀・五重"
 		},
 		{
 			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2023-01-31_17-32-01-000.jpg",
@@ -72,6 +64,7 @@
 		},
 		{
 			"src": [
+				"https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2023-04-20_22-17-15-000.jpg",
 				"https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2023-04-05_13-19-25-000.jpg",
 				"https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2023-03-24_22-48-35-000.jpg",
 				"https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2023-02-27_22-30-33-000.jpg",
@@ -87,11 +80,12 @@
 			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2023-01-12_00-16-29-000.jpg",
 			"date": "2023-01-12_00-16-29-000",
 			"origin": "活动龙门飞剑",
-			"type": "其他",
+			"type": "装备",
 			"label": "真・龙门飞剑"
 		},
 		{
 			"src": [
+				"https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2023-05-08_22-36-08-000.jpg",
 				"https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2023-02-27_23-01-24-000.jpg",
 				"https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2023-01-11_23-58-43-000.jpg"
 			],
@@ -191,7 +185,7 @@
 			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2022-08-30_23-26-15-000.jpg",
 			"date": "2022-08-30_23-26-15-000",
 			"origin": "活动周年庆",
-			"type": "特殊道具",
+			"type": "其他",
 			"label": "随缘"
 		},
 		{
@@ -209,10 +203,14 @@
 			"label": "游空竹翼"
 		},
 		{
-			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2022-07-12_15-15-33-000.png",
+			"src": [
+				"https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2022-07-12_15-15-33-000.png",
+				"https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2022-05-18_22-21-40-000.jpg",
+				"https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2022-04-29_21-18-18-000.jpg"
+			],
 			"date": "2022-07-12_15-15-33-00",
 			"origin": "秘境河阳之战",
-			"type": "马饰",
+			"type": "马具",
 			"label": "玄域辟甲"
 		},
 		{
@@ -276,25 +274,11 @@
 			"label": "水长生・青金莲"
 		},
 		{
-			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2022-05-18_22-21-40-000.jpg",
-			"date": "2022-05-18_22-21-40-000",
-			"origin": "秘境河阳之战",
-			"type": "马具",
-			"label": "玄域辟甲・鞍饰"
-		},
-		{
 			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2022-05-15_14-29-51-000.jpg",
 			"date": "2022-05-15_14-29-51-000",
 			"origin": "秘境大明宫",
 			"type": "家具",
 			"label": "九天阖闾"
-		},
-		{
-			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2022-05-09_23-40-08-000.jpg",
-			"date": "2022-05-09_23-40-08-000",
-			"origin": "秘境烛龙殿",
-			"type": "马具",
-			"label": "踏炎头饰"
 		},
 		{
 			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2022-05-08_21-34-52-000.jpg",
@@ -309,13 +293,6 @@
 			"origin": "签到有礼",
 			"type": "挂件",
 			"label": "夜幕星河"
-		},
-		{
-			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2022-04-29_21-18-18-000.jpg",
-			"date": "2022-04-29_21-18-18-000",
-			"origin": "秘境河阳之战",
-			"type": "马具",
-			"label": "玄域辟甲・足饰"
 		},
 		{
 			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2022-04-21_23-12-18-000.jpg",
@@ -363,7 +340,7 @@
 			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2022-03-03_20-41-29-000.jpg",
 			"date": "2022-03-03_20-41-29-000",
 			"origin": "秘境修罗挑战",
-			"type": "礼盒",
+			"type": "称号、挂件",
 			"label": "修罗挑战・正觉礼盒"
 		},
 		{
@@ -374,11 +351,14 @@
 			"label": "掠影无迹"
 		},
 		{
-			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2022-02-08_14-51-11-000.jpg",
+			"src": [
+				"https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2022-05-09_23-40-08-000.jpg",
+				"https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2022-02-08_14-51-11-000.jpg"
+			],
 			"date": "2022-02-08_14-51-11-000",
 			"origin": "秘境烛龙殿",
 			"type": "马具",
-			"label": "踏炎鞍饰"
+			"label": "踏炎"
 		},
 		{
 			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2022-02-04_14-05-08-000.jpg",
@@ -424,13 +404,6 @@
 			"label": "醉蛛墙饰"
 		},
 		{
-			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2021-09-05_22-05-24-000.jpg",
-			"date": "2021-09-05_22-05-24-000",
-			"origin": "秘境荻花圣殿",
-			"type": "马具",
-			"label": "红莲头饰"
-		},
-		{
 			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2021-09-02_23-04-05-000.jpg",
 			"date": "2021-09-02_23-04-05-000",
 			"origin": "十二周年大战秘境",
@@ -438,11 +411,14 @@
 			"label": "切玉踏"
 		},
 		{
-			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2021-08-15_14-41-47-000.jpg",
+			"src": [
+				"https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2021-09-05_22-05-24-000.jpg",
+				"https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2021-08-15_14-41-47-000.jpg"
+			],
 			"date": "2021-08-15_14-41-47-000",
 			"origin": "秘境荻花圣殿",
 			"type": "马具",
-			"label": "红莲鞍饰"
+			"label": "红莲"
 		},
 		{
 			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2021-07-04_22-48-18-000.jpg",
@@ -466,7 +442,7 @@
 			"date": "2021-04-24_01-48-08-000",
 			"origin": "秘境白帝江关",
 			"type": "马具",
-			"label": "御马踏金・足饰"
+			"label": "御马踏金"
 		},
 		{
 			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2021-04-17_15-37-30-000.jpg",
@@ -582,13 +558,6 @@
 			"origin": "家园照料",
 			"type": "宠物",
 			"label": "猹"
-		},
-		{
-			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2020-09-08_22-00-17-000.png",
-			"date": "2020-09-08_22-00-17-000",
-			"origin": "洛道世界首领沐云冲",
-			"type": "书籍",
-			"label": "天枢・上"
 		},
 		{
 			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2020-09-07_21-46-54-000.png",
@@ -853,7 +822,7 @@
 			],
 			"date": "2019-08-19_20-13-59-000",
 			"origin": "秘境狼神殿",
-			"type": "其他",
+			"type": "外观",
 			"label": "遗忘的书函"
 		},
 		{
@@ -931,7 +900,7 @@
 			"src": "https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/2018-10-13_19-47-56-000.png",
 			"date": "2018-10-13_19-47-56-000",
 			"origin": "秘境持国天王回忆录",
-			"type": "挂进",
+			"type": "挂件",
 			"label": "激焰"
 		},
 		{
