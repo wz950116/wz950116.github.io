@@ -69,7 +69,8 @@ const state = reactive({
     'https://bj.bcebos.com/v1/wz950116/jx3-pvx/截图/无上正等正觉/thumbnail/JX3 Online Super-Resolution 2022.06.27 - 23.52.47.38.jpg',
     'https://bj.bcebos.com/v1/wz950116/jx3-pvx/截图/无上正等正觉/thumbnail/JX3 Online Super-Resolution 2022.06.27 - 23.55.47.26.jpg',
     'https://bj.bcebos.com/v1/wz950116/jx3-pvx/截图/无上正等正觉/thumbnail/JX3 Online Super-Resolution 2022.06.28 - 00.12.07.61.jpg',
-    'https://bj.bcebos.com/v1/wz950116/jx3-pvx/截图/无上正等正觉/thumbnail/JX3 Online Super-Resolution 2022.06.28 - 00.14.34.21.jpg'
+    'https://bj.bcebos.com/v1/wz950116/jx3-pvx/截图/无上正等正觉/thumbnail/JX3 Online Super-Resolution 2022.06.28 - 00.14.34.21.jpg',
+    'https://bj.bcebos.com/v1/wz950116/jx3-pvx/截图/无上正等正觉/thumbnail/2023-05-16_00-17-20-001.jpg'
   ]
 })
 
@@ -86,7 +87,8 @@ const showDetail = (src) => {
 }
 
 const openVideo = () => {
-  state.videoSourceUrl = `https://bj.bcebos.com/v1/wz950116/jx3-pvx/截图/无上正等正觉/剑网3 - 梦江南 @ 电信五区(点卡区) 2022-06-12 23-39-29.mp4`
+  // state.videoSourceUrl = `https://bj.bcebos.com/v1/wz950116/jx3-pvx/截图/无上正等正觉/剑网3 - 梦江南 @ 电信五区(点卡区) 2022-06-12 23-39-29.mp4`
+  state.videoSourceUrl = `https://bj.bcebos.com/v1/wz950116/jx3-pvx/截图/无上正等正觉/剑网3 - 梦江南 @ 电信五区(点卡区) 2023-05-16 00-11-08.mp4`
   state.dialogVideoPlayer = true
 }
 
