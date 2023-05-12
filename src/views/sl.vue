@@ -56,7 +56,7 @@ const piclist = ref(null)
 
 const state = reactive({
   activeImage: {},
-  tabs: ['SL_110', 'SL_100', 'SL_95', 'SL_90'],
+  tabs: ['SL_120', 'SL_110', 'SL_100', 'SL_95', 'SL_90'],
   tableData: {
     SL_110: SL_110.data,
     SL_100: SL_100.data,
@@ -64,6 +64,7 @@ const state = reactive({
     SL_90: SL_90.data
   },
   mapToName: {
+    SL_120: '横刀断浪',
     SL_110: '奉天证道',
     SL_100: '世外蓬莱',
     SL_95: '剑胆琴心',
