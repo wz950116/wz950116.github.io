@@ -31,14 +31,17 @@ const router = createRouter({
     path: '/pve',
     component: () => import(/* webpackChunkName: "pve" */ './views/pve.vue')
   }, {
-    path: '/qy',
-    component: () => import(/* webpackChunkName: "qy" */ './views/qy.vue')
+    path: '/printscreen',
+    component: () => import(/* webpackChunkName: "dl" */ './views/printscreen.vue')
   }, {
     path: '/dl',
     component: () => import(/* webpackChunkName: "dl" */ './views/dl.vue')
   }, {
-    path: '/printscreen',
-    component: () => import(/* webpackChunkName: "dl" */ './views/printscreen.vue')
+    path: '/qy',
+    component: () => import(/* webpackChunkName: "qy" */ './views/qy.vue')
+  }, {
+    path: '/qs',
+    component: () => import(/* webpackChunkName: "qy" */ './views/qs.vue')
   }, {
     path: '/code',
     component: () => import(/* webpackChunkName: "code" */ './views/code/utils.vue')

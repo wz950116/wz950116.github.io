@@ -17,7 +17,7 @@
       <div class="banner-img banner-2" @click="mountsClick"></div>
       <div class="banner-img banner-3" @click="$router.push('/dl')"></div>
       <div class="banner-img banner-4" @click="$router.push('/qy')"></div>
-      <div class="banner-img banner-5"></div>
+      <div class="banner-img banner-5" @click="$router.push('/qs')"></div>
     </div>
     <div class="nav">
       <div class="nav-item nav-1 nav-item-active">
