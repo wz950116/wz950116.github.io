@@ -113,12 +113,12 @@ const state = reactive({
   dialogVideoPlayer: false,
   dialogVideoList: false,
   videoPosterLoading: null,
-  activeNames: 'bhd',
+  activeNames: 'wyhl',
   dps_urls: [],
   fb_urls: [],
   previewSrcList: ['https://wz950116.bj.bcebos.com/jx3-pve%2F秘境%2Floading.png'],
   videoSourceUrl: '',
-  videoPosterUrl: 'https://wz950116.bj.bcebos.com/jx3-pve%2F秘境%2Fbhd_poster.jpg',
+  videoPosterUrl: 'https://wz950116.bj.bcebos.com/jx3-pve%2F秘境%2Fwyhl_poster.jpg',
   roles: [],
   dialogTitle: '',
   roleInfo: [],
@@ -127,7 +127,7 @@ const state = reactive({
   initShowNum: 3,
   fbGroupNum: 1,
   responseData: {},
-  currentVideo: 'bhd',
+  currentVideo: 'wyhl',
   activeYear: '安史之乱'
 })
 

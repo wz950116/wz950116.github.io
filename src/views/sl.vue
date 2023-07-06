@@ -44,6 +44,7 @@
 
 <script setup>
 import { ref, reactive, onMounted, nextTick } from 'vue'
+import SL_120 from '@/assets/data/120sl.json'
 import SL_110 from '@/assets/data/110sl.json'
 import SL_100 from '@/assets/data/100sl.json'
 import SL_95 from '@/assets/data/95sl.json'
@@ -58,6 +59,7 @@ const state = reactive({
   activeImage: {},
   tabs: ['SL_120', 'SL_110', 'SL_100', 'SL_95', 'SL_90'],
   tableData: {
+    SL_120: SL_120.data,
     SL_110: SL_110.data,
     SL_100: SL_100.data,
     SL_95: SL_95.data,
