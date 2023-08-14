@@ -1,0 +1,132 @@
+[
+  {
+    "area": "初级",
+    "list": [
+      {
+        "name": "怨念鬼王",
+        "level": 10,
+        "origin": "乱葬岗"
+      },
+      {
+        "name": "魔灵大头目",
+        "level": 15,
+        "origin": "精怪秘境"
+      },
+      {
+        "name": "鼠将军",
+        "level": 18,
+        "origin": "鼠洞"
+      },
+      {
+        "name": "恶巡抚、愁雨夜叉",
+        "level": 20,
+        "origin": "酆都城"
+      }
+    ]
+  },
+  {
+    "area": "中级",
+    "list": [
+      {
+        "name": "敖族咆哮者、敖族大将军",
+        "level": 25,
+        "origin": "试炼洞窟·销魂窟"
+      },
+      {
+        "name": "巴",
+        "level": 28,
+        "origin": "古之巴国"
+      },
+      {
+        "name": "双六骰魔",
+        "level": 30,
+        "origin": "过云舫"
+      },
+      {
+        "name": "金属机关龙",
+        "level": 33,
+        "origin": "沈家堡水牢"
+      },
+      {
+        "name": "九尾狐的幻影",
+        "level": 35,
+        "origin": "朱雀女的梦魇"
+      },
+      {
+        "name": "魔晶巨魔像",
+        "level": 38,
+        "origin": "匿袭天山"
+      },
+      {
+        "name": "云瑶仙子",
+        "level": 40,
+        "origin": "锁云台"
+      }
+    ]
+  },
+  {
+    "area": "高级",
+    "list": [
+      {
+        "name": "磐甲巨神",
+        "level": 41,
+        "origin": "无尘天"
+      },
+      {
+        "name": "蝶后、赤魇屠杀者",
+        "level": 43,
+        "origin": "天山山麓"
+      },
+      {
+        "name": "深渊蛛后",
+        "level": 45,
+        "origin": "试炼洞窟·断肠径"
+      },
+      {
+        "name": "地魔兽",
+        "level": 45,
+        "origin": "蝳篱狭室"
+      },
+      {
+        "name": "六天旱魔",
+        "level": 48,
+        "origin": "金沙滩"
+      },
+      {
+        "name": "镇狱明王",
+        "level": 49,
+        "origin": "锁妖塔"
+      },
+      {
+        "name": "黑白无常",
+        "level": 50,
+        "origin": "亡者之乱"
+      }
+    ]
+  },
+  {
+    "area": "终极",
+    "list": [
+      {
+        "name": "梭罗树精",
+        "level": 51,
+        "origin": "月幽之境"
+      },
+      {
+        "name": "流霓/丹穹/太玄",
+        "level": 54,
+        "origin": "神木林"
+      },
+      {
+        "name": "血月荒神",
+        "level": 55,
+        "origin": "泥犛祭坛"
+      },
+      {
+        "name": "古祸",
+        "level": 60,
+        "origin": "古祸再临"
+      }
+    ]
+  }
+]

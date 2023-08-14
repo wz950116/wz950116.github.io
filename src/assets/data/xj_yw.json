@@ -1,0 +1,177 @@
+[
+  {
+    "area": "江淮南地",
+    "list": [
+      {
+        "name": "叶灵皇帝",
+        "level": 7,
+        "origin": "钱塘江滨"
+      },
+      {
+        "name": "翡沼蛛后",
+        "level": 7,
+        "origin": "太湖船坞"
+      },
+      {
+        "name": "赫",
+        "level": 12,
+        "origin": "合肥·新城旧址"
+      },
+      {
+        "name": "穿扬兔王",
+        "level": 12,
+        "origin": "峨嵋峰"
+      },
+      {
+        "name": "聚魂棺妖王",
+        "level": 17,
+        "origin": "神农顶"
+      },
+      {
+        "name": "锦玉鼠王",
+        "level": 17,
+        "origin": "洞庭湖"
+      },
+      {
+        "name": "鲲鲵",
+        "level": 42,
+        "origin": "汨罗江底"
+      },
+      {
+        "name": "双蛮",
+        "level": 55,
+        "origin": "隐龙窟"
+      },
+      {
+        "name": "龟丞相",
+        "level": 57,
+        "origin": "丹轮福地"
+      }
+    ]
+  },
+  {
+    "area": "南蛮川夷",
+    "list": [
+      {
+        "name": "冥海鱼人",
+        "level": 22,
+        "origin": "桂林"
+      },
+      {
+        "name": "猪突猛将",
+        "level": 22,
+        "origin": "朝珠花海"
+      },
+      {
+        "name": "幽冥萤王",
+        "level": 27,
+        "origin": "太和遗址"
+      },
+      {
+        "name": "死纹山豹",
+        "level": 27,
+        "origin": "云岭苍山"
+      },
+      {
+        "name": "盘角羌王",
+        "level": 32,
+        "origin": "苗疆"
+      },
+      {
+        "name": "逆天妖猴",
+        "level": 32,
+        "origin": "龙陵"
+      },
+      {
+        "name": "鬼将军",
+        "level": 37,
+        "origin": "冥泉里"
+      }
+    ]
+  },
+  {
+    "area": "大漠之地",
+    "list": [
+      {
+        "name": "熔岩巨魔",
+        "level": 43,
+        "origin": "天山谷地"
+      },
+      {
+        "name": "山鬼王",
+        "level": 45,
+        "origin": "天山谷地"
+      }
+    ]
+  },
+  {
+    "area": "河京川北",
+    "list": [
+      {
+        "name": "大寨主戚得海",
+        "level": 37,
+        "origin": "梁山"
+      },
+      {
+        "name": "金眼狻猊",
+        "level": 37,
+        "origin": "桑梓荒原"
+      },
+      {
+        "name": "白虎帝",
+        "level": 42,
+        "origin": "白虎林"
+      },
+      {
+        "name": "娥衣娘",
+        "level": 42,
+        "origin": "姑瑶山"
+      },
+      {
+        "name": "真言符王",
+        "level": 47,
+        "origin": "巴蜀栈道"
+      },
+      {
+        "name": "龙帝",
+        "level": 47,
+        "origin": "雁门关"
+      },
+      {
+        "name": "雪岭洞天",
+        "level": 47,
+        "origin": "芙诸"
+      },
+      {
+        "name": "混世狂犘",
+        "level": 50,
+        "origin": "雷泽之滨"
+      },
+      {
+        "name": "虬龙",
+        "level": 52,
+        "origin": "蜀山"
+      },
+      {
+        "name": "天灵",
+        "level": 52,
+        "origin": "云间道"
+      },
+      {
+        "name": "砂之主",
+        "level": 53,
+        "origin": "云夏沙漠"
+      }
+    ]
+  },
+  {
+    "area": "河西大夏",
+    "list": [
+      {
+        "name": "五蕴夜魔",
+        "level": 63,
+        "origin": "云夏沙漠"
+      }
+    ]
+  }
+]

@@ -43,6 +43,9 @@ const router = createRouter({
     path: '/qs',
     component: () => import(/* webpackChunkName: "qy" */ './views/qs.vue')
   }, {
+    path: '/xj',
+    component: () => import(/* webpackChunkName: "code" */ './views/xj.vue')
+  }, {
     path: '/code',
     component: () => import(/* webpackChunkName: "code" */ './views/code/utils.vue')
   }]
