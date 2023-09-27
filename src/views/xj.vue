@@ -41,11 +41,13 @@
         <div class="video-player-title">
           {{ currentBOSS.name }}<img src="@/assets/images/popup_close.png" alt="" @click="showVideo = false">
         </div>
-        <video class="video-resource" :src="'https://wz950116.bj.bcebos.com/xj/'+ currentBOSS.type +'/'+ currentBOSS.name +'.mp4'" controls></video>
+        <img class="video-resource" :src="'https://wz950116.bj.bcebos.com/xj/' + currentBOSS.type + '/' + currentBOSS.name + '.jpg'" alt="" @click="checkDetail">
       </div>
     </div>
     <div class="video-player-mask"></div>
   </div>
+
+  <el-image-viewer v-if="dialogVisible" :url-list="previewSrcList" @close="closeImgViewer" />
 </template>
 
 <script>
@@ -55,7 +57,9 @@ export default {
   name: 'xj',
   data() {
     return {
+      dialogVisible: false,
       showVideo: false,
+      previewSrcList: [],
       currentBOSS: {},
       ywBOSS: [],
       fbBOSS: []
@@ -72,6 +76,16 @@ export default {
         type
       }
       this.showVideo = true
+    },
+    // 打开查看大图
+    checkDetail(src) {
+      this.dialogVisible = true
+      this.previewSrcList = ['https://wz950116.bj.bcebos.com/xj/' + this.currentBOSS.type + '/'+ this.currentBOSS.name + '.jpg']
+    },
+    // 关闭查看大图
+    closeImgViewer() {
+      this.dialogVisible = false
+      this.previewSrcList = []
     }
   }
 }
@@ -93,7 +107,8 @@ export default {
   width: 100%;
   height: 100%;
   padding: 20px;
-  background: #000000;
+  background: #000000 url('https://bj.bcebos.com/v1/wz950116/xj/其他/3.jpg') no-repeat center;
+  background-size: contain;
   overflow: hidden;
   overflow-y: auto;
 }
@@ -233,7 +248,7 @@ export default {
       }
       .video-resource {
         width: 100%;
-        height: 292px;
+        cursor: pointer;
       }
     }
   }
