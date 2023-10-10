@@ -51,7 +51,7 @@
       </div>
       <div class="output-list" :style="{ opacity: outputVisible ? 1 : 0 }" @click.stop>
         <span class="output-list-item" v-for="item in currentBOSS.output?.split(',')" :key="item" @click="showOutputDetail(item)">{{ item }},</span>
-        <span>垃圾材料</span>
+        <span>等等</span>
         <div class="popper-arrow"></div>
       </div>
     </div>
@@ -100,7 +100,7 @@ export default {
     },
     // 查看掉落
     showOutput() {
-      if (this.currentBOSS.type === '野外') return
+      // if (this.currentBOSS.type === '野外') return
       this.outputVisible = !this.outputVisible
     },
     // 查看掉落大图
