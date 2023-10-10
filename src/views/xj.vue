@@ -36,17 +36,27 @@
     </div>
   </div>
   <div class="video-player-wrapper" v-if="showVideo">
-    <div class="video-player">
+    <div class="video-player" @click="outputVisible = false">
       <div class="video-player-content">
         <div class="video-player-title">
-          {{ currentBOSS.name }}<img src="@/assets/images/popup_close.png" alt="" @click="showVideo = false">
+          <el-tooltip effect="dark" content="查看视频" placement="top">
+            <img class="source" src="https://bj.bcebos.com/v1/wz950116/xj/assets/video_player.png" alt="">
+          </el-tooltip>
+          <el-tooltip effect="dark" content="查看掉落" placement="top">
+            <span class="output" @click.stop="showOutput">{{ currentBOSS.name }}</span>
+          </el-tooltip>
+          <img class="close" src="https://bj.bcebos.com/v1/wz950116/xj/assets/popup_close.png" alt="" @click="showVideo = false">
         </div>
-        <img class="video-resource" :src="'https://wz950116.bj.bcebos.com/xj/' + currentBOSS.type + '/' + currentBOSS.name + '.jpg'" alt="" @click="checkDetail">
+        <img class="video-pic" :src="'https://wz950116.bj.bcebos.com/xj/' + currentBOSS.type + '/' + currentBOSS.name + '.jpg'" alt="" @click="checkDetail">
+      </div>
+      <div class="output-list" :style="{ opacity: outputVisible ? 1 : 0 }" @click.stop>
+        <span class="output-list-item" v-for="item in currentBOSS.output?.split(',')" :key="item" @click="showOutputDetail(item)">{{ item }},</span>
+        <span>垃圾材料</span>
+        <div class="popper-arrow"></div>
       </div>
     </div>
     <div class="video-player-mask"></div>
   </div>
-
   <el-image-viewer v-if="dialogVisible" :url-list="previewSrcList" @close="closeImgViewer" />
 </template>
 
@@ -57,6 +67,7 @@ export default {
   name: 'xj',
   data() {
     return {
+      outputVisible: false,
       dialogVisible: false,
       showVideo: false,
       previewSrcList: [],
@@ -78,7 +89,7 @@ export default {
       this.showVideo = true
     },
     // 打开查看大图
-    checkDetail(src) {
+    checkDetail() {
       this.dialogVisible = true
       this.previewSrcList = ['https://wz950116.bj.bcebos.com/xj/' + this.currentBOSS.type + '/'+ this.currentBOSS.name + '.jpg']
     },
@@ -86,6 +97,16 @@ export default {
     closeImgViewer() {
       this.dialogVisible = false
       this.previewSrcList = []
+    },
+    // 查看掉落
+    showOutput() {
+      if (this.currentBOSS.type === '野外') return
+      this.outputVisible = !this.outputVisible
+    },
+    // 查看掉落大图
+    showOutputDetail(item) {
+      this.dialogVisible = true
+      this.previewSrcList = ['https://wz950116.bj.bcebos.com/xj/掉落/'+ item + '.jpg']
     }
   }
 }
@@ -107,8 +128,8 @@ export default {
   width: 100%;
   height: 100%;
   padding: 20px;
-  background: #000000 url('https://bj.bcebos.com/v1/wz950116/xj/其他/3.jpg') no-repeat center;
-  background-size: contain;
+  background: #000000 url('https://bj.bcebos.com/v1/wz950116/xj/其他/2.jpg') no-repeat center;
+  background-size: cover;
   overflow: hidden;
   overflow-y: auto;
 }
@@ -117,7 +138,7 @@ export default {
     width: 560px;
     height: 80px;
     margin-left: -15px;
-    background: url('@/assets/images/bg_13.png') no-repeat 0 center;
+    background: url('https://bj.bcebos.com/v1/wz950116/xj/assets/bg_13.png') no-repeat 0 center;
     .title {
       background: linear-gradient(270deg, #cbd9f4, #ffffff);
       -webkit-background-clip: text;
@@ -133,7 +154,7 @@ export default {
     height: 902px;
     padding: 16px;
     margin-top: -15px;
-    background: url('@/assets/images/bg.png') no-repeat center;
+    background: url('https://bj.bcebos.com/v1/wz950116/xj/assets/bg.png') no-repeat center;
     color: #ffffff;
     overflow: hidden;
     overflow-y: auto;
@@ -184,7 +205,7 @@ export default {
         line-height: 61px;
         text-align: center;
         font-size: 26px;
-        background: url('@/assets/images/bg_1.png') no-repeat center;
+        background: url('https://bj.bcebos.com/v1/wz950116/xj/assets/bg_1.png') no-repeat center;
         user-select: none;
       }
       .part1-list {
@@ -196,7 +217,7 @@ export default {
           text-align: center;
           font-size: 18px;
           color: #ffffff;
-          background: url('@/assets/images/bg_2.png') no-repeat center;
+          background: url('https://bj.bcebos.com/v1/wz950116/xj/assets/bg_2.png') no-repeat center;
           margin-top: 9px;
           margin-right: 13px;
           line-height: 25px;
@@ -233,20 +254,27 @@ export default {
       background: rgba(6, 39, 81, 0.8);
       border-radius: 5px;
       .video-player-title {
+        display: flex;
+        align-items: center;
         position: relative;
         width: 100%;
         font-size: 20px;
         color: #cccccc;
         padding: 16px 0;
-        background: url('@/assets/images/video_player.png') no-repeat center left;
-        text-indent: 30px;
-        img {
+        .source {
+          cursor: pointer;
+        }
+        .output {
+          margin-left: 10px;
+          cursor: pointer;
+        }
+        .close {
           position: absolute;
           right: 0;
           cursor: pointer;
         }
       }
-      .video-resource {
+      .video-pic {
         width: 100%;
         cursor: pointer;
       }
@@ -260,6 +288,35 @@ export default {
     bottom: 0;
     opacity: .8;
     background: #000000;
+  }
+}
+.output-list {
+  position: absolute;
+  left: 8px;
+  top: 50px;
+  width: 200px;
+  padding: 8px;
+  background: rgba(6, 39, 81, 1);
+  color: rgb(120, 187, 123);
+  border-radius: 3px;
+  opacity: 0;
+  transition: all .5s;
+  &-item {
+    cursor: pointer;
+  }
+  .popper-arrow {
+    position: absolute;
+    left: 40%;
+    top: -5px;
+    display: block;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 6px;
+    margin-right: 3px;
+    border-top-width: 0;
+    border-bottom-color: rgba(6, 39, 81, 1);
   }
 }
 </style>
