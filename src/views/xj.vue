@@ -51,7 +51,7 @@
       </div>
       <div class="output-list" :style="{ opacity: outputVisible ? 1 : 0 }" @click.stop>
         <span class="output-list-item" v-for="item in currentBOSS.output?.split(',')" :key="item" @click="showOutputDetail(item)">{{ item }},</span>
-        <span>{{ currentBOSS.type === '副本' ? '散件,绯红材料,生产原料,图样' : '' }}等等</span>
+        <span>{{ currentBOSS.type === '副本' ? '散件,图样,绯红材料' : '' }}等等</span>
         <div class="popper-arrow"></div>
       </div>
     </div>
@@ -106,6 +106,7 @@ export default {
     // 查看掉落大图
     showOutputDetail(item) {
       this.dialogVisible = true
+      item = item === '套装' ? '套装_' + this.currentBOSS.origin : item
       this.previewSrcList = ['https://wz950116.bj.bcebos.com/xj/掉落/'+ item + '.png']
     }
   }
