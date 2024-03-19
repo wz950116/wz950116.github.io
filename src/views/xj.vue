@@ -51,7 +51,7 @@
       </div>
       <div class="output-list" :style="{ opacity: outputVisible ? 1 : 0 }" @click.stop>
         <span class="output-list-item" v-for="item in currentBOSS.output?.split(',')" :key="item" @click="showOutputDetail(item)">{{ item }},</span>
-        <span>{{ currentBOSS.type === '副本' ? '散件,图样,绯红材料' : '' }}等等</span>
+        <span>{{ currentBOSS.type === '副本' ? '散件,图样,绯红材料' : '图样' }}等等</span>
         <div class="popper-arrow"></div>
       </div>
     </div>
@@ -107,6 +107,7 @@ export default {
     showOutputDetail(item) {
       this.dialogVisible = true
       item = item === '套装' ? '套装_' + this.currentBOSS.origin : item
+      item = item === '伏魔元神' ? '伏魔元神_' + this.currentBOSS.origin : item
       this.previewSrcList = ['https://wz950116.bj.bcebos.com/xj/掉落/'+ item + '.png']
     }
   }
@@ -164,35 +165,35 @@ export default {
       width: 0 !important;
     }
     .gradient-font-0 {
-      background: linear-gradient(180deg, #ffffff 21%, #43bfff 76%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-size: 20px;
-      font-weight: 700;
-    }
-    .gradient-font-1 {
-      background: linear-gradient(180deg, #ffffff 21%, #ffaf43 76%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-size: 20px;
-      font-weight: 700;
-    }
-    .gradient-font-2 {
-      background: linear-gradient(180deg, #ffffff 21%, #ff0000 76%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-size: 20px;
-      font-weight: 700;
-    }
-    .gradient-font-3 {
       background: linear-gradient(180deg, #ffffff 21%, #32cd7a 76%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       font-size: 20px;
       font-weight: 700;
     }
+    .gradient-font-1 {
+      background: linear-gradient(180deg, #ffffff 21%, #43bfff 76%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 20px;
+      font-weight: 700;
+    }
+    .gradient-font-2 {
+      background: linear-gradient(180deg, #ffffff 21%, #ffaf43 76%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 20px;
+      font-weight: 700;
+    }
+    .gradient-font-3 {
+      background: linear-gradient(180deg, #ffffff 21%, #da00bd 76%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 20px;
+      font-weight: 700;
+    }
     .gradient-font-4 {
-      background: linear-gradient(180deg, #ffffff 21%, #ff8100 76%);
+      background: linear-gradient(180deg, #ffffff 21%, #ff0000 76%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       font-size: 20px;
