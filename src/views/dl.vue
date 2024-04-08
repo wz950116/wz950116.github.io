@@ -9,7 +9,7 @@
           <div class="img-name">{{ item.label }}</div>
           <div class="img-desc">
             <div class="img-type">{{ item.type }}</div>
-            <div class="img-date">{{ item.date ? item.date.slice(0, 10) : '具体不详' }}</div>
+            <div class="img-date">{{ item.date ? item.date.slice(0, 10) : '' }}</div>
           </div>
           <el-image src="https://bj.bcebos.com/v1/wz950116/jx3-pvx/掉落/assets/previewImg.png" :preview-src-list="state.previewSrcList"></el-image>
         </li>
